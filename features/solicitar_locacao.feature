@@ -26,3 +26,14 @@ Feature: Solicitar locação de carro informando a data de retirada e a data de 
         When Eu finaizar a reserva
         Then Eu vejo uma menságem de falta de preencimento de data e hora de locação e devolução.
         And Eu sou redirecionado para a seção de declaração de data e hora de locação e devolução
+
+    Scenario: finalização de solicitação de locação bem sucedida 
+        Given Eu estou logado com privilégios de "cliente"
+        And Eu estou na seção de "finalização de solicitação de locação"
+        And A data e hora de locação informada foi 5/08/2022 - 13:00 
+        And A data e hora de devolução informada foi 10/08/2022 - 13:00
+        And o modelo selecionado foi o Honda fit prata
+        And não foi escolhido acessório extra
+        When Eu confirmar a locação
+        Then Eu vejo uma menságem de confirmação de solicitação
+        And Eu sou direcionado para a página inicial. 
