@@ -10,7 +10,6 @@ Feature: Solicitar locação de carro informando a data de retirada e a data de 
         When Eu seleciono o Honda fit prata
         Then Eu sou direcionado para seção de "seleção de acessórios"
 
-
     Scenario: falha na seleção de carro por indisponibilidade do veículo
         Given Eu estou logado com privilégios de "cliente"
         And Existem 0 Honda fit prata disponíveis
