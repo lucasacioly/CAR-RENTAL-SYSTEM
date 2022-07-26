@@ -11,9 +11,8 @@ Scenario: Car return with delay
     And I am at the "Car return" page
     When I select the button "Register car return"
     And I fill the informations of the day of the return
-    Then the system show me that there was delay
-    And and shows me the price of the fine that will be charged to the customer
-
+    Then the system show me that there was a delay
+    And and shows me the price of the fine that will be charged to the client
 
 Scenario: Car return as client
     Given I am loggen as "client"
