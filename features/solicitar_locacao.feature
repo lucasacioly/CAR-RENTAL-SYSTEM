@@ -25,7 +25,6 @@ Feature: Solicitar locação de carro informando a data de retirada e a data de 
         When Eu finaizar a reserva
         Then Eu vejo uma menságem de falta de preencimento de data e hora de locação e devolução.
         And Eu sou redirecionado para a seção de declaração de data e hora de locação e devolução
-        And Eu posso escolher a data e hora de locação e devolução
 
     Scenario: finalização de solicitação de locação bem sucedida 
         Given Eu estou logado com privilégios de "cliente"
@@ -38,3 +37,4 @@ Feature: Solicitar locação de carro informando a data de retirada e a data de 
         Then Eu vejo uma menságem de confirmação de solicitação
         And Eu sou direcionado para a página inicial. 
 
+    
