@@ -13,6 +13,7 @@ Feature: Solicitar locação de carro informando a data de retirada e a data de 
 
     Scenario: falha na seleção de carro por indisponibilidade do veículo
         Given Eu estou logado com privilégios de "cliente"
+        And Eu estou na seção de "locação de veículo"
         And Existem 0 Honda fit prata disponíveis
         When Eu seleciono o Honda fit prata
         Then Eu vejo uma mensagem de erro
@@ -24,7 +25,7 @@ Feature: Solicitar locação de carro informando a data de retirada e a data de 
         And nenhum acessório foi selecionado
         And A data de entrega e devolução não foi informada
         When Eu finaizar a reserva
-        Then Eu vejo uma menságem de falta de preencimento de data e hora de locação e devolução.
+        Then Eu vejo uma menságem de falta de preenchimento de data e hora de locação e devolução.
         And Eu sou redirecionado para a seção de declaração de data e hora de locação e devolução
 
     Scenario: finalização de solicitação de locação bem sucedida 
