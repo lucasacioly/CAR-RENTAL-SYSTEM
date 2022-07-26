@@ -47,4 +47,4 @@ Feature: Solicitar locação de carro informando a data de retirada e a data de 
         And foi selecionado GPS como acessório extra
         When Eu confirmar a locação 
         Then Eu vejo uma menságem de erro por "não informação do modelo desejado"
-        And Eu sou redrecionado para a seção de "seleção do modelo do veículo"
+        And Eu sou redrecionado para a seção de "seleção de modelo do veículo"
