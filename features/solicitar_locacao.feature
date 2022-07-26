@@ -20,8 +20,8 @@ Feature: Solicitar locação de carro informando a data de retirada e a data de 
     Scenario: falha de locação por não informação dos horários de locação e devolução
         Given Eu estou logado com privilégios de "cliente"
         And Eu selecionei para locação o Honda fit prata
-        And Eu não selecionei qualquer acessório
-        And Eu não especifiquei data de entrega e devolução
+        And nenhum acessório foi selecionado
+        And A data de entrega e devolução não foi informada
         When Eu finaizar a reserva
         Then Eu vejo uma menságem de falta de preencimento de data e hora de locação e devolução.
         And Eu sou redirecionado para a seção de declaração de data e hora de locação e devolução
