@@ -20,8 +20,8 @@ Feature: Solicitar locação de carro informando a data de retirada e a data de 
     Scenario: falha de locação por não informação dos horários de locação e devolução
         Given Eu estou logado com privilégios de "cliente"
         And Eu selecionei para locação o Honda fit prata
-        And Eu não selecionei qualquer acessório
-        And Eu não especifiquei data de entrega e devolução
+        And nenhum acessório foi selecionado
+        And A data de entrega e devolução não foi informada
         When Eu finaizar a reserva
         Then Eu vejo uma menságem de falta de preencimento de data e hora de locação e devolução.
         And Eu sou redirecionado para a seção de declaração de data e hora de locação e devolução
@@ -38,3 +38,12 @@ Feature: Solicitar locação de carro informando a data de retirada e a data de 
         And Eu sou direcionado para a página inicial. 
 
     
+    Scenario: falha de locação por não informação do modelo do veículo
+        Given Eu estou logado com privilégios de "cliente"
+        And A data e hora de locação informada foi 5/08/2022 - 13:00 
+        And A data e hora de devolução informada foi 10/08/2022 - 13:00
+        And Eu não informo o modelo do veículo
+        And foi selecionado GPS como acessório extra
+        When Eu confirmar a locação 
+        Then Eu vejo uma menságem de erro por "não informação do modelo desejado"
+        And Eu sou redrecionado para a seção de "seleção do modelo do veículo"
