@@ -5,7 +5,8 @@ Feature: Solicitar locação de carro informando a data de retirada e a data de 
     so that it will be reserved for the date of my rental
 
     Scenario: Seleção de carro disponível para locação 
-        Given Eu estou logado com privilégios de "cliente" 
+        Given Eu estou logado com privilégios de "cliente"
+        And Eu estou na seção de "locação de veículo"
         And Existem 3 Honda fit prata disponíveis
         When Eu seleciono o Honda fit prata
         Then Eu sou direcionado para seção de "seleção de acessórios"
