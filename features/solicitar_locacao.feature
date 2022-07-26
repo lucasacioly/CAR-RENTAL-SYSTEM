@@ -36,3 +36,13 @@ Feature: Solicitar locação de carro informando a data de retirada e a data de 
         When Eu confirmar a locação
         Then Eu vejo uma menságem de confirmação de solicitação
         And Eu sou direcionado para a página inicial. 
+
+    Scenario: falha de locação por não informação do modelo do veículo
+        Given Eu estou logado com privilégios de "cliente"
+        And A data e hora de locação informada foi 5/08/2022 - 13:00 
+        And A data e hora de devolução informada foi 10/08/2022 - 13:00
+        And Eu não informo o modelo do veículo
+        And foi selecionado GPS como acessório extra
+        When Eu confirmar a locação 
+        Then Eu vejo uma menságem de erro por "não informação do modelo desejado"
+        And Eu sou redrecionado para a seção de "seleção do modelo do veículo"
