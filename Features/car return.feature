@@ -37,4 +37,4 @@ Scenario: Test
     And I fill the informations of the day of the return
     And I select the button "Car damaged"
     Then the system show me that there was no delay
-    And It shows me a price of the fine to be charged to the client for the car damage
+    And show me the price of the fine to be charged to the client for damage to the car
