@@ -28,3 +28,4 @@ Scenario: Car return without all informations
     And I don't fill all of the informations of the day of the return
     Then I go to the "Error" page
     And It shows "all the informations are required"
+    And It asks me again the informations
