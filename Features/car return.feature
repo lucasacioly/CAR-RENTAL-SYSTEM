@@ -30,7 +30,7 @@ Scenario: Car return without all informations
     And It shows "all the informations are required"
     And It asks me again the informations
 
-Scenario: Test
+Scenario: Car damaged
     Given Im am logged as "admin"
     And I am at the "Car return" page
     When I select the button "Register car return"
