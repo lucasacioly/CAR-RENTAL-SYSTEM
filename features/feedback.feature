@@ -83,3 +83,4 @@ Feature: Feedback sobre o carro e o usuário
         And Eu clico em "OK"
         And Eu volto para a tela de carros
         And Eu vejo o carro "Ford New Fiesta" sem feedback feito
+        And Eu posso preencher o feedback novamente
