@@ -104,11 +104,4 @@ Feature: Feedback sobre o carro e o usuário
         And Eu clico em "OK"
         And Eu volto para a tela de clientes
         And Eu vejo o cliente "João da Silva Batista" sem feedback feito
-
-    Scenario: Não tem mais cenário para fazer e o roteiro tá mandando
-        Given O roteiro mandou eu fazer esse cenário
-        And Eu não tenho mais ideias de cenário
-        When Eu escrevo esse cenário
-        And faço um pequeno ajuste
-        Then A questão do roteiro é concluída
         
