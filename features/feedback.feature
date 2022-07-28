@@ -93,3 +93,13 @@ Feature: Feedback sobre o carro e o usuário
         And Eu clico em "OK"
         And Eu volto para a tela de carros
         And Eu vejo o carro "Ford New Fiesta" sem feedback feito
+
+    Scenario: Falha no Feedback do cliente por atraso de devolvimento
+        Given Eu estou logado como "administrador"
+        And Eu estou na tela de clientes
+        And Eu vejo o cliente "João da Silva" sem feedback feito
+        When Eu tento clicar para fazer o feedback dele
+        Then Aparece uma mensagem de erro na tela informando de que o cliente ainda não devolveu o carro
+        And Eu clico em "OK"
+        And Eu volto para a tela de clientes
+        And Eu vejo o cliente "João da Silva" sem feedback feito
