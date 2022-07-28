@@ -70,3 +70,4 @@ Scenario 6: Falha no acesso ao sistema por senha incorreta
     Then Eu devo ver uma mensagem de erro "Login ou senha incorreto(a)"
     And Eu sou redirecionado para a "página de login"
     And Os campos estão em branco
+    And Eu eu vejo um "Captcha"
