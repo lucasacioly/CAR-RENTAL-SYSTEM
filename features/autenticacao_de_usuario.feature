@@ -79,6 +79,7 @@ Scenario 7: Novo cliente quer se cadastrar no sistema
     When Eu pressiono em "Cadastre-se"
     Then Eu devo estar na "página de cadastro"
     And Eu devo ver "campo de nome"
+    And Eu vejo "campo CPF"
     And Eu vejo "campo de idade e gênero"
     And Eu vejo "campo de endereço"
     And Eu vejo "campo de telefones"
@@ -94,3 +95,15 @@ Scenario 7: Novo cliente quer se cadastrar no sistema
     Then Eu devo ver uma mensagem de sucesso "Cadastro realizado com sucesso! Verifique e confirme seu e-mail."
     And Eu estou logado
     And Eu sou redirecionado para página "meu perfil" dentro do sistema
+
+Scenario 8: Falha no cadastro de cliente já cadastrado
+
+    Given Eu estou na "página de cadastro"
+    And Eu sou um cliente cadastrado
+    When Eu preencho todos os campos
+    And Eu preenchi o "campo CPF" com o CPF já cadastrado
+    And Eu pressiono "Próximo"
+    Then Eu devo ver uma mensagem de erro "CPF já cadastrado"
+    And Eu sou redirecionado para a seção onde encontra-se o "campo CPF"
+    And Eu vejo o "campo CPF" em destaque
+    
