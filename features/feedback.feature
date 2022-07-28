@@ -83,3 +83,13 @@ Feature: Feedback sobre o carro e o usuário
         And Eu clico em "OK"
         And Eu volto para a tela de carros
         And Eu vejo o carro "Ford New Fiesta" sem feedback feito
+
+    Scenario: Falha no Feedback do carro por atraso de devolvimento
+        Given Eu estou logado como "administrador"
+        And Eu estou na tela de carros
+        And Eu vejo o carro "Ford New Fiesta" sem feedback feito
+        When Eu tento clicar para fazer o feedback dele
+        Then Aparece uma mensagem de erro na tela informando de que o carro ainda não foi devolvido
+        And Eu clico em "OK"
+        And Eu volto para a tela de carros
+        And Eu vejo o carro "Ford New Fiesta" sem feedback feito
