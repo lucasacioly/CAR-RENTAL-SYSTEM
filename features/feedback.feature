@@ -5,7 +5,6 @@ Feature: Feedback sobre o carro e o usuário
     and the client that rented it
     As a Client
     I want to be able to give feedback about the car I rented to the rental company
-    cccc
 
     Scenario: Feedback sobre o cliente feito com sucesso pelo "administrador"
         Given Eu estou logado como "administrador"
