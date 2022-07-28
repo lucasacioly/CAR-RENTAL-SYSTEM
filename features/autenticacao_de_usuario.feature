@@ -47,4 +47,13 @@ Scenario 4: Login de cliente no acesso para Funcionários
     Then Eu devo ver uma mensagem de erro "Você não é Funcionário"
     And Eu devo voltar para a "página de login"
 
-    The End
+Scenario 5: Falha no acesso ao sistema para Funcionários
+
+    Given Eu estou na "página de login"
+    And Eu sou um funcionário
+    When Eu preencho o "campo de login"
+    And Eu preencho o "campo de senha"
+    And Eu pressiono "Entrar"
+    Then Eu devo ver uma mensagem de erro "Você não selecionou a opção cliente/funcionário"
+    And Eu retorno para a "página de login"
+    And Os campos estão em branco
