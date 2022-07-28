@@ -55,5 +55,18 @@ Scenario 5: Falha no acesso ao sistema para Funcionários
     And Eu preencho o "campo de senha"
     And Eu pressiono "Entrar"
     Then Eu devo ver uma mensagem de erro "Você não selecionou a opção cliente/funcionário"
-    And Eu retorno para a "página de login"
+    And Eu sou redirecionado para a "página de login"
+    And Os campos estão em branco
+
+Scenario 6: Falha no acesso ao sistema por senha incorreta
+
+    Given Eu estou na "página de login"
+    And Eu sou um usuário
+    When Eu preencho o "campo de login"
+    And Eu preencho o "campo de senha"
+    And A senha está incorreta
+    And Eu seleciono uma opção no campo cliente/funcionário
+    And Eu pressiono "Entrar"
+    Then Eu devo ver uma mensagem de erro "Login ou senha incorreto(a)"
+    And Eu sou redirecionado para a "página de login"
     And Os campos estão em branco
