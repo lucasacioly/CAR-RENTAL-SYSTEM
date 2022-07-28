@@ -71,3 +71,40 @@ Scenario 6: Falha no acesso ao sistema por senha incorreta
     And Eu sou redirecionado para a "página de login"
     And Os campos estão em branco
     And Eu eu vejo um "Captcha"
+
+Scenario 7: Novo cliente quer se cadastrar no sistema
+
+    Given Eu estou na "página de login"
+    And Eu não sou um usuário cadastrado
+    And Eu sou um cliente
+    When Eu pressiono em "Cadastre-se"
+    Then Eu devo estar na "página de cadastro"
+    And Eu devo ver "campo de nome"
+    And Eu vejo "campo CPF"
+    And Eu vejo "campo de idade e gênero"
+    And Eu vejo "campo de endereço"
+    And Eu vejo "campo de telefones"
+    And Eu vejo "campo de e-mail"
+    When Eu preencho todos os campos
+    And Eu pressiono em "Próximo"
+    Then Eu devo ser redirecionado para a segunda página do cadastro
+    And Eu devo ver o "campo login"
+    And Eu vejo o "campo senha" e "confirmar senha"
+    When Eu preencho um login válido e único
+    And Eu preencho uma senha válida
+    And Eu pressiono "Cadastrar!"
+    Then Eu devo ver uma mensagem de sucesso "Cadastro realizado com sucesso! Verifique e confirme seu e-mail."
+    And Eu estou logado
+    And Eu sou redirecionado para página "meu perfil" dentro do sistema
+
+Scenario 8: Falha no cadastro de cliente já cadastrado
+
+    Given Eu estou na "página de cadastro"
+    And Eu sou um cliente cadastrado
+    When Eu preencho todos os campos
+    And Eu preenchi o "campo CPF" com o CPF já cadastrado
+    And Eu pressiono "Próximo"
+    Then Eu devo ver uma mensagem de erro "CPF já cadastrado"
+    And Eu sou redirecionado para a seção onde encontra-se o "campo CPF"
+    And Eu vejo o "campo CPF" em destaque
+    
