@@ -108,3 +108,4 @@ Scenario 8: Falha no cadastro de cliente já cadastrado
     And Eu sou redirecionado para a seção onde encontra-se o "campo CPF"
     And Eu vejo o "campo CPF" em branco e em <destaque>
     
+testando commit 3 main
