@@ -111,4 +111,5 @@ Scenario 8: Falha no cadastro de cliente já cadastrado
     <ggb> testando commit 3 main
 
 Roteiro de gerencia, questão 14.a)
-testando commit 1 desenvolvimento    
+testando commit 1 desenvolvimento
+testando commit 2 desenvolvimento    
