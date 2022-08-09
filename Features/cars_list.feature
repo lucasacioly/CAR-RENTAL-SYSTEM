@@ -32,11 +32,12 @@ Feature: Lista de carros disponíveis para locação
         And Digo que possui 5 assentos e o aluguel dele está na faixa dos 120-140 reais diários
         Then Clico em concluir Adição
         And Verifico no site que já está disponível o Toyota Corolla
+        
 
     Scenario: Não possui a opção de carro procurada pelo cliente
         Given Eu estou logado como "cliente" no site
         And Estou na seção de "opção de veículo"
-        When Eu seleciono o Fiat Palio
+        When Eu seleciono o Fiat  Palio
         And Existem 0 Fiat Toro disponíveis
         And Tem 0 opções de 'Sedan', 0 de 'Hatch', 0 'SUVs' e 0 'Caminhonetes'
         And Possui 5 assentos e o aluguel dele está na faixa dos 60-80 reais diários
