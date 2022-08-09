@@ -45,6 +45,7 @@ Feature: Lista de carros disponíveis para locação
         And Recebo a mensagem 'Modelo não disponível no momento'
         And Sou redirecionado de volta para a lista de opções de veículo
 
+
     Scenario: Tentativa de adição deu um carro já disponível 
         Given Eu estou logado como "admin" no site
         And Estou na seção de "opção de veículo"
