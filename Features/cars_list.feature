@@ -32,6 +32,7 @@ Feature: Lista de carros disponíveis para locação
         And Digo que possui 5 assentos e o aluguel dele está na faixa dos 120-140 reais diários
         Then Clico em concluir Adição
         And Verifico no site que já está disponível o Toyota Corolla
+        
 
     Scenario: Não possui a opção de carro procurada pelo cliente
         Given Eu estou logado como "cliente" no site
