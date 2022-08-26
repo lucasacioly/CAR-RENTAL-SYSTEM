@@ -1,0 +1,38 @@
+nav {
+    display: flex;
+    position: fixed;
+    background-color: var(--grey);
+    height: 100%;
+    width: 16%;
+    flex-direction: column;   
+    align-items: center;
+    padding-top: 5%;
+    font-size: 150%;
+
+}
+
+.nav_up {
+    
+    //margin-top:10%;
+    padding-top: 30%;
+    height: 40%;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav_down {
+    justify-content: flex-start;
+}
+
+.nav_button {
+    color: var(--white);
+    text-decoration: none;
+    
+}
+
+.button_x {
+    //padding-left: 200%;
+    //padding-top: 100%;
+    
+}
+

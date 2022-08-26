@@ -1,0 +1,43 @@
+.home-container{
+    position: fixed;
+    background: var(--bg);
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+    .logo{
+        margin-top: 1%;
+        height: 8%;
+    }
+
+    .promocoes{
+        width: 100%;
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .lista1{
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+        }
+    
+    }
+
+    .mais_alugados{
+        width: 100%;
+        color: var(--white);
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        margin-bottom: 2%;
+        .lista2{
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}
