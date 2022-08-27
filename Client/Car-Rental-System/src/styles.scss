@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+*{
+  margin: 0;
+  padding: 0;  
+  box-sizing: border-box;
+}
+
+:root {
+  --bg : linear-gradient(180deg, rgba(0, 2, 15, 0.31) 0%, #474850 45.58%, rgba(0, 0, 0, 0.87) 96.1%);
+  --black: #000000;
+  --white: #FFFFFF;
+  --beige: #D9D9D9;
+  --red: #FF6565;
+  --green: #3C921E;
+  --blue: #1F1BE0;
+  --grey:#232428;
+
+}
