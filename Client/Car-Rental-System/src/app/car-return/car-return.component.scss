@@ -1,0 +1,56 @@
+
+.return-container{
+  display: flex;
+  background: var(--bg);
+  color: var(--white);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+
+
+  .questions{
+    font-size: 200%;
+    margin-left: 5%;
+    padding-top: 12%;
+  }
+
+  .title{
+    font-size: 450%;
+    display: flex;
+    margin-top: 2%;
+    margin-right:3%;
+
+  }
+
+  .fine{
+    font-size: 200%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 5%;
+    padding-top: 18%;
+
+  }
+
+  .calculate-button{
+    margin-top: 5%;
+    //display: flex;
+    background: var(--green);
+    color: var(--white);
+    border-radius: 31px;
+    font-size: 120%;
+    align-items: flex-end;
+  }
+
+
+}
+
+textarea{
+  font-size: 30px;
+}
+
+input{
+  width: 100%;
+  height: 5%;
+  font-size: 150%;
+}
