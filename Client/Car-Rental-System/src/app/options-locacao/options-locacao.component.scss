@@ -1,0 +1,32 @@
+.container{
+    position: fixed;
+    background: var(--bg);
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+    //justify-content: space-between;
+
+    .title{
+        height: 10%;
+    }
+
+    .imagem{
+       height: 30%
+    }
+
+    .info{
+        height: 30%
+    }
+
+    .selections{
+        
+       display: flex;
+       
+       margin-left: 3%;
+       margin-right: 3%
+    }
+
+    
+}

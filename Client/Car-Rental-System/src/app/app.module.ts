@@ -5,16 +5,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { DataHoraLocacaoComponent } from './data-hora-locacao/data-hora-locacao.component';
+import { OptionsLocacaoComponent } from './options-locacao/options-locacao.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
-    HomePageComponent
+    HomePageComponent,
+    DataHoraLocacaoComponent,
+    OptionsLocacaoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
