@@ -1,0 +1,87 @@
+.container{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+
+  .login-container{
+    background: var(--beige);
+    border-radius: 50px;
+    margin-top: 100px;
+    height: 60%;
+    width: 50%;
+
+    .login{
+      display: flex;
+      flex-direction: column;
+
+      textarea{
+        padding-top: 15px;
+        padding-left: 15px;
+        color: black;
+        border-radius: 50px;
+        margin-top: 50px;
+        margin-left: 35px;
+        font-size: 30px;
+        width: 90%;
+        height: 73px;
+      }
+
+      .password{
+        position: relative;
+        .senha{
+          padding-top: 2px;
+          padding-left: 15px;
+          color: black;
+          border-radius: 50px;
+          margin-top: 50px;
+          margin-left: 35px;
+          font-size: 30px;
+          width: 90%;
+          height: 73px;
+        }
+        .eye-button{
+          position: absolute;
+          right: 90px;
+          top: 70px;
+          background: transparent;
+          border: none;
+
+        }
+
+        .eye{
+          border: 0;
+          min-height: 30px;
+          max-height: 30px;
+        }
+      }
+
+
+      .entrar{
+        background: var(--green);
+        color: var(--white);
+        display: flex;
+        border: none;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        margin-top: 70px;
+        margin-left: 35px;
+        width: 90%;
+        height: 50px;
+      }
+
+      .cadastro{
+        color: var(--blue);
+        text-decoration: underline;
+        background: transparent;
+        border: none;
+        font-size: 20px;
+        margin-top: 30px;
+        margin-left: 830px;
+        width: 10%;
+      }
+    }
+  }
+}

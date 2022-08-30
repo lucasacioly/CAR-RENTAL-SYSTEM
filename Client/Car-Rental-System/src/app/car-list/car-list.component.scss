@@ -1,0 +1,35 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .logo{
+    margin-top: 10px;
+    height: 8%;
+    margin-bottom: 3px;
+  }
+
+  .filter{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    width: 100%;
+    justify-content: flex-end;
+    margin-right: 80px;
+    position: fixed;
+    .button{
+      font-size: 36px;
+      background: transparent;
+      color: var(--white);
+      border: none;
+      text-decoration: underline;
+    }
+  }
+
+
+
+
+
+
+
+}
