@@ -1,0 +1,23 @@
+.container {
+    height: 100%;
+    float: right;
+    display: flex;
+    //position: fixed;
+    background-color: #D9D9D9;
+    height: 100vh;
+    width: 16%;
+    flex-direction: column;   
+    align-items: center;
+
+    padding-top: 5%;
+    font-size: 150%;
+
+    .text{
+        color: var(--black);
+    }
+
+    .icon{
+        color: var(--black);
+    }
+    
+}
