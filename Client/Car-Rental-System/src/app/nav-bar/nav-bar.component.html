@@ -2,13 +2,13 @@
     <img (click)="nav_onclick()" class = "nav_button_toggle" src="assets/X.png"/>
     <div class="nav_text">
         <div class="nav_text_main">
-            
-            <p class="nav_button_text"><a href="#" class="nav_button">Home</a></p>
-            <p class="nav_button_text"><a href="#" class="nav_button">Carros</a></p>
-            <p class="nav_button_text"><a href="#" class="nav_button">Feedback</a></p>
-            
+
+            <p class="nav_button_text"><a (click)="navigate_to_home_page()" class="nav_button">Home</a></p>
+            <p class="nav_button_text"><a (click)="navigate_to_car_list()" class="nav_button">Carros</a></p>
+            <p class="nav_button_text"><a (click)="navigate_to_feedback_page()" class="nav_button">Feedback</a></p>
+
         </div>
-            <p><a href="#" class="nav_button">Login</a></p>
+            <p><a (click)="navigate_to_login_page()" class="nav_button">Login</a></p>
     </div>
 
 </nav>

@@ -27,7 +27,11 @@ body{
   color: var(--white);
 }
 
-button, a {
+button, a{
+  cursor: pointer;
+}
+
+img{
   cursor: pointer;
 }
 
