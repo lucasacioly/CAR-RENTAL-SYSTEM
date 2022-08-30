@@ -5,7 +5,8 @@
     flex-direction: column;
     //justify-content: space-between;
     font-weight: normal;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
     padding-top: 2%;
 
 
@@ -44,7 +45,8 @@
         flex-direction: column;
         justify-content: space-between;
         margin-left: 3%;
-        margin-right: 3%
+        margin-right: 3%;
+        padding-right: 15%
     }
 
     .submit-button {
