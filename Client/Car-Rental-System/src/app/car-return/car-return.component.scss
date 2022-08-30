@@ -1,7 +1,5 @@
 .return-container{
   display: flex;
-  background: var(--bg);
-  color: var(--white);
   height: 100vh;
   width: 100%;
   align-items: center;
@@ -36,7 +34,6 @@
       margin-top: 32px;
       margin-left: 128px;
       width: 60%;
-      //display: flex;
       background: var(--green);
       color: var(--white);
       border-radius: 31px;
