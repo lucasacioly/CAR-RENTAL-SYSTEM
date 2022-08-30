@@ -8,6 +8,8 @@ import { FeedbackPageComponent } from './feedback-page/feedback-page.component';
 import { DataHoraLocacaoComponent } from './data-hora-locacao/data-hora-locacao.component';
 import { OptionsLocacaoComponent } from './options-locacao/options-locacao.component';
 import { CarReturnComponent } from './car-return/car-return.component';
+import { CardFeedbackComponent } from './card-feedback/card-feedback.component';
+import { AddEditCarPageComponent } from './add-edit-car-page/add-edit-car-page.component';
 import { CarListComponent } from './car-list/car-list.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { CarListCardComponent } from './car-list-card/car-list-card.component';
@@ -23,10 +25,13 @@ import { ListFiltersComponent } from './list-filters/list-filters.component';
     DataHoraLocacaoComponent,
     OptionsLocacaoComponent,
     CarReturnComponent,
+    CardFeedbackComponent,
+    AddEditCarPageComponent,
     CarListComponent,
     LoginPageComponent
     CarListCardComponent,
     ListFiltersComponent
+
   ],
   imports: [
     BrowserModule,
