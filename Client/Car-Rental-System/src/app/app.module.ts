@@ -9,6 +9,8 @@ import { FeedbackPageComponent } from './feedback-page/feedback-page.component';
 import { DataHoraLocacaoComponent } from './data-hora-locacao/data-hora-locacao.component';
 import { OptionsLocacaoComponent } from './options-locacao/options-locacao.component';
 import { CarReturnComponent } from './car-return/car-return.component';
+import { CarListComponent } from './car-list/car-list.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { CarReturnComponent } from './car-return/car-return.component';
     FeedbackPageComponent,
     DataHoraLocacaoComponent,
     OptionsLocacaoComponent,
-    CarReturnComponent
+    CarReturnComponent,
+    CarListComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
