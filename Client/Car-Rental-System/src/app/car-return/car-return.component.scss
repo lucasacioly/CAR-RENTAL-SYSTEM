@@ -3,7 +3,7 @@
   display: flex;
   background: var(--bg);
   color: var(--white);
-  position: fixed;
+  //position: fixed;
   height: 100%;
   width: 100%;
   justify-content: space-between;
@@ -46,7 +46,7 @@
 }
 
 textarea{
-  font-size: 30px;
+  font-size: 90%;
 }
 
 input{
