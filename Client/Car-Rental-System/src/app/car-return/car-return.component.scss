@@ -1,56 +1,57 @@
-
 .return-container{
   display: flex;
-  background: var(--bg);
-  color: var(--white);
-  position: fixed;
-  height: 100%;
+  height: 100vh;
   width: 100%;
-  justify-content: space-between;
-
-
-  .questions{
-    font-size: 200%;
-    margin-left: 5%;
-    padding-top: 12%;
-  }
+  align-items: center;
+  flex-direction: column;
 
   .title{
-    font-size: 450%;
+    font-size: 75px;
     display: flex;
-    margin-top: 2%;
-    margin-right:3%;
-
+    margin-top: 20px;
+    margin-right:64px;
   }
 
-  .fine{
-    font-size: 200%;
+  .form-container{
     display: flex;
-    flex-direction: column;
-    margin-right: 5%;
-    padding-top: 18%;
+    margin-top: 128px;
+    font-size: 30px;
+    width: 80%;
+    justify-content: space-around;
+
+    .questions{
+      margin-left: 5px;
+    }
+
+    .fine{
+      margin-top: 200px;
+      display: flex;
+      flex-direction: column;
+      margin-right: 16px;
+    }
+
+    .button{
+      margin-top: 32px;
+      margin-left: 128px;
+      width: 60%;
+      background: var(--green);
+      color: var(--white);
+      border-radius: 31px;
+      font-size: 40px;
+      align-items: flex-end;
+    }
 
   }
-
-  .calculate-button{
-    margin-top: 5%;
-    //display: flex;
-    background: var(--green);
-    color: var(--white);
-    border-radius: 31px;
-    font-size: 120%;
-    align-items: flex-end;
-  }
-
 
 }
 
-textarea{
-  font-size: 30px;
+textarea, input{
+  font-size: 35px;
+  width: 100%;
 }
 
 input{
   width: 100%;
   height: 5%;
-  font-size: 150%;
+  font-size: 40px;
 }
