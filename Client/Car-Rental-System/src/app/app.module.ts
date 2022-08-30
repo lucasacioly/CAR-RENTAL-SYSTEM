@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -11,6 +10,11 @@ import { OptionsLocacaoComponent } from './options-locacao/options-locacao.compo
 import { CarReturnComponent } from './car-return/car-return.component';
 import { CardFeedbackComponent } from './card-feedback/card-feedback.component';
 import { AddEditCarPageComponent } from './add-edit-car-page/add-edit-car-page.component';
+import { CarListComponent } from './car-list/car-list.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { CarListCardComponent } from './car-list-card/car-list-card.component';
+import { ListFiltersComponent } from './list-filters/list-filters.component';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +26,12 @@ import { AddEditCarPageComponent } from './add-edit-car-page/add-edit-car-page.c
     OptionsLocacaoComponent,
     CarReturnComponent,
     CardFeedbackComponent,
-    AddEditCarPageComponent
+    AddEditCarPageComponent,
+    CarListComponent,
+    LoginPageComponent
+    CarListCardComponent,
+    ListFiltersComponent
+
   ],
   imports: [
     BrowserModule,

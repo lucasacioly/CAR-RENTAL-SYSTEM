@@ -1,0 +1,38 @@
+.card {
+    background-color: #D9D9D9;
+}
+
+.card-title{
+    color: var(--black);
+}
+
+.card-text {
+    color: var(--black);
+}
+
+.card-body {
+    text-align: center;
+}
+
+.feature{
+    display: flex;
+    flex-direction: column;
+}
+
+.preco{
+    background: var(--black);
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: var(--black);
+}
+
+.adm-btn{
+    margin: 5px;
+}
+

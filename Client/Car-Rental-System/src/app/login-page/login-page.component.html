@@ -1,0 +1,26 @@
+<nav class="container">
+
+  <img src="assets/AluCar.png">
+
+  <div class="login-container">
+    <section class="login">
+
+      <textarea name="e-mail" id="" cols="30" rows="1" placeholder="E-mail"></textarea>
+
+      <section class = "password">
+        <input class = "senha" [type]="show ? 'text' : 'password'"  placeholder="Senha"/>
+        <button class = "eye-button" *ngIf="show"(click)="show_senha()">
+          <img class = "eye"  src="assets/olho.svg">
+        </button>
+        <button class = "eye-button" *ngIf="!show"(click)="show_senha()">
+          <img  class = "eye"  src="assets/olho-riscado.svg">
+        </button>
+
+        <button class="entrar">Entrar</button>
+        <button class="cadastro">Cadastrar</button>
+      </section>
+    </section>
+
+  </div>
+
+</nav>
