@@ -1,4 +1,6 @@
+<app-nav-bar></app-nav-bar>
 <nav class="container">
+    <img (click)="navigate_to_home_page()" class="titles" src="assets/AluCar.png" alt="">
     <h1 class="titles">OPÇÕES</h1>
 
     <section class='division'>
@@ -8,7 +10,7 @@
                 <figcaption class="figure-caption">A caption for the above image.</figcaption>
               </figure>
         </div>
-    
+
         <section class='options'>
             <div class="Seguros">
                 <h2 class="titles">SEGUROS E PROTEÇÕES</h2>
@@ -27,7 +29,7 @@
                     <div class="input-group-text">
                         <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1" aria-label="Checkbox for following text input">
                     </div>
-                    
+
                     <label class="form-control" for="defaultCheck1" aria-label="Text input with checkbox">
                         Proteção de Pneus - R$ 14,00 / dia
                     </label>
@@ -37,24 +39,24 @@
                     <div class="input-group-text">
                         <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1" aria-label="Checkbox for following text input">
                     </div>
-                    
+
                     <label class="form-control" for="defaultCheck1" aria-label="Text input with checkbox">
                         Cobertura para Terceiros - R$ 10,00 / dia
                     </label>
                   </div>
-                
+
                   <div class="input-group mb-3">
                     <div class="input-group-text">
                         <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1" aria-label="Checkbox for following text input">
                     </div>
-                    
+
                     <label class="form-control" for="defaultCheck1" aria-label="Text input with checkbox">
                         Seguro Premium - R$ 45,00 / dia
                     </label>
                   </div>
 
             </div>
-        
+
             <div class="Acessórios">
                 <h2 CLASS="titles">ACESSÓRIOS</h2>
 
@@ -62,9 +64,9 @@
                     <div class="input-group-text">
                         <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1" aria-label="Checkbox for following text input">
                     </div>
-                    
+
                     <label class="form-control" for="defaultCheck1" aria-label="Text input with checkbox">
-                        GPS - R$ 50,00 
+                        GPS - R$ 50,00
                     </label>
                   </div>
 
@@ -72,9 +74,9 @@
                     <div class="input-group-text">
                         <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1" aria-label="Checkbox for following text input">
                     </div>
-                    
+
                     <label class="form-control" for="defaultCheck1" aria-label="Text input with checkbox">
-                        Wi-Fi - R$ 50,00 
+                        Wi-Fi - R$ 50,00
                     </label>
                   </div>
 
@@ -82,9 +84,9 @@
                     <div class="input-group-text">
                         <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1" aria-label="Checkbox for following text input">
                     </div>
-                    
+
                     <label class="form-control" for="defaultCheck1" aria-label="Text input with checkbox">
-                        Limpeza do Veículo - R$ 30,00 
+                        Limpeza do Veículo - R$ 30,00
                     </label>
                   </div>
 
@@ -92,9 +94,9 @@
                     <div class="input-group-text">
                         <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1" aria-label="Checkbox for following text input">
                     </div>
-                    
+
                     <label class="form-control" for="defaultCheck1" aria-label="Text input with checkbox">
-                        Bebê Conforto - R$ 25,00 
+                        Bebê Conforto - R$ 25,00
                     </label>
                   </div>
 
@@ -102,26 +104,26 @@
                     <div class="input-group-text">
                         <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1" aria-label="Checkbox for following text input">
                     </div>
-                    
+
                     <label class="form-control" for="defaultCheck1" aria-label="Text input with checkbox">
-                        Assento de Elevação - R$ 25,00 
+                        Assento de Elevação - R$ 25,00
                     </label>
                   </div>
 
 
             </div>
-            
+
             <div class="pagamento">
                 <h3 class="titles">TOTAL:XXXXXXXXX</h3>
-        
-                <button CLASS='submit-button'>
+
+                <button (click)="navigate_to_home_page()" CLASS='submit-button'>
                     PAGAR
                 </button>
             </div>
-            
+
         </section>
-        
+
     </section>
-    
+
 
 </nav>

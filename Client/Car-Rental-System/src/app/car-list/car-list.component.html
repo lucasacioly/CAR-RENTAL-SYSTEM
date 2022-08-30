@@ -1,10 +1,13 @@
+<app-nav-bar></app-nav-bar>
 <nav class="container">
 
-  <img class = "logo" src="assets/AluCar.png"/>
+  <img (click)="navigate_to_home_page()" class = "logo" src="assets/AluCar.png"/>
 
-  <section class="filter">
-    <img src="assets/filter-button.svg">
-    <button class="button">Filtrar</button>
-  </section>
+  <div class="filter-div">
+    <section class="filter">
+      <img src="assets/filter-button.svg">
+      <button class="button">Filtrar</button>
+    </section>
+  </div>
 
 </nav>

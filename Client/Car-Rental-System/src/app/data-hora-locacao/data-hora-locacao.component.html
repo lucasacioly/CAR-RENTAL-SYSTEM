@@ -1,4 +1,6 @@
+<app-nav-bar></app-nav-bar>
 <nav class="container">
+    <img (click)="navigate_to_home_page()" class="titles" src="assets/AluCar.png" alt="">
     <h1 class="titles">LOCAÇÃO</h1>
 
     <div class="imagem">
@@ -7,7 +9,7 @@
 
     <div class="info">
         <h2 class="titles">Informações</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque aspernatur beatae ad illo iste sit reprehenderit 
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque aspernatur beatae ad illo iste sit reprehenderit
             vitae aperiam culpa unde omnis debitis fugit neque voluptas ullam accusamus, autem voluptatem eaque?</p>
     </div>
 
@@ -16,19 +18,19 @@
             <h3 class="titles">Retirada</h3>
             <input type="datetime-local" min="{{min}}">
         </div>
-        
+
         <div class="devolução">
             <h3 class="titles">Devolução</h3>
             <input type="datetime-local">
         </div>
 
-        
+
     </section>
 
-    <button class="submit-button">
+    <button (click)="navigate_to_accessories()" class="submit-button">
         AVANÇAR
     </button>
-    
+
 </nav>
 
 <section class="feedback-card-section">

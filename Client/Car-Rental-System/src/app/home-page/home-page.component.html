@@ -1,3 +1,4 @@
+<app-nav-bar></app-nav-bar>
 <nav class="home-container">
 
     <img class = "logo" src="assets/AluCar.png"/>
@@ -5,21 +6,21 @@
     <section class="showcase">
         <h2>PROMOÇÕES</h2>
         <section class="car-images">
-            <img src="assets/carro2.png" class="fix-car">
-            <img src="assets/carro1.png">
-            <img src="assets/carro3.png">
+            <img (click)="navigate_to_location_page()" src="assets/carro2.png" class="fix-car">
+            <img (click)="navigate_to_location_page()" src="assets/carro1.png">
+            <img (click)="navigate_to_location_page()" src="assets/carro3.png">
         </section>
-        <a class="lista">ver lista completa</a>
+        <a (click)="navigate_to_car_list()" class="lista">ver lista completa</a>
     </section>
-    
+
     <section class="showcase">
         <h2>MAIS ALUGADOS</h2>
         <section class="car-images">
-            <img src="assets/carro5.png" class="fix-car">
-            <img src="assets/carro4.png" class="fix-car">
-            <img src="assets/carro6.png" class="fix-car wrong-car">
+            <img (click)="navigate_to_location_page()" src="assets/carro5.png" class="fix-car">
+            <img (click)="navigate_to_location_page()" src="assets/carro4.png" class="fix-car">
+            <img (click)="navigate_to_location_page()" src="assets/carro6.png" class="fix-car wrong-car">
         </section>
-        <a class="lista">ver lista completa</a>
+        <a (click)="navigate_to_car_list()" class="lista">ver lista completa</a>
     </section>
 </nav>
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-data-hora-locacao',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataHoraLocacaoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: Router) { }
+
+  navigate_to_accessories(){
+    this.route.navigate(['/options'])
+  }
+
+  navigate_to_home_page(){
+    this.route.navigate([''])
+  }
 
   ngOnInit(): void {
     this.PastDateTime();

@@ -28,9 +28,9 @@ import { ListFiltersComponent } from './list-filters/list-filters.component';
     CardFeedbackComponent,
     AddEditCarPageComponent,
     CarListComponent,
-    LoginPageComponent
+    LoginPageComponent,
     CarListCardComponent,
-    ListFiltersComponent
+    ListFiltersComponent,
 
   ],
   imports: [

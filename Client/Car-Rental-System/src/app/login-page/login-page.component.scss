@@ -11,6 +11,7 @@
     margin-top: 100px;
     height: 60%;
     width: 50%;
+    min-width: 500px;
 
     .login{
       display: flex;
@@ -72,16 +73,20 @@
         height: 50px;
       }
 
-      .cadastro{
-        color: var(--blue);
-        text-decoration: underline;
-        background: transparent;
-        border: none;
-        font-size: 20px;
-        margin-top: 30px;
-        margin-left: 830px;
-        width: 10%;
-      }
+      .cadastro-button{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        .cadastro{
+          color: var(--blue);
+          text-decoration: underline;
+          background: transparent;
+          border: none;
+          font-size: 20px;
+          margin-top: 30px;
+          margin-right: 15px;
+        }
+    }
     }
   }
 }
