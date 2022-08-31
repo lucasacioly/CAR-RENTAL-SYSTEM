@@ -14,6 +14,10 @@ export class CarListComponent implements OnInit {
     this.route.navigate([''])
   }
 
+  navigate_to_location_page(){
+    this.route.navigate(['/location'])
+  }
+
   ngOnInit(): void {
   }
 

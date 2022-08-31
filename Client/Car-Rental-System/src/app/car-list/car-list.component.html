@@ -1,13 +1,287 @@
 <app-nav-bar></app-nav-bar>
-<nav class="container">
+<nav class="general">
+  
+  <nav class="container">
 
-  <img (click)="navigate_to_home_page()" class = "logo" src="assets/AluCar.png"/>
+    <img (click)="navigate_to_home_page()" class = "logo" src="assets/AluCar.png"/>
 
-  <div class="filter-div">
-    <section class="filter">
-      <img src="assets/filter-button.svg">
-      <button class="button">Filtrar</button>
-    </section>
-  </div>
+    <div class="filter-div">
+      <section class="filter">
+        <img src="assets/filter-button.svg">
+        <button class="button">Filtrar</button>
+      </section>
+    </div>
+
+  </nav>
+
+  <nav class="estruction">
+    <div class="car-cards">
+      <section class="row1">
+        <div class="card" style="width: 18rem;">
+          <img src="assets/carro1.png" class="Img_1">
+          <div class="card-body">
+              <h5 class="card-title">Car Name</h5>
+              <div class="info">
+                  <div class="feature">
+                      <i class="bi bi-snow"></i>
+                      <p>AC</p>
+                  </div>
+
+                  <div class="feature">
+                      <i class="bi bi-gear-fill"></i>
+                      <p>A</p>
+                  </div>
+
+                  <div class="feature">
+                      <i class="bi bi-people-fill"></i>
+                      <p>5</p>
+                  </div>
+
+                  <div class="feature">
+                      <i class="bi bi-briefcase-fill"></i>
+                      <p>3</p>
+                  </div>
+
+                  <div class="feature">
+                      <i class="bi bi-fuel-pump-fill"></i>
+                      <p>G</p>
+                  </div>
+              </div>
+          </div>
+
+          <div class="card preco">
+              <div class="card-body">
+                  R$ 114,00 / dia
+              </div>
+          </div>
+
+          <div class="card-body">
+              <button (click)="navigate_to_location_page()"  class="btn btn-danger">ALUGAR</button>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+          <img src="assets/carro2.png" class="Img_2">
+          <div class="card-body">
+              <h5 class="card-title">Car Name</h5>
+              <div class="info">
+                  <div class="feature">
+                      <i class="bi bi-snow"></i>
+                      <p>AC</p>
+                  </div>
+
+                  <div class="feature">
+                      <i class="bi bi-gear-fill"></i>
+                      <p>A</p>
+                  </div>
+
+                  <div class="feature">
+                      <i class="bi bi-people-fill"></i>
+                      <p>5</p>
+                  </div>
+
+                  <div class="feature">
+                      <i class="bi bi-briefcase-fill"></i>
+                      <p>2</p>
+                  </div>
+
+                  <div class="feature">
+                      <i class="bi bi-fuel-pump-fill"></i>
+                      <p>G</p>
+                  </div>
+              </div>
+          </div>
+
+          <div class="card preco">
+              <div class="card-body">
+                  R$ 150,00 / dia
+              </div>
+          </div>
+
+          <div class="card-body">
+              <button (click)="navigate_to_location_page()"  class="btn btn-danger">ALUGAR</button>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+          <img src="assets/carro3.png" class="Img_3">
+          <div class="card-body">
+              <h5 class="card-title">Car Name</h5>
+              <div class="info">
+                  <div class="feature">
+                      <i class="bi bi-snow"></i>
+                      <p>AC</p>
+                  </div>
+
+                  <div class="feature">
+                      <i class="bi bi-gear-fill"></i>
+                      <p>M</p>
+                  </div>
+
+                  <div class="feature">
+                      <i class="bi bi-people-fill"></i>
+                      <p>5</p>
+                  </div>
+
+                  <div class="feature">
+                      <i class="bi bi-briefcase-fill"></i>
+                      <p>1</p>
+                  </div>
+
+                  <div class="feature">
+                      <i class="bi bi-fuel-pump-fill"></i>
+                      <p>G</p>
+                  </div>
+              </div>
+          </div>
+
+          <div class="card preco">
+              <div class="card-body">
+                  R$ 65,00 / dia
+              </div>
+          </div>
+
+          <div class="card-body">
+              <button (click)="navigate_to_location_page()"  class="btn btn-danger">ALUGAR</button>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="row2">
+        <div class="card" style="width: 18rem;">
+          <img src="assets/carro4.png" class="Img_4">
+          <div class="card-body">
+              <h5 class="card-title">Car Name</h5>
+              <div class="info">
+                  <div class="feature">
+                      <i class="bi bi-snow"></i>
+                      <p>AC</p>
+                  </div>
+
+                  <div class="feature">
+                      <i class="bi bi-gear-fill"></i>
+                      <p>M</p>
+                  </div>
+
+                  <div class="feature">
+                      <i class="bi bi-people-fill"></i>
+                      <p>5</p>
+                  </div>
+
+                  <div class="feature">
+                      <i class="bi bi-briefcase-fill"></i>
+                      <p>3</p>
+                  </div>
+
+                  <div class="feature">
+                      <i class="bi bi-fuel-pump-fill"></i>
+                      <p>G</p>
+                  </div>
+              </div>
+          </div>
+
+          <div class="card preco">
+              <div class="card-body">
+                  R$ 98,00 / dia
+              </div>
+          </div>
+
+          <div class="card-body">
+              <button (click)="navigate_to_location_page()"  class="btn btn-danger">ALUGAR</button>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+          <img src="assets/carro5.png" class="Img_5">
+          <div class="card-body">
+              <h5 class="card-title">Car Name</h5>
+              <div class="info">
+                  <div class="feature">
+                      <i class="bi bi-snow"></i>
+                      <p>AC</p>
+                  </div>
+
+                  <div class="feature">
+                      <i class="bi bi-gear-fill"></i>
+                      <p>M</p>
+                  </div>
+
+                  <div class="feature">
+                      <i class="bi bi-people-fill"></i>
+                      <p>5</p>
+                  </div>
+
+                  <div class="feature">
+                      <i class="bi bi-briefcase-fill"></i>
+                      <p>2</p>
+                  </div>
+
+                  <div class="feature">
+                      <i class="bi bi-fuel-pump-fill"></i>
+                      <p>G</p>
+                  </div>
+              </div>
+          </div>
+
+          <div class="card preco">
+              <div class="card-body">
+                  R$ 79,00 / dia
+              </div>
+          </div>
+
+          <div class="card-body">
+              <button (click)="navigate_to_location_page()"  class="btn btn-danger">ALUGAR</button>
+          </div>
+        </div>
+        
+        <div class="card" style="width: 18rem;">
+        <img src="assets/carro6.png" class="Img_6">
+        <div class="card-body">
+            <h5 class="card-title">Car Name</h5>
+            <div class="info">
+                <div class="feature">
+                    <i class="bi bi-snow"></i>
+                    <p>AC</p>
+                </div>
+
+                <div class="feature">
+                    <i class="bi bi-gear-fill"></i>
+                    <p>A</p>
+                </div>
+
+                <div class="feature">
+                    <i class="bi bi-people-fill"></i>
+                    <p>5</p>
+                </div>
+
+                <div class="feature">
+                    <i class="bi bi-briefcase-fill"></i>
+                    <p>2</p>
+                </div>
+
+                <div class="feature">
+                    <i class="bi bi-fuel-pump-fill"></i>
+                    <p>G</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card preco">
+            <div class="card-body">
+                R$ 85,00 / dia
+            </div>
+        </div>
+
+        <div class="card-body">
+            <button (click)="navigate_to_location_page()"  class="btn btn-danger">ALUGAR</button>
+        </div>
+      </div>
+
+      </section>
+
+    </div>
+
+  </nav>
 
 </nav>
