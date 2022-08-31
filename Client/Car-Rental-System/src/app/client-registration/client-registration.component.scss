@@ -1,0 +1,168 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 20px;
+  margin-top: 20px;
+
+  h1{
+    margin-top: 20px;
+  }
+
+  .form-container{
+    color: black;
+    background: var(--beige);
+    width: 60%;
+    border-radius: 20px;
+    padding-left: 20px;
+    margin-top: 20px;
+
+    .name{
+      margin-top: 40px;
+      margin-left: 20px;
+    }
+
+    .name-txt{
+      width: 95%;
+      border-radius: 13px;
+      height: 35px;
+    }
+
+    .cpfdate{
+
+      display: flex;
+      flex-direction: row;
+
+      .cpf{
+        margin-top: 20px;
+        margin-left: 20px;
+      }
+
+      .cpf-txt{
+        width: 100%;
+        border-radius: 13px;
+        height: 35px;
+      }
+
+      .date{
+        margin-top: 20px;
+        margin-left: 60px;
+      }
+
+      .date-txt{
+        width: 100%;
+        border-radius: 13px;
+        height: 35px;
+        margin-left: 50px;
+        padding-left: 10px;
+      }
+
+    }
+
+    .emailgenre{
+      display: flex;
+      flex-direction: row;
+      p{
+        margin-left: 20px;
+        margin-top: 20px;
+      }
+
+      textarea{
+        width: 100%;
+        border-radius: 13px;
+        height: 35px;
+      }
+
+      .genre{
+        display: flex;
+        flex-direction: column;
+
+        .genre-p{
+          margin-left: 60px;
+        }
+        .genre-check{
+          display: flex;
+          flex-direction: column;
+          margin-left: 50px;
+          .masc{
+            display: flex;
+            flex-direction: row;
+          }
+          .fem{
+            display: flex;
+            flex-direction: row;
+          }
+          .others{
+            display: flex;
+            flex-direction: row;
+          }
+
+        }
+
+      }
+    }
+
+    .senhaphone{
+      display: flex;
+      flex-direction: row;
+
+      .password{
+        margin-top: 20px;
+        margin-left: 20px;
+      }
+
+      .password-txt{
+        width: 100%;
+        border-radius: 13px;
+        height: 35px;
+      }
+
+      .phone{
+        margin-top: 20px;
+        margin-left: 60px;
+      }
+
+      .phone-txt{
+        width: 100%;
+        border-radius: 13px;
+        height: 35px;
+        margin-left: 50px;
+        padding-left: 10px;
+      }
+
+    }
+
+    .address{
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+
+    .address-txt{
+      width: 95%;
+      border-radius: 13px;
+      height: 70px;
+    }
+
+
+    .button-father{
+      display: flex;
+      justify-content: center;
+      .button{
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+        color: var(--white);
+        background: var(--green);
+        border: none;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        height: 35px;
+        width: 256px;
+        border-radius: 13px;
+      }
+    }
+  }
+
+
+
+}

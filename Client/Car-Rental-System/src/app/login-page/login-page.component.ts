@@ -14,6 +14,10 @@ export class LoginPageComponent implements OnInit {
     this.route.navigate([''])
   }
 
+  navigate_to_client_registration_page(){
+    this.route.navigate(['/clientregistration'])
+  }
+
   ngOnInit(): void {
   }
 
