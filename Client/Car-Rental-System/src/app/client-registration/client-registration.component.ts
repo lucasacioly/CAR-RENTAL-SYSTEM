@@ -14,6 +14,11 @@ export class ClientRegistrationComponent implements OnInit {
     this.route.navigate([''])
   }
 
+  show: boolean = false;
+  show_senha() {
+    this.show = !this.show;
+  }
+
   ngOnInit(): void {
   }
 
