@@ -1,0 +1,80 @@
+<app-nav-bar></app-nav-bar>
+
+<nav class="container">
+
+  <img (click)="navigate_to_home_page()" src="assets/AluCar.png">
+  <h1>Cadastro</h1>
+
+  <section class="form-container">
+
+    <p class="name">Nome completo:</p>
+    <textarea class="name-txt" name="nome" cols="30" rows="1"></textarea>
+
+    <div class="cpfdate">
+
+      <section>
+        <p class="cpf">CPF:</p>
+        <textarea class="cpf-txt" name="CPF" cols="30" rows="1"></textarea>
+      </section>
+
+      <section>
+        <p class="date">Data de Nascimento:</p>
+        <input class="date-txt" type="datetime-local" min="1930-08-28">
+      </section>
+    </div>
+
+    <div class="emailgenre">
+
+      <section>
+        <p>E-mail:</p>
+        <textarea name="E-mail" cols="30" rows="1"></textarea>
+      </section>
+
+      <section class="genre">
+
+        <p class="genre-p">Genêro:</p>
+
+        <div class="genre-check">
+          <div class="masc">
+            <input type="checkbox">
+            <label>Masculino</label>
+          </div>
+
+          <div class="fem">
+            <input type="checkbox" value="">
+            <label>Feminino</label>
+          </div>
+
+          <div class="others">
+            <input type="checkbox">
+
+            <label>Outros</label>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+
+    <div class="senhaphone">
+      <section>
+        <p class="password">Senha:</p>
+        <textarea class="password-txt" name="Senha" cols="30" rows="1"></textarea>
+      </section>
+
+      <section>
+        <p class="phone">Telefone:</p>
+        <textarea class="phone-txt" name="Telefone" cols="30" rows="1"></textarea>
+      </section>
+    </div>
+
+    <p class="address">Endereço:</p>
+    <textarea class="address-txt" name="Endereço" cols="30" rows="2"></textarea>
+
+    <div class="button-father">
+      <button (click)="navigate_to_home_page()" class="button">Confirmar</button>
+    </div>
+
+  </section>
+
+</nav>

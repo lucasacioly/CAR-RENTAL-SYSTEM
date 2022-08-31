@@ -14,6 +14,7 @@ import { CarListComponent } from './car-list/car-list.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { CarListCardComponent } from './car-list-card/car-list-card.component';
 import { ListFiltersComponent } from './list-filters/list-filters.component';
+import { ClientRegistrationComponent } from './client-registration/client-registration.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { ListFiltersComponent } from './list-filters/list-filters.component';
     LoginPageComponent,
     CarListCardComponent,
     ListFiltersComponent,
+    ClientRegistrationComponent,
 
   ],
   imports: [
