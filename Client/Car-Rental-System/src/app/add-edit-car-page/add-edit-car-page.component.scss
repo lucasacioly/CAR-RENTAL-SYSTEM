@@ -4,20 +4,44 @@
     height: 100%;
     align-items: center;
     flex-direction: column;
-    justify-content: space-between;
+    font-size: 20px;
+    margin-top: 20px;
 
     .logo{
         margin-top: 1%;
         height: 8%;
         margin-bottom: 3%;
     }
+    
+    .form-container{
+        color: black;
+        background: var(--beige);
+        width: 80%;
+        border-radius: 20px;
+        padding: 20px;
+        margin-top: 20px;
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
 
-    .form-container {
-        background-color: var(--beige);
-        border-radius: 77px;
-        height: 75%;
+        .sec {
+          display: flex;
+          //flex-direction: row;
+          align-items: baseline;
+          justify-content: flex-end;
+          //justify-content: space-between;
+
+        }
+
+        .marca-txt,.ano-txt,.modelo-txt,.categ-txt,.direcao-txt,.cambio-txt,.comb-txt,.assentos-txt,.bagage-txt,.diaria-txt {
+            margin-left: 20px;
+            border-radius: 13px;
+            border-style: hidden;
+        }
+
+
     }
 }
-
 
 
