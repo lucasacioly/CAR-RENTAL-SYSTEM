@@ -9,19 +9,19 @@
       <textarea name="e-mail" id="" cols="30" rows="1" placeholder="E-mail"></textarea>
 
       <section class = "password">
-        <input class = "senha" [type]="show ? 'text' : 'password'"  placeholder="Senha"/>
-        <button class = "eye-button" *ngIf="show"(click)="show_senha()">
-          <img class = "eye"  src="assets/olho.svg">
-        </button>
-        <button class = "eye-button" *ngIf="!show"(click)="show_senha()">
-          <img  class = "eye"  src="assets/olho-riscado.svg">
-        </button>
-
+          <input class = "senha" [type]="show ? 'text' : 'password'"  placeholder="Senha"/>
+          <button class = "eye-button" *ngIf="show"(click)="show_senha()">
+            <img class = "eye"  src="assets/olho.svg">
+          </button>
+          <button class = "eye-button" *ngIf="!show"(click)="show_senha()">
+            <img  class = "eye"  src="assets/olho-riscado.svg">
+          </button>
+      </section>
         <button class="entrar">Entrar</button>
         <div class="cadastro-button">
         <button (click)="navigate_to_client_registration_page()" class="cadastro">Cadastrar</button>
         </div>
-      </section>
+
     </section>
 
   </div>

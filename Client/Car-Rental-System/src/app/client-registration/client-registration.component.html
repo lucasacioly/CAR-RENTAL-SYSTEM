@@ -57,9 +57,15 @@
     </div>
 
     <div class="senhaphone">
-      <section>
-        <p class="password">Senha:</p>
-        <textarea class="password-txt" name="Senha" cols="30" rows="1"></textarea>
+      <section class = "password">
+          <p class="senha-p">Senha:</p>
+          <input class = "senha" [type]="show ? 'text' : 'password'"/>
+          <button class = "eye-button" *ngIf="show"(click)="show_senha()">
+            <img class = "eye"  src="assets/olho.svg">
+          </button>
+          <button class = "eye-button" *ngIf="!show"(click)="show_senha()">
+            <img  class = "eye"  src="assets/olho-riscado.svg">
+          </button>
       </section>
 
       <section>

@@ -26,6 +26,7 @@
       width: 95%;
       border-radius: 13px;
       height: 35px;
+      padding-left: 10px;
     }
 
     .cpfdate{
@@ -42,6 +43,7 @@
         width: 100%;
         border-radius: 13px;
         height: 35px;
+        padding-left: 10px;
       }
 
       .date{
@@ -71,6 +73,7 @@
         width: 100%;
         border-radius: 13px;
         height: 35px;
+        padding-left: 10px;
       }
 
       .genre{
@@ -107,15 +110,31 @@
       flex-direction: row;
 
       .password{
+        position: relative;
         margin-top: 20px;
-        margin-left: 20px;
+        width: 40%;
+        .senha{
+          border-radius: 13px;
+          height: 35px;
+          padding-left: 10px;
+          width: 100%;
+        }
+        .eye-button{
+          position: absolute;
+          right:15px;
+          top: 45px;
+          background: transparent;
+          border: none;
+
+        }
+        .eye{
+          border: 0;
+          min-height: 25px;
+          max-height: 25px;
+        }
       }
 
-      .password-txt{
-        width: 100%;
-        border-radius: 13px;
-        height: 35px;
-      }
+
 
       .phone{
         margin-top: 20px;
@@ -141,6 +160,7 @@
       width: 95%;
       border-radius: 13px;
       height: 70px;
+      padding-left: 10px;
     }
 
 
