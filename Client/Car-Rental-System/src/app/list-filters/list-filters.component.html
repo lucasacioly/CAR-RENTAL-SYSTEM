@@ -1,8 +1,8 @@
-<nav class="container">
+<nav class="container" *ngIf="filter_openned">
 
     <div class="title">
         <h1>Filtros</h1>
-        <a><i class="bi bi-x-lg close-button"></i></a>   
+        <a><i (click)="filter_onclick()" class="bi bi-x-lg close-button"></i></a>   
     </div>
     
     <hr class="division">
@@ -178,3 +178,8 @@
     <button type="button" class="btn btn-success">APLICAR</button>
 
 </nav>
+
+<div>
+    <img (click)="filter_onclick()" src="assets/filter-button.svg">
+    <button (click)="filter_onclick()" class="button">Filtrar</button>
+</div>
