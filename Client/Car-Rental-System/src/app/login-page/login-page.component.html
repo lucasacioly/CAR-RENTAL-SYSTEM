@@ -1,4 +1,3 @@
-<app-nav-bar></app-nav-bar>
 <nav class="container">
 
   <img (click)="navigate_to_home_page()" src="assets/AluCar.png">
@@ -6,7 +5,7 @@
   <div class="login-container">
     <section class="login">
 
-      <textarea name="e-mail" id="" cols="30" rows="1" placeholder="E-mail"></textarea>
+      <textarea name="e-mail" id="" cols="30" rows="1" placeholder="Login"></textarea>
 
       <section class = "password">
           <input class = "senha" [type]="show ? 'text' : 'password'"  placeholder="Senha"/>
@@ -17,7 +16,7 @@
             <img  class = "eye"  src="assets/olho-riscado.svg">
           </button>
       </section>
-        <button class="entrar">Entrar</button>
+        <button (click)="signin()" class="entrar">Entrar</button>
         <div class="cadastro-button">
         <button (click)="navigate_to_client_registration_page()" class="cadastro">Cadastrar</button>
         </div>

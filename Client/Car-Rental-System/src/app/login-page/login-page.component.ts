@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login-page',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor(private route: Router) { }
+  constructor(private route: Router, private authService: AuthService) { }
 
   navigate_to_home_page(){
     this.route.navigate([''])
@@ -20,6 +21,12 @@ export class LoginPageComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  signin(){
+    this.authService.signin();
+    this.navigate_to_home_page();
+  }
+
 
   show: boolean = false;
   show_senha() {
