@@ -6,13 +6,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  
+
     .logo{
       margin-top: 10px;
       height: 8%;
       margin-bottom: 3px;
     }
-  
+
     .filter-div{
       display: flex;
       justify-content: flex-end;
@@ -20,14 +20,15 @@
       margin-right: 100px;
       .filter{
         display: flex;
-        
+
       }
     }
-  
+
   }
   .estruction{
     display: flex;
     flex-direction: row;
+    justify-content: center;
     padding-top: 40px;
     padding-left: 200px;
     margin-right: 50px;
@@ -40,6 +41,7 @@
         flex-direction: row;
         justify-content: space-between;
         padding-bottom: 30px;
+
       }
       .row2{
         margin-right: 30px;
@@ -50,7 +52,7 @@
       }
 
     }
-    
+
   }
 }
 
@@ -94,6 +96,30 @@
 
 .card-body {
   text-align: center;
+}
+
+.editremove{
+  display: flex;
+  justify-content: center;
+  .edit{
+    margin-right: 10px;
+    background: #dc3545;
+    border: none;
+    color: var(--white);
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    height: 40px;
+    width: 60%;
+  }
+  .remove{
+    background: #dc3545;
+    border: none;
+    color: var(--white);
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    height: 40px;
+    width: 60%;
+  }
 }
 
 .feature{

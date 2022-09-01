@@ -9,7 +9,8 @@ import {CarReturnComponent} from './car-return/car-return.component';
 import {DataHoraLocacaoComponent} from './data-hora-locacao/data-hora-locacao.component';
 import {FeedbackPageComponent} from './feedback-page/feedback-page.component';
 import {OptionsLocacaoComponent} from './options-locacao/options-locacao.component';
-import {ClientRegistrationComponent} from './client-registration/client-registration.component'
+import {ClientRegistrationComponent} from './client-registration/client-registration.component';
+import { EditCarPageComponent } from './edit-car-page/edit-car-page.component';
 
 
 const routes: Routes = [
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: 'location', component: DataHoraLocacaoComponent},
   { path: 'feedback', component: FeedbackPageComponent},
   { path: 'options', component: OptionsLocacaoComponent},
-  { path: 'clientregistration', component: ClientRegistrationComponent}
+  { path: 'clientregistration', component: ClientRegistrationComponent},
+  { path: 'editcar', component: EditCarPageComponent}
 ];
 
 @NgModule({
