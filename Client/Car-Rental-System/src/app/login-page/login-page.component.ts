@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-login-page',
@@ -9,7 +10,7 @@ import { AuthService } from '../auth.service';
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor(private route: Router, private authService: AuthService) { }
+  constructor(private route: Router, private authService: AuthService, private formBuilder: FormBuilder) { }
 
   navigate_to_home_page(){
     this.route.navigate([''])
@@ -22,8 +23,8 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  signin(){
-    this.authService.signin();
+  signin(type: string){
+    this.authService.signin(type);
     this.navigate_to_home_page();
   }
 
@@ -31,6 +32,21 @@ export class LoginPageComponent implements OnInit {
   show: boolean = false;
   show_senha() {
     this.show = !this.show;
-}
+  }
+
+  loginForm = this.formBuilder.group({
+    login: '',
+    password: ''
+  })
+
+  onSubmit() {
+    if ((this.loginForm.value.login == 'admin') && (this.loginForm.value.password == 'admin')) {
+      this.signin('admin')
+    }
+    else {
+      this.signin(String(this.loginForm.value.login))
+    }
+    this.loginForm.reset();
+  }
 
 }
