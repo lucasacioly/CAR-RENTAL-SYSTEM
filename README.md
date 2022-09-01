@@ -12,13 +12,13 @@
 
 ### Team 👥
 
-Rodrigo Mesel - rmlo
+[Rodrigo Mesel](https://github.com/RodrigoMesel) - rmlo
 
-Gustavo Campos - gcc2
+[Gustavo Campos](https://github.com/gugaccampos) - gcc2
 
-José Lucas Acioly - jlca
+[José Lucas Acioly](https://github.com/lucasacioly) - jlca
 
-Matheus Frej - mflc
+[Matheus Frej](https://github.com/Matheusfrej) - mflc
 
-Gustavo Borges - ggb
+[Gustavo Borges](https://github.com/ggborges) - ggb
 
