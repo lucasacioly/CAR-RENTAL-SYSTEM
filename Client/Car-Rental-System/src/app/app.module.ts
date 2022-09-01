@@ -16,6 +16,7 @@ import { CarListCardComponent } from './car-list-card/car-list-card.component';
 import { ListFiltersComponent } from './list-filters/list-filters.component';
 import { ClientRegistrationComponent } from './client-registration/client-registration.component';
 import { EditCarPageComponent } from './edit-car-page/edit-car-page.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -40,6 +41,8 @@ import { EditCarPageComponent } from './edit-car-page/edit-car-page.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
