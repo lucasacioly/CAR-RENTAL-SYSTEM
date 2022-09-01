@@ -1,4 +1,5 @@
 <app-nav-bar></app-nav-bar>
+
 <nav class="return-container">
 
   <img (click)="navigate_to_home_page()" class="title" src="assets/AluCar.png">
@@ -21,7 +22,7 @@
       <input type="datetime-local" min="2022-08-28T17:55">
       <h2>Data de devolução:</h2>
       <input type="datetime-local" min="2022-08-28T17:55">
-      <button class="button"> Concluir</button>
+      <button (click)="navigate_to_home_page()" class="button"> Concluir</button>
     </section>
 
 

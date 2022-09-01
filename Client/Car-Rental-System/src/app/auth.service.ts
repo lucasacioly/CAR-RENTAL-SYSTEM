@@ -12,7 +12,7 @@ export class AuthService {
   public clientName = 'Gustavo';
 
   signin(){
-    this.isClient = true;
+    this.isAdmin = true;
   }
 
   logOut(){
