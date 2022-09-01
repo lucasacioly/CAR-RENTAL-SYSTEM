@@ -1,188 +1,561 @@
-.container{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 20px;
-  padding-top: 20px;
+@media (min-width: 1200px) {
+  .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    padding-top: 20px;
 
-  h1{
-    margin-top: 20px;
-  }
-
-  .form-container{
-    color: black;
-    background: var(--beige);
-    width: 60%;
-    border-radius: 20px;
-    padding-left: 20px;
-    margin-top: 20px;
-
-    .name{
-      margin-top: 40px;
-      margin-left: 20px;
+    h1{
+      margin-top: 20px;
     }
 
-    .name-txt{
-      width: 95%;
-      border-radius: 13px;
-      height: 35px;
-      padding-left: 10px;
-    }
+    .form-container{
+      color: black;
+      background: var(--beige);
+      width: 60%;
+      border-radius: 20px;
+      padding-left: 20px;
+      margin-top: 20px;
 
-    .cpfdate{
-
-      display: flex;
-      flex-direction: row;
-
-      .cpf{
-        margin-top: 20px;
+      .name{
+        margin-top: 40px;
         margin-left: 20px;
       }
 
-      .cpf-txt{
-        width: 100%;
+      .name-txt{
+        width: 95%;
         border-radius: 13px;
         height: 35px;
         padding-left: 10px;
       }
 
-      .date{
-        margin-top: 20px;
-        margin-left: 60px;
-      }
+      .cpfdate{
 
-      .date-txt{
-        width: 100%;
-        border-radius: 13px;
-        height: 35px;
-        margin-left: 50px;
-        padding-left: 10px;
-      }
-
-    }
-
-    .emailgenre{
-      display: flex;
-      flex-direction: row;
-      p{
-        margin-left: 20px;
-        margin-top: 20px;
-      }
-
-      .login{
-        width: 100%;
-        border-radius: 13px;
-        height: 35px;
-        padding-left: 10px;
-      }
-
-      .genre{
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
 
-        .genre-p{
-          margin-left: 60px;
-        }
-        .genre-check{
-          display: flex;
-          flex-direction: column;
-          margin-left: 50px;
-          .masc{
-            display: flex;
-            flex-direction: row;
-          }
-          .fem{
-            display: flex;
-            flex-direction: row;
-          }
-          .others{
-            display: flex;
-            flex-direction: row;
-          }
-
+        .cpf{
+          margin-top: 20px;
+          margin-left: 20px;
         }
 
-      }
-    }
-
-    .senhaphone{
-      display: flex;
-      flex-direction: row;
-
-      .password{
-        position: relative;
-        margin-top: 20px;
-        width: 40%;
-        .senha{
+        .cpf-txt{
+          width: 100%;
           border-radius: 13px;
           height: 35px;
           padding-left: 10px;
+        }
+
+        .date{
+          margin-top: 20px;
+          margin-left: 60px;
+        }
+
+        .date-txt{
           width: 100%;
+          border-radius: 13px;
+          height: 35px;
+          margin-left: 50px;
+          padding-left: 10px;
         }
-        .eye-button{
-          position: absolute;
-          right:15px;
-          top: 45px;
-          background: transparent;
-          border: none;
 
+      }
+
+      .emailgenre{
+        display: flex;
+        flex-direction: row;
+        p{
+          margin-left: 20px;
+          margin-top: 20px;
         }
-        .eye{
-          border: 0;
-          min-height: 25px;
-          max-height: 25px;
+
+        .login{
+          width: 100%;
+          border-radius: 13px;
+          height: 35px;
+          padding-left: 10px;
+        }
+
+        .genre{
+          display: flex;
+          flex-direction: column;
+
+          .genre-p{
+            margin-left: 60px;
+          }
+          .genre-check{
+            display: flex;
+            flex-direction: column;
+            margin-left: 50px;
+            .masc{
+              display: flex;
+              flex-direction: row;
+            }
+            .fem{
+              display: flex;
+              flex-direction: row;
+            }
+            .others{
+              display: flex;
+              flex-direction: row;
+            }
+
+          }
+
         }
       }
 
+      .senhaphone{
+        display: flex;
+        flex-direction: row;
+
+        .password{
+          position: relative;
+          margin-top: 20px;
+          width: 40%;
+          .senha{
+            border-radius: 13px;
+            height: 35px;
+            padding-left: 10px;
+            width: 100%;
+          }
+          .eye-button{
+            position: absolute;
+            right:15px;
+            top: 45px;
+            background: transparent;
+            border: none;
+
+          }
+          .eye{
+            border: 0;
+            min-height: 25px;
+            max-height: 25px;
+          }
+        }
 
 
-      .phone{
+
+        .phone{
+          margin-top: 20px;
+          margin-left: 60px;
+        }
+
+        .phone-txt{
+          width: 100%;
+          border-radius: 13px;
+          height: 35px;
+          margin-left: 50px;
+          padding-left: 10px;
+        }
+
+      }
+
+      .address{
         margin-top: 20px;
-        margin-left: 60px;
+        margin-left: 20px;
       }
 
-      .phone-txt{
-        width: 100%;
+      .address-txt{
+        width: 95%;
         border-radius: 13px;
-        height: 35px;
-        margin-left: 50px;
+        height: 70px;
         padding-left: 10px;
       }
 
-    }
 
-    .address{
-      margin-top: 20px;
-      margin-left: 20px;
-    }
-
-    .address-txt{
-      width: 95%;
-      border-radius: 13px;
-      height: 70px;
-      padding-left: 10px;
-    }
-
-
-    .button-father{
-      display: flex;
-      justify-content: center;
-      .button{
+      .button-father{
+        display: flex;
         justify-content: center;
-        align-items: center;
-        font-size: 25px;
-        color: var(--white);
-        background: var(--green);
-        border: none;
-        margin-top: 15px;
-        margin-bottom: 15px;
-        height: 45px;
-        width: 256px;
-        border-radius: 13px;
+        .button{
+          justify-content: center;
+          align-items: center;
+          font-size: 25px;
+          color: var(--white);
+          background: var(--green);
+          border: none;
+          margin-top: 15px;
+          margin-bottom: 15px;
+          height: 45px;
+          width: 256px;
+          border-radius: 13px;
+        }
       }
     }
+
+  }.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    padding-top: 20px;
+
+    h1{
+      margin-top: 20px;
+    }
+
+    .form-container{
+      color: black;
+      background: var(--beige);
+      width: 60%;
+      border-radius: 20px;
+      padding-left: 20px;
+      margin-top: 20px;
+
+      .name{
+        margin-top: 40px;
+        margin-left: 20px;
+      }
+
+      .name-txt{
+        width: 95%;
+        border-radius: 13px;
+        height: 35px;
+        padding-left: 10px;
+      }
+
+      .cpfdate{
+
+        display: flex;
+        flex-direction: row;
+
+        .cpf{
+          margin-top: 20px;
+          margin-left: 20px;
+        }
+
+        .cpf-txt{
+          width: 100%;
+          border-radius: 13px;
+          height: 35px;
+          padding-left: 10px;
+        }
+
+        .date{
+          margin-top: 20px;
+          margin-left: 60px;
+        }
+
+        .date-txt{
+          width: 100%;
+          border-radius: 13px;
+          height: 35px;
+          margin-left: 50px;
+          padding-left: 10px;
+        }
+
+      }
+
+      .emailgenre{
+        display: flex;
+        flex-direction: row;
+        p{
+          margin-left: 20px;
+          margin-top: 20px;
+        }
+
+        .login{
+          width: 100%;
+          border-radius: 13px;
+          height: 35px;
+          padding-left: 10px;
+        }
+
+        .genre{
+          display: flex;
+          flex-direction: column;
+
+          .genre-p{
+            margin-left: 60px;
+          }
+          .genre-check{
+            display: flex;
+            flex-direction: column;
+            margin-left: 50px;
+            .masc{
+              display: flex;
+              flex-direction: row;
+            }
+            .fem{
+              display: flex;
+              flex-direction: row;
+            }
+            .others{
+              display: flex;
+              flex-direction: row;
+            }
+
+          }
+
+        }
+      }
+
+      .senhaphone{
+        display: flex;
+        flex-direction: row;
+
+        .password{
+          position: relative;
+          margin-top: 20px;
+          width: 40%;
+          .senha{
+            border-radius: 13px;
+            height: 35px;
+            padding-left: 10px;
+            width: 100%;
+          }
+          .eye-button{
+            position: absolute;
+            right:15px;
+            top: 45px;
+            background: transparent;
+            border: none;
+
+          }
+          .eye{
+            border: 0;
+            min-height: 25px;
+            max-height: 25px;
+          }
+        }
+
+
+
+        .phone{
+          margin-top: 20px;
+          margin-left: 60px;
+        }
+
+        .phone-txt{
+          width: 100%;
+          border-radius: 13px;
+          height: 35px;
+          margin-left: 50px;
+          padding-left: 10px;
+        }
+
+      }
+
+      .address{
+        margin-top: 20px;
+        margin-left: 20px;
+      }
+
+      .address-txt{
+        width: 95%;
+        border-radius: 13px;
+        height: 70px;
+        padding-left: 10px;
+      }
+
+
+      .button-father{
+        display: flex;
+        justify-content: center;
+        .button{
+          justify-content: center;
+          align-items: center;
+          font-size: 25px;
+          color: var(--white);
+          background: var(--green);
+          border: none;
+          margin-top: 15px;
+          margin-bottom: 15px;
+          height: 45px;
+          width: 256px;
+          border-radius: 13px;
+        }
+      }
+    }
+
   }
+}
+
+@media (max-width: 1200px) {
+  .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    padding-top: 10px;
+
+    h1{
+      margin-top: 20px;
+    }
+
+    .form-container{
+      color: black;
+      background: var(--beige);
+      width: 60%;
+      border-radius: 20px;
+      padding-left: 20px;
+      margin-top: 20px;
+
+      .name{
+        margin-top: 40px;
+        margin-left: 20px;
+      }
+
+      .name-txt{
+        width: 90%;
+        border-radius: 13px;
+        height: 35px;
+        padding-left: 10px;
+      }
+
+      .cpfdate{
+
+        display: flex;
+        flex-direction: column;
+
+        .cpf{
+          margin-top: 20px;
+          margin-left: 20px;
+        }
+
+        .cpf-txt{
+          width: 90%;
+          border-radius: 13px;
+          height: 35px;
+          padding-left: 10px;
+        }
+
+        .date{
+          margin-top: 20px;
+          margin-left: 20px;
+        }
+
+        .date-txt{
+          width: 90%;
+          border-radius: 13px;
+          height: 35px;
+          padding-left: 10px;
+        }
+
+      }
+
+      .emailgenre{
+        display: flex;
+        flex-direction: row;
+        p{
+          margin-left: 20px;
+          margin-top: 20px;
+        }
+
+        .login{
+          width: 100%;
+          border-radius: 13px;
+          height: 35px;
+          padding-left: 10px;
+        }
+
+        .genre{
+          display: flex;
+          flex-direction: column;
+          margin-right: 5px;
+
+          .genre-p{
+            margin-left: 60px;
+          }
+          .genre-check{
+            display: flex;
+            flex-direction: column;
+            margin-left: 50px;
+            .masc{
+              display: flex;
+              flex-direction: row;
+            }
+            .fem{
+              display: flex;
+              flex-direction: row;
+            }
+            .others{
+              display: flex;
+              flex-direction: row;
+            }
+
+          }
+
+        }
+      }
+
+      .senhaphone{
+        display: flex;
+        flex-direction: column;
+
+        .password{
+          position: relative;
+          margin-top: 20px;
+          width: 90%;
+          .senha{
+            border-radius: 13px;
+            height: 35px;
+            padding-left: 10px;
+            width: 100%;
+          }
+          .eye-button{
+            position: absolute;
+            right:15px;
+            top: 45px;
+            background: transparent;
+            border: none;
+
+          }
+          .eye{
+            border: 0;
+            min-height: 25px;
+            max-height: 25px;
+          }
+        }
 
 
 
+        .phone{
+          margin-top: 20px;
+          margin-left: 20px;
+        }
+
+        .phone-txt{
+          width: 90%;
+          border-radius: 13px;
+          height: 35px;
+          padding-left: 10px;
+        }
+
+      }
+
+      .address{
+        margin-top: 20px;
+        margin-left: 20px;
+      }
+
+      .address-txt{
+        width: 95%;
+        border-radius: 13px;
+        height: 70px;
+        padding-left: 10px;
+      }
+
+
+      .button-father{
+        display: flex;
+        justify-content: center;
+        .button{
+          justify-content: center;
+          align-items: center;
+          font-size: 25px;
+          color: var(--white);
+          background: var(--green);
+          border: none;
+          margin-top: 15px;
+          margin-bottom: 15px;
+          height: 45px;
+          width: 200px;
+          border-radius: 13px;
+        }
+      }
+    }
+
+  }
 }

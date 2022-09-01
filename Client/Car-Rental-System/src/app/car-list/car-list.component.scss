@@ -15,23 +15,29 @@
 
     .topbar{
       display: flex;
-      justify-content: space-between;
-      width: 100vw;
-      margin-right: 100px;
+      width: 100%;
       .addnewcar{
+        justify-content: flex-start;
         background: var(--green);
         color: var(--white);
         border: none;
-        width: 10%;
+        width: 200px;
+        height: 50px;
         border-radius: 31px;
-        margin-left: 5%;
         margin-top: 10px;
       }
       .addnewcar:hover {
         background-color: #346224;
-    }
+      }
+      .filter-button{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+
+      }
 
     }
+
 
   }
   .estruction{
@@ -152,4 +158,3 @@
 .adm-btn{
   margin: 5px;
 }
-
