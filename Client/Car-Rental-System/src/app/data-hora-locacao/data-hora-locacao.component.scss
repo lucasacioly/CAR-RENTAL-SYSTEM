@@ -20,16 +20,21 @@
         font-size: 280%;
     }
 
-    .imagem{
-        padding-top: 5%;
+    .car{
+        display: flex;
+        padding-top: 20px;
+    }
+
+    .image{
         height: 20%;
         color: var(--white);
     }
 
     .info{
         text-align:center;
-        padding-top: 10%;
+        //padding-top: 10%;
         color: var(--white);
+       // width: 40%;
     }
 
     .selections{
@@ -49,17 +54,6 @@
         margin:auto;
     }
 
-    .submit-button {
-        margin-top: 5%;
-        //padding-bottom: 30px;
-        font-size: 100%;
-        background: var(--green);
-        padding: 0.7%;
-        border-radius: 31px;
-        font-weight: normal;
-        color: var(--white);
-    }
-
     .submit-button:hover {
         background: #346224;
     }
@@ -68,6 +62,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
     }
 
 
