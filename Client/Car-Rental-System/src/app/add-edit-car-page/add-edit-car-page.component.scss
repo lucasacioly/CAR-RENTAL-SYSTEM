@@ -5,10 +5,9 @@
     align-items: center;
     flex-direction: column;
     font-size: 20px;
-    margin-top: 20px;
 
     .logo{
-        margin-top: 1%;
+        margin-top: 2%;
         height: 8%;
         margin-bottom: 3%;
     }
@@ -34,13 +33,43 @@
 
         }
 
-        .marca-txt,.ano-txt,.modelo-txt,.categ-txt,.direcao-txt,.cambio-txt,.comb-txt,.assentos-txt,.bagage-txt,.diaria-txt {
+        .marca-txt,.ano-txt,.modelo-txt,.categ-txt,.direcao-txt,.cambio-txt,.comb-txt,
+        .assentos-txt,.bagage-txt,.diaria-txt {
             margin-left: 20px;
             border-radius: 13px;
             border-style: hidden;
         }
 
+        .marca-txt:hover,.ano-txt:hover,.modelo-txt:hover,.categ-txt:hover,.direcao-txt:hover,
+        .cambio-txt:hover,.comb-txt:hover,.assentos-txt:hover,.bagage-txt:hover,.diaria-txt:hover {
+            border-style: groove;
+        }
 
+    }
+
+    .button-confirm {
+        display: flex;
+        justify-content: center;
+        margin-top: 2%;
+
+        .button {
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+            color: var(--white);
+            background: var(--green);
+            border: none;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            height: 35px;
+            width: 256px;
+            border-radius: 13px;
+        }
+
+        .button:hover {
+            color: var(--black);
+            background: #46b11f;
+        }
     }
 }
 
