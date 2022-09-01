@@ -27,6 +27,10 @@ export class CarListComponent implements OnInit {
     this.route.navigate(['/editcar'])
   }
 
+  navigate_to_add_car_page(){
+    this.route.navigate(['/addcar'])
+  }
+
   remove(){
 
   }

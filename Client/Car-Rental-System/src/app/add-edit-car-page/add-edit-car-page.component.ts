@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-edit-car-page',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddEditCarPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: Router) { }
+
+  navigate_to_home_page(){
+    this.route.navigate([''])
+  }
+
+  navigate_to_car_list_page(){
+    this.route.navigate(['/carlist'])
+  }
 
   ngOnInit(): void {
   }
