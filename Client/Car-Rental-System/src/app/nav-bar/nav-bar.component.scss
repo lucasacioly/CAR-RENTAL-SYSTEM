@@ -4,7 +4,7 @@
     background-color: var(--grey);
     height: 100%;
     width: 16%;
-    flex-direction: column;   
+    flex-direction: column;
     align-items: center;
 
     padding-top: 5%;
@@ -20,7 +20,7 @@
     padding-bottom: 20px;
     align-items: center;
     margin-top: 24px;
-    
+
 }
 
 .nav_text_main {
@@ -36,7 +36,7 @@
     color: var(--white);
     text-decoration: none;
     margin-bottom: 2%;
-    
+
 }
 
 .nav_button_text {
@@ -58,4 +58,15 @@ nav img {
     cursor: pointer;
 
 }
+
+.login{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+
+
+
 
