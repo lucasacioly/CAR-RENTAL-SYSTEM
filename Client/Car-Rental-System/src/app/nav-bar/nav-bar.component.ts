@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor(private route: Router) {
+  constructor(private route: Router, private authService: AuthService) {
 
   }
 
@@ -26,6 +27,19 @@ export class NavBarComponent implements OnInit {
 
   navigate_to_feedback_page(){
     this.route.navigate(['/feedback'])
+  }
+
+  navigate_to_car_return_page(){
+    this.route.navigate(['/carreturn'])
+  }
+
+  isClient = this.authService.isClient;
+  isAdmin = this.authService.isAdmin;
+  clientName = this.authService.clientName;
+
+  logOut(){
+    [this.isClient, this.isAdmin] = this.authService.logOut();
+    this.navigate_to_home_page();
   }
 
   ngOnInit(): void {

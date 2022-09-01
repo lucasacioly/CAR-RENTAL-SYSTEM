@@ -5,10 +5,18 @@
 
             <p class="nav_button_text"><a (click)="navigate_to_home_page()" class="nav_button">Home</a></p>
             <p class="nav_button_text"><a (click)="navigate_to_car_list()" class="nav_button">Carros</a></p>
-            <p class="nav_button_text"><a (click)="navigate_to_feedback_page()" class="nav_button">Feedback</a></p>
+            <p *ngIf="isClient && !isAdmin" class="nav_button_text"><a (click)="navigate_to_feedback_page()" class="nav_button">Feedback</a></p>
+            <p *ngIf="!isClient && isAdmin" class="nav_button_text"><a (click)="navigate_to_car_return_page()" class="nav_button">Devolução de carro</a></p>
 
         </div>
-            <p><a (click)="navigate_to_login_page()" class="nav_button">Login</a></p>
+
+          <section class="login">
+            <a *ngIf="!isClient && !isAdmin"(click)="navigate_to_login_page()" class="nav_button">Login</a>
+            <p *ngIf="isClient && !isAdmin" class="nav_button">{{clientName}}</p>
+            <p *ngIf="isAdmin && !isClient" class="nav_button">ADMIN</p>
+            <a *ngIf="isClient || isAdmin" class="nav_button" (click)="logOut()">Sair</a>
+          </section>
+
     </div>
 
 </nav>
