@@ -13,15 +13,24 @@
       margin-bottom: 3px;
     }
 
-    .filter-div{
+    .topbar{
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
       width: 100vw;
       margin-right: 100px;
-      .filter{
-        display: flex;
-
+      .addnewcar{
+        background: var(--green);
+        color: var(--white);
+        border: none;
+        width: 10%;
+        border-radius: 31px;
+        margin-left: 5%;
+        margin-top: 10px;
       }
+      .addnewcar:hover {
+        background-color: #346224;
+    }
+
     }
 
   }

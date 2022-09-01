@@ -1,35 +1,45 @@
 .return-container{
   display: flex;
-  height: 100vh;
   width: 100%;
   align-items: center;
   flex-direction: column;
 
-  .title{
-    font-size: 75px;
+  .logo{
     display: flex;
+    justify-content: center;
     margin-top: 20px;
-    margin-right:64px;
     margin-bottom: 20px;
+    font-size: 40px;
+  }
+
+  .title{
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
   }
 
   .form-container{
     display: flex;
-    margin-top: 128px;
+    margin-top: 64px;
     font-size: 30px;
     width: 80%;
-    justify-content: space-around;
+    justify-content: space-between;
 
-    .questions{
-      margin-left: 5px;
+    .questions > input{
+      margin-bottom: 20px;
     }
 
     .fine{
       margin-top: 200px;
+      margin-right: 100px;
       display: flex;
       flex-direction: column;
-      margin-right: 16px;
+      & > input{
+        margin-bottom: 20px;
+        width: 150%;
+      }
     }
+
 
     .button{
       margin-top: 32px;
@@ -39,6 +49,7 @@
       color: var(--white);
       border-radius: 31px;
       font-size: 40px;
+      justify-content: center;
       align-items: flex-end;
     }
 
@@ -46,13 +57,9 @@
 
 }
 
-textarea, input{
-  font-size: 35px;
-  width: 100%;
-}
-
 input{
   width: 100%;
   height: 5%;
-  font-size: 40px;
+  font-size: 20px;
+  
 }

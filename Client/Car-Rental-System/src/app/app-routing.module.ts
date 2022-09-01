@@ -16,7 +16,7 @@ import { EditCarPageComponent } from './edit-car-page/edit-car-page.component';
 const routes: Routes = [
   { path: '', component:  HomePageComponent},
   { path: 'login', component: LoginPageComponent },
-  { path: 'addedit', component: AddEditCarPageComponent},
+  { path: 'addcar', component: AddEditCarPageComponent},
   { path: 'carlist', component: CarListComponent},
   { path: 'carreturn', component: CarReturnComponent},
   { path: 'location', component: DataHoraLocacaoComponent},
