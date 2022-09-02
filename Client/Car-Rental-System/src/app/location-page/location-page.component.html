@@ -59,7 +59,7 @@
         <section class="selections">
             <div>
                 <h3 class="titles">Retirada</h3>
-                <input class="date" type="datetime-local" min="{{min}}">
+                <input type="datetime-local" #input (change)="onChange(input.value)" min="{{min_date}}">  <!--[(ngModel)]="values"-->
             </div>
 
             <div>
