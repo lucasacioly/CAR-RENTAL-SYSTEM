@@ -2,9 +2,9 @@
 
     <div class="title">
         <h1>Filtros</h1>
-        <a><i (click)="filter_onclick()" class="bi bi-x-lg close-button"></i></a>   
+        <a><i (click)="filter_onclick()" class="bi bi-x-lg close-button"></i></a>
     </div>
-    
+
     <hr class="division">
 
     <div class="options">
@@ -110,7 +110,7 @@
             <div class="instance">
                 <input type="checkbox">
                 <p>Híbrido</p>
-            </div>            
+            </div>
         </div>
 
         <!-- FILTRO POR BAGAGEM -->
@@ -171,15 +171,15 @@
             </div>
         </div>
 
-        
+
 
     </div>
 
-    <button type="button" class="btn btn-success">APLICAR</button>
+    <button (click)="filter_onclick()" type="button" class="btn btn-success">APLICAR</button>
 
 </nav>
 
-<div>
-    <img (click)="filter_onclick()" src="assets/filter-button.svg">
-    <button (click)="filter_onclick()" class="button">Filtrar</button>
+<div class="filter-button" *ngIf="!filter_openned">
+  <img  (click)="filter_onclick()" src="assets/filter-button.svg">
+  <button (click)="filter_onclick()" class="button">Filtrar</button>
 </div>

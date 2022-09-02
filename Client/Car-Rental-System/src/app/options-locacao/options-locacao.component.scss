@@ -27,7 +27,14 @@
         width: 75%;
         text-align: center;
         display: flex;
-        justify-content: space-between;
+        @media (min-width: 1000px) {
+          justify-content: space-between;
+        }
+
+        @media (max-width: 1000px) {
+          flex-direction: column;
+        }
+
     }
 
     .imagem{

@@ -23,20 +23,44 @@
     margin-top: 64px;
     font-size: 30px;
     width: 80%;
-    justify-content: space-between;
+    @media (min-width: 1000px) {
+      justify-content: space-between;
+    }
+
+    @media (max-width: 1000px) {
+      flex-direction: column-reverse;
+      align-items: center;
+      width: 60%;
+   }
+
 
     .questions > input{
       margin-bottom: 20px;
+      border-radius: 20px;
+      width: 90%;
+      height: 50px;
     }
 
     .fine{
-      margin-top: 200px;
-      margin-right: 100px;
+      @media (min-width: 1000px) {
+        margin-top: 200px;
+        margin-right: 100px;
+      }
       display: flex;
       flex-direction: column;
       & > input{
-        margin-bottom: 20px;
-        width: 150%;
+        height: 50px;
+        @media (min-width: 1000px) {
+          margin-bottom: 20px;
+          width: 120%;
+          border-radius: 20px;
+        }
+
+        @media (max-width: 1000px) {
+          margin-bottom: 20px;
+          width: 90%;
+          border-radius: 20px;
+        }
       }
     }
 
@@ -45,12 +69,12 @@
       margin-top: 32px;
       margin-left: 128px;
       margin-bottom: 20px;
-      width: 60%;
+      width: 300px;
       background: var(--green);
       color: var(--white);
       border-radius: 31px;
       font-size: 40px;
-      justify-content: center;
+
       align-items: flex-end;
     }
 
@@ -62,5 +86,5 @@ input{
   width: 100%;
   height: 5%;
   font-size: 20px;
-  
+
 }

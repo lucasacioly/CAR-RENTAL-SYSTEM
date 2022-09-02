@@ -1,53 +1,91 @@
-.home-container{
-    background: var(--bg);
+@media (min-width: 1000px) {
+ .home-container{
+      background: var(--bg);
+      display: flex;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-between;
+
+
+      .logo{
+          padding-top: 1%;
+          height: 8%;
+          margin-bottom: 3%;
+      }
+
+      .showcase{
+          width: 100%;
+          height: 40%;
+          color: var(--white);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+
+          .lista{
+              margin-left: 90%;
+              margin-bottom: 1%;
+              text-decoration: underline;
+              font-size: 20px;
+              //color: var(--blue);
+          }
+
+      }
+
+      .car-images {
+          display: flex;
+          flex-direction: row;
+          margin-left: -4%;
+      }
+
+      .fix-car {
+          height: 90%;
+          margin-top: 5%;
+      }
+
+      .wrong-car {
+          margin-top: 8%;
+          margin-left: 2%;
+      }
+
+  }
+}
+
+@media (max-width: 1000px) {
+
+  .car-images{
     display: flex;
-    width: 100%;
-    height: 100%;
-    align-items: center;
     flex-direction: column;
-    justify-content: space-between;
+    width: 80%;
+    margin-left: 10%;
+  }
 
+  .fix-car-red{
+    margin-bottom: 50px;
+  }
 
-    .logo{
-        margin-top: 1%;
-        height: 8%;
-        margin-bottom: 3%;
-    }
+  .logo{
+    display: flex;
+    margin-left: 20%;
+    padding-top: 3%;
+    height: 8%;
 
-    .showcase{
-        width: 100%;
-        height: 40%;
-        color: var(--white);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
+  }
 
-        .lista{
-            margin-left: 90%;
-            margin-bottom: 1%;
-            text-decoration: underline;
-            //color: var(--blue);
-        }
+  h2{
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+  }
 
-    }
-
-    .car-images {
-        display: flex;
-        flex-direction: row;
-        margin-left: -4%;
-    }
-
-    .fix-car {
-        height: 90%;
-        margin-top: 5%;
-    }
-
-    .wrong-car {
-        margin-top: 8%;
-        margin-left: 2%;
-    }
-
-
+  a{
+    font-size: 20px;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 5%;
+  }
 
 }
+

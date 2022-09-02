@@ -1,5 +1,5 @@
 .container {
-    
+
     height: 100%;
     //float: right;
     top:0;
@@ -12,7 +12,7 @@
     //background-color: black;
     height: 100vh;
     width: 16%;
-    flex-direction: column;   
+    flex-direction: column;
     //align-items: center;
     padding-top: 1%;
     padding-bottom: 20px;
@@ -20,7 +20,7 @@
     // hide scroll bar
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
-    
+
     .title{
         display: flex;
         justify-content: space-between;
@@ -32,10 +32,10 @@
     .close-button{
         color: var(--black);
     }
-    
+
     .close-button:hover{
         color: var(--white);
-        
+
     }
 
     .division{
@@ -58,7 +58,7 @@
         float: left;
         margin-left:20px;
         text-align: center;
-        
+
     }
 
     p{
@@ -79,3 +79,7 @@
 .container::-webkit-scrollbar { //hide scrollbar on other browsers
     display: none;
   }
+
+
+
+
