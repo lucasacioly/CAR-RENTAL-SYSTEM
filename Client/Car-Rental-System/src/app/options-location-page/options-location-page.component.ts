@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-options-locacao',
-  templateUrl: './options-locacao.component.html',
-  styleUrls: ['./options-locacao.component.scss']
+  selector: 'app-options-location-page',
+  templateUrl: './options-location-page.component.html',
+  styleUrls: ['./options-location-page.component.scss']
 })
-export class OptionsLocacaoComponent implements OnInit {
+export class OptionsLocationComponent implements OnInit {
 
   constructor(private route: Router) { }
 

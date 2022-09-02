@@ -9,10 +9,17 @@ export class AuthService {
 
   public isClient = false;
   public isAdmin = false;
-  public clientName = 'Gustavo';
+  public clientName = '';
 
-  signin(){
-    this.isAdmin = true;
+  signin(type: string){
+    if (type == 'admin') {
+      this.isAdmin = true
+    }
+    else {
+      this.isClient = true
+      console.log(type);
+      this.clientName = String(type)
+    }
   }
 
   logOut(){

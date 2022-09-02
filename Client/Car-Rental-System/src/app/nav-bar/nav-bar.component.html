@@ -4,7 +4,7 @@
         <div class="nav_text_main">
 
             <p class="nav_button_text"><a (click)="navigate_to_home_page()" class="nav_button">Home</a></p>
-            <p class="nav_button_text"><a (click)="navigate_to_car_list()" class="nav_button">Carros</a></p>
+            <p class="nav_button_text"><a (click)="navigate_to_car_list()" class="nav_button" id="nav_button_carlist">Carros</a></p>
             <p *ngIf="isClient && !isAdmin" class="nav_button_text"><a (click)="navigate_to_feedback_page()" class="nav_button">Feedback</a></p>
             <p *ngIf="!isClient && isAdmin" class="nav_button_text"><a (click)="navigate_to_car_return_page()" class="nav_button">Devolução de carro</a></p>
 

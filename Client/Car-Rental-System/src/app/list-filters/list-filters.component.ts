@@ -10,7 +10,7 @@ export class ListFiltersComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    
+
   }
   filter_openned = false;
 

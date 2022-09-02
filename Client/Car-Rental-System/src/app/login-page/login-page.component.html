@@ -5,12 +5,11 @@
   <img (click)="navigate_to_home_page()" src="assets/AluCar.png">
 
   <div class="login-container">
-    <section class="login">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login">
 
-      <input class="email" name="e-mail" id="" cols="30" rows="1" placeholder="Login"/>
-
+      <input formControlName="login" type="text" class="email" name="e-mail" id="" cols="30" rows="1" placeholder="Login"/>
       <section class = "password">
-          <input class = "senha" [type]="show ? 'text' : 'password'"  placeholder="Senha"/>
+          <input formControlName="password" class = "senha" [type]="show ? 'text' : 'password'"  placeholder="Senha"/>
           <button class = "eye-button" *ngIf="show"(click)="show_senha()">
             <img class = "eye"  src="assets/olho.svg">
           </button>
@@ -18,12 +17,12 @@
             <img  class = "eye"  src="assets/olho-riscado.svg">
           </button>
       </section>
-        <button (click)="signin()" class="entrar">Entrar</button>
+        <button class="entrar" type="submit">Entrar</button>
         <div class="cadastro-button">
         <button (click)="navigate_to_client_registration_page()" class="cadastro">Cadastrar</button>
         </div>
 
-    </section>
+    </form>
 
   </div>
 

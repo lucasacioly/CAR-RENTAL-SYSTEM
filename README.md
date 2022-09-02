@@ -1,16 +1,24 @@
-# CAR-RENTAL-SYSTEM
-Car rental system developed during the Software and Systems Engineering course
+## A Saas project of a car rental developed at the Software and Systems Engineering course. 🚗
 
-# TEAM
+### Our [Figma](https://www.figma.com/file/gc8JzA74qoyzUhpvuAPBLT/Car-Rental-System) 🎨
 
-Rodrigo Mesel - rmlo
+### How to Run it ⚙️
 
-Gustavo Campos - gcc2
+1. Install [node.js](https://nodejs.org/en/) and [angular](https://angular.io/)
+2. Clone our [repository](https://github.com/lucasacioly/CAR-RENTAL-SYSTEM.git)
+3. Use npm install in the Client/Car-Rental-System directory 
+4. Use npm start in that directory
+5. Open [localhost](http://localhost:4200/) in your web
 
-José Lucas Acioly - jlca
+### Team 👥
 
-Matheus Frej - mflc
+[Rodrigo Mesel](https://github.com/RodrigoMesel) - rmlo
 
-Gustavo Borges - ggb
+[Gustavo Campos](https://github.com/gugaccampos) - gcc2
 
+[José Lucas Acioly](https://github.com/lucasacioly) - jlca
+
+[Matheus Frej](https://github.com/Matheusfrej) - mflc
+
+[Gustavo Borges](https://github.com/ggborges) - ggb
 

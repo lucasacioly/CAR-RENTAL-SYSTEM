@@ -7,10 +7,8 @@
     <img (click)="navigate_to_home_page()" class = "logo" src="assets/AluCar.png"/>
 
     <div class="topbar">
-      <button (click)="navigate_to_add_car_page()" class="addnewcar"  >Adicionar Carro</button>
-      <section class="filter">
-        <app-list-filters></app-list-filters>
-      </section>
+      <button *ngIf="isAdmin" (click)="navigate_to_add_car_page()" class="addnewcar"  >Adicionar Carro</button>
+      <section class="filter-button"><app-list-filters></app-list-filters></section>
     </div>
 
   </nav>
@@ -57,7 +55,7 @@
           </div>
 
           <div class="card-body">
-              <button *ngIf="!isAdmin && !isClient" (click)="navigate_to_login_page()"  class="btn btn-danger">ALUGAR</button>
+              <button *ngIf="!isAdmin && !isClient" (click)="navigate_to_login_page()"  class="btn btn-danger buttonTest">ALUGAR</button>
               <button *ngIf="!isAdmin && isClient" (click)="navigate_to_location_page()"  class="btn btn-danger">ALUGAR</button>
               <section class="editremove">
                 <button *ngIf="isAdmin" (click)="navigate_to_edit_page()"  class="edit">EDITAR</button>
@@ -105,7 +103,7 @@
           </div>
 
           <div class="card-body">
-            <button *ngIf="!isAdmin && !isClient" (click)="navigate_to_login_page()"  class="btn btn-danger">ALUGAR</button>
+            <button *ngIf="!isAdmin && !isClient" (click)="navigate_to_login_page()"  class="btn btn-danger buttonTest">ALUGAR</button>
             <button *ngIf="!isAdmin && isClient" (click)="navigate_to_location_page()"  class="btn btn-danger">ALUGAR</button>
             <section class="editremove">
               <button *ngIf="isAdmin" (click)="navigate_to_edit_page()"  class="edit">EDITAR</button>
@@ -153,7 +151,7 @@
           </div>
 
           <div class="card-body">
-            <button *ngIf="!isAdmin && !isClient" (click)="navigate_to_login_page()"  class="btn btn-danger">ALUGAR</button>
+            <button *ngIf="!isAdmin && !isClient" (click)="navigate_to_login_page()"  class="btn btn-danger buttonTest">ALUGAR</button>
             <button *ngIf="!isAdmin && isClient" (click)="navigate_to_location_page()"  class="btn btn-danger">ALUGAR</button>
             <section class="editremove">
               <button *ngIf="isAdmin" (click)="navigate_to_edit_page()"  class="edit">EDITAR</button>
@@ -204,7 +202,7 @@
           </div>
 
           <div class="card-body">
-            <button *ngIf="!isAdmin && !isClient" (click)="navigate_to_login_page()"  class="btn btn-danger">ALUGAR</button>
+            <button *ngIf="!isAdmin && !isClient" (click)="navigate_to_login_page()"  class="btn btn-danger buttonTest">ALUGAR</button>
             <button *ngIf="!isAdmin && isClient" (click)="navigate_to_location_page()"  class="btn btn-danger">ALUGAR</button>
             <section class="editremove">
               <button *ngIf="isAdmin" (click)="navigate_to_edit_page()"  class="edit">EDITAR</button>
@@ -252,7 +250,7 @@
           </div>
 
           <div class="card-body">
-            <button *ngIf="!isAdmin && !isClient" (click)="navigate_to_login_page()"  class="btn btn-danger">ALUGAR</button>
+            <button *ngIf="!isAdmin && !isClient" (click)="navigate_to_login_page()"  class="btn btn-danger buttonTest">ALUGAR</button>
             <button *ngIf="!isAdmin && isClient" (click)="navigate_to_location_page()"  class="btn btn-danger">ALUGAR</button>
             <section class="editremove">
               <button *ngIf="isAdmin" (click)="navigate_to_edit_page()"  class="edit">EDITAR</button>
@@ -300,7 +298,7 @@
         </div>
 
         <div class="card-body">
-          <button *ngIf="!isAdmin && !isClient" (click)="navigate_to_login_page()"  class="btn btn-danger">ALUGAR</button>
+          <button *ngIf="!isAdmin && !isClient" (click)="navigate_to_login_page()"  class="btn btn-danger buttonTest">ALUGAR</button>
           <button *ngIf="!isAdmin && isClient" (click)="navigate_to_location_page()"  class="btn btn-danger">ALUGAR</button>
           <section class="editremove">
             <button *ngIf="isAdmin" (click)="navigate_to_edit_page()"  class="edit">EDITAR</button>
