@@ -10,42 +10,42 @@
 
     <div class="rental">
         <div class="car">
-            
+
             <div class="info">
                 <h2 class="titles">Informações</h2>
-    
+
                 <table class="table table-bordered">
                     <tbody>
                         <tr>
                             <td>Marca</td>
                             <td>Otto</td>
                         </tr>
-    
+
                         <tr>
                             <td>Modelo</td>
                             <td>Otto</td>
                         </tr>
-    
+
                         <tr>
                             <td>Categoria</td>
                             <td>Otto</td>
                         </tr>
-    
+
                         <tr>
                             <td>Câmbio</td>
                             <td>Otto</td>
                         </tr>
-    
+
                         <tr>
                             <td>Assentos</td>
                             <td>Otto</td>
                         </tr>
-    
+
                         <tr>
                             <td>Bagageiro</td>
                             <td>Otto</td>
                         </tr>
-    
+
                         <tr>
                             <td>Combustível</td>
                             <td>Otto</td>
@@ -53,34 +53,35 @@
                     </tbody>
                 </table>
             </div>
-        
+
         </div>
-    
+
         <section class="selections">
-            <div class="retirada">
+            <div>
                 <h3 class="titles">Retirada</h3>
-                <input type="datetime-local" min="{{min}}">
+                <input class="date" type="datetime-local" min="{{min}}">
             </div>
-    
-            <div class="devolução">
+
+            <div>
                 <h3 class="titles">Devolução</h3>
-                <input type="datetime-local">
+                <input class="date" type="datetime-local">
             </div>
-    
+
             <button (click)="navigate_to_accessories()" type="button" class="btn btn-success" >
                 AVANÇAR
             </button>
         </section>
     </div>
 
-    
 
     <section class="feedback-card-section">
-        <app-card-feedback class="feedback-card"></app-card-feedback>
-    
-        <app-card-feedback class="feedback-card"></app-card-feedback>
+      <app-card-feedback class="feedback-card"></app-card-feedback>
+
+      <app-card-feedback class="feedback-card"></app-card-feedback>
     </section>
-    
+
+
 
 </nav>
+
 
