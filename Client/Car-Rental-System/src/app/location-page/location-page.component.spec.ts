@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OptionsLocacaoComponent } from './options-locacao.component';
+import { LocationPageComponent } from './location-page.component';
 
-describe('OptionsLocacaoComponent', () => {
-  let component: OptionsLocacaoComponent;
-  let fixture: ComponentFixture<OptionsLocacaoComponent>;
+describe('LocationPageComponent', () => {
+  let component: LocationPageComponent;
+  let fixture: ComponentFixture<LocationPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OptionsLocacaoComponent ]
+      declarations: [ LocationPageComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(OptionsLocacaoComponent);
+    fixture = TestBed.createComponent(LocationPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
