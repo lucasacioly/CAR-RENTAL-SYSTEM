@@ -39,7 +39,7 @@ export class LocationPageComponent implements OnInit {
   isClient = this.authService.isClient;
   isAdmin = this.authService.isAdmin;
 
-  min:any = "2022-08-28T17:55";
+  min_date:any = "2022-08-28T17:55";
 
   PastDateTime(){
     var tdate:any = new Date();
