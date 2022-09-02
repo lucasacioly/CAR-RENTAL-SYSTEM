@@ -21,17 +21,17 @@ describe('CarListComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should go to login page', fakeAsync((): void => {
-    // observa a função de navegar para a página de login
-    spyOn(component, 'navigate_to_login_page')
+  it('should go to location page', fakeAsync((): void => {
+    // observa a função de navegar para a página de locação
+    spyOn(component, 'navigate_to_location_page')
 
-    // botao que navega para página de login
+    // botao que navega para página de locação
     let button1 = fixture.debugElement.nativeElement.querySelector('.buttonTest')
     button1.click()
     tick()
 
-    // espera-se que a função de navegar para página de login seja chamada
-    expect(component.navigate_to_login_page).toHaveBeenCalled()
+    // espera-se que a função de navegar para página de locação seja chamada
+    expect(component.navigate_to_location_page).toHaveBeenCalled()
 
   }))
 });

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-location-page',
@@ -8,7 +9,7 @@ import { Route, Router } from '@angular/router';
 })
 export class LocationPageComponent implements OnInit {
 
-  constructor(private route: Router) { }
+  constructor(private route: Router, private authService: AuthService) { }
 
   navigate_to_accessories(){
     this.route.navigate(['/options'])
@@ -18,12 +19,27 @@ export class LocationPageComponent implements OnInit {
     this.route.navigate([''])
   }
 
+  navigate_to_login_page(){
+    this.route.navigate(['/login'])
+  }
+
+  advance_button(){
+    if(this.isClient || this.isAdmin){
+      this.navigate_to_accessories()
+    }
+    else {
+      this.navigate_to_login_page()
+    }
+  }
+
   ngOnInit(): void {
     this.PastDateTime();
   }
 
+  isClient = this.authService.isClient;
+  isAdmin = this.authService.isAdmin;
 
-  min_date:any = "2022-08-28T17:55";
+  min:any = "2022-08-28T17:55";
 
   PastDateTime(){
     var tdate:any = new Date();
