@@ -104,4 +104,3 @@ Feature: Feedback sobre o carro e o usuário
         And Eu clico em "OK"
         And Eu volto para a tela de clientes
         And Eu vejo o cliente "João da Silva Batista" sem feedback feito
-        
