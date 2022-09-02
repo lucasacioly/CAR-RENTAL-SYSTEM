@@ -5,11 +5,11 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { FeedbackPageComponent } from './feedback-page/feedback-page.component';
-import { DataHoraLocacaoComponent } from './data-hora-locacao/data-hora-locacao.component';
-import { OptionsLocacaoComponent } from './options-locacao/options-locacao.component';
+import { LocationPageComponent } from './location-page/location-page.component';
+import { OptionsLocationComponent } from './options-location-page/options-location-page.component';
 import { CarReturnComponent } from './car-return/car-return.component';
 import { CardFeedbackComponent } from './card-feedback/card-feedback.component';
-import { AddEditCarPageComponent } from './add-edit-car-page/add-edit-car-page.component';
+import { AddCarPageComponent } from './add-car-page/add-car-page.component';
 import { CarListComponent } from './car-list/car-list.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { CarListCardComponent } from './car-list-card/car-list-card.component';
@@ -25,11 +25,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NavBarComponent,
     HomePageComponent,
     FeedbackPageComponent,
-    DataHoraLocacaoComponent,
-    OptionsLocacaoComponent,
+    LocationPageComponent,
+    OptionsLocationComponent,
     CarReturnComponent,
     CardFeedbackComponent,
-    AddEditCarPageComponent,
+    AddCarPageComponent,
     CarListComponent,
     LoginPageComponent,
     CarListCardComponent,
