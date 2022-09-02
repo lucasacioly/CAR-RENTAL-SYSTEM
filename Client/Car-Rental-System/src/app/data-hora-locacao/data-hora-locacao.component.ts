@@ -22,10 +22,35 @@ export class DataHoraLocacaoComponent implements OnInit {
     this.PastDateTime();
   }
 
-  min:any = "2022-08-28T17:55";
+
+  min_date:any = "2022-08-28T17:55";
 
   PastDateTime(){
-    var tdate = new Date();
-    console.log(tdate);
+    var tdate:any = new Date();
+    var date:any = tdate.getDate();
+    if (date < 10) {
+      date = '10' + date;
+    }
+    var month:any = tdate.getMonth();
+    if (month < 10) {
+      month = '10' + month + 1;
+    }
+    var year:any = tdate.getFullYear();
+    var hours:any = tdate.getHours();
+    var minutes:any = tdate.getMinutes();
+
+    this.min_date = year + '-' + month + '-' + date + 'T' + hours + ':' + minutes;
+  }
+
+  values:any;
+  onChange(value:any){
+    var todate:any = new Date();
+    var selectDate:any = new Date();
+    if(todate > selectDate){
+      this.values="";
+      alert("Please, select a valid date and time");
+    }
+    
+
   }
 }
