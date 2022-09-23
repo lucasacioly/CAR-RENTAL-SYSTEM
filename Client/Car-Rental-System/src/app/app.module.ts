@@ -17,6 +17,8 @@ import { ListFiltersComponent } from './list-filters/list-filters.component';
 import { ClientRegistrationComponent } from './client-registration/client-registration.component';
 import { EditCarPageComponent } from './edit-car-page/edit-car-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
 
 
 @NgModule({
@@ -42,7 +44,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
   bootstrap: [AppComponent]

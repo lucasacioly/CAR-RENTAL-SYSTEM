@@ -16,7 +16,7 @@ describe('AuthService', () => {
 
   it('should login as admin', fakeAsync((): void => {
     //entrando como admin
-    service.signin('admin')
+    service.login('admin@admin.com', 'admin')
     tick()
     
 
@@ -28,7 +28,7 @@ describe('AuthService', () => {
   it('should login as client', fakeAsync((): void => {
 
     //entrando como cliente
-    service.signin('Gustavo')
+    service.login('gustavo@alucar.com', '123456')
     tick()
     
 
@@ -44,7 +44,7 @@ describe('AuthService', () => {
   it('should logout', fakeAsync((): void => {
 
     // Entrar como admin
-    service.signin('admin')
+    service.login('admin@admin.com', 'admin')
     tick()
     // Dar logout
     service.logOut()

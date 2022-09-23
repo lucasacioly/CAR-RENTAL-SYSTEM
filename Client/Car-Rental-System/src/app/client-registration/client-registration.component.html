@@ -5,10 +5,10 @@
   <img (click)="navigate_to_home_page()" src="assets/AluCar.png">
   <h1>Cadastro</h1>
 
-  <section class="form-container">
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form-container">
 
     <p class="name">Nome completo:</p>
-    <input class="name-txt" name="nome" cols="30" rows="1"/>
+    <input formControlName="name" class="name-txt" name="nome" cols="30" rows="1"/>
 
     <div class="cpfdate">
 
@@ -26,8 +26,8 @@
     <div class="emailgenre">
 
       <section>
-        <p>Login:</p>
-        <input class="login" name="login" cols="30" rows="1"/>
+        <p>Email:</p>
+        <input formControlName="email" class="login" name="login" cols="30" rows="1"/>
       </section>
 
       <section class="genre">
@@ -59,7 +59,7 @@
     <div class="senhaphone">
       <section class = "password">
           <p class="senha-p">Senha:</p>
-          <input class = "senha" [type]="show ? 'text' : 'password'"/>
+          <input formControlName="password" class = "senha" [type]="show ? 'text' : 'password'"/>
           <button class = "eye-button" *ngIf="show"(click)="show_senha()">
             <img class = "eye"  src="assets/olho.svg">
           </button>
@@ -78,9 +78,9 @@
     <input class="address-txt" name="Endereço" cols="30" rows="2"/>
 
     <div class="button-father">
-      <button (click)="navigate_to_login_page()" class="button">Confirmar</button>
+      <button class="button">Confirmar</button>
     </div>
 
-  </section>
+  </form>
 
 </nav>
