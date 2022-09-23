@@ -23,9 +23,8 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  signin(type: string){
-    this.authService.signin(type);
-    this.navigate_to_home_page();
+  login(type: string, password : string){
+    this.authService.login(type, password);
   }
 
 
@@ -40,12 +39,7 @@ export class LoginPageComponent implements OnInit {
   })
 
   onSubmit() {
-    if ((this.loginForm.value.login == 'admin') && (this.loginForm.value.password == 'admin')) {
-      this.signin('admin')
-    }
-    else {
-      this.signin(String(this.loginForm.value.login))
-    }
+    this.login(this.loginForm.value.login!, this.loginForm.value.password!)
     this.loginForm.reset();
   }
 

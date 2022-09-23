@@ -12,8 +12,7 @@
 
           <section class="login">
             <a *ngIf="!isClient && !isAdmin"(click)="navigate_to_login_page()" class="nav_button">Login</a>
-            <p *ngIf="isClient && !isAdmin" class="nav_button">{{clientName}}</p>
-            <p *ngIf="isAdmin && !isClient" class="nav_button">ADMIN</p>
+            <p *ngIf="isClient || isAdmin" class="nav_button">{{clientName}}</p>
             <a *ngIf="isClient || isAdmin" class="nav_button" (click)="logOut()">Sair</a>
           </section>
 

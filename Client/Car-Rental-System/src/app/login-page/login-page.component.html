@@ -7,7 +7,7 @@
   <div class="login-container">
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login">
 
-      <input formControlName="login" type="text" class="email" name="e-mail" id="" cols="30" rows="1" placeholder="Login"/>
+      <input formControlName="login" type="text" class="email" name="e-mail" id="" cols="30" rows="1" placeholder="Email"/>
       <section class = "password">
           <input formControlName="password" class = "senha" [type]="show ? 'text' : 'password'"  placeholder="Senha"/>
           <button class = "eye-button" *ngIf="show"(click)="show_senha()">
