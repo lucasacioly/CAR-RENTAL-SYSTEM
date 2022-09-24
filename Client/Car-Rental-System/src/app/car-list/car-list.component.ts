@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { CarService } from '../car.service';
-
 @Component({
   selector: 'app-car-list',
   templateUrl: './car-list.component.html',
@@ -38,82 +37,10 @@ export class CarListComponent implements OnInit {
 
   isClient = this.authService.isClient;
   isAdmin = this.authService.isAdmin;
-  cars = this.carService.cars
-  addCar() {
-    this.carService.addCar(
-      'New Fiesta', 
-      'Ford',
-      'https://morena.actfly.top/storage/2017/07/fiesta.png', 
-      'Hatch',
-      '5',
-      'Automático',
-      'Flex',
-      'P',
-      65.00)
-    this.carService.addCar(
-      'New Fiesta', 
-      'Ford',
-      'https://morena.actfly.top/storage/2017/07/fiesta.png', 
-      'Hatch',
-      '5',
-      'Automático',
-      'Flex',
-      'P',
-      65.00)
-    this.carService.addCar(
-      'New Fiesta', 
-      'Ford',
-      'https://morena.actfly.top/storage/2017/07/fiesta.png', 
-      'Hatch',
-      '5',
-      'Automático',
-      'Flex',
-      'P',
-      65.00)
-    this.carService.addCar(
-      'New Fiesta', 
-      'Ford',
-      'https://morena.actfly.top/storage/2017/07/fiesta.png', 
-      'Hatch',
-      '5',
-      'Automático',
-      'Flex',
-      'P',
-      65.00)
-    this.carService.addCar(
-      'New Fiesta', 
-      'Ford',
-      'https://morena.actfly.top/storage/2017/07/fiesta.png', 
-      'Hatch',
-      '5',
-      'Automático',
-      'Flex',
-      'P',
-      65.00)
-    this.carService.addCar(
-      'New Fiesta', 
-      'Ford',
-      'https://morena.actfly.top/storage/2017/07/fiesta.png', 
-      'Hatch',
-      '5',
-      'Automático',
-      'Flex',
-      'P',
-      65.00)
-    this.carService.addCar(
-      'New Fiesta', 
-      'Ford',
-      'https://morena.actfly.top/storage/2017/07/fiesta.png', 
-      'Hatch',
-      '5',
-      'Automático',
-      'Flex',
-      'P',
-      65.00)
-  }
-
+  cars = this.carService.cars;
+  
   ngOnInit(): void {
-    this.addCar()
+    
   }
 
 }

@@ -11,12 +11,12 @@
 
   <h1>Adicionar Carro</h1>
 
-  <section class="form-container">
+  <form [formGroup]="addCarForm" class="form-container" (ngSubmit)="onSubmit()">
     <!-- Coluna da direita -->
     <div class="col-left">
         <section class="sec">
             <p class="marca">Marca:</p>
-            <input type="text" class="marca-txt">
+            <input type="text" class="marca-txt" formControlName="marca">
         </section>
 
         <section class="sec">
@@ -31,67 +31,54 @@
 
         <section class="sec">
             <p class="combustivel">Combustível:</p>
-            <input type="text" class="comb-txt">
+            <input type="text" class="comb-txt" formControlName="tipoCombustivel">
         </section>
 
         <section class="sec">
             <p class="bagage">Tamanho do bagageiro:</p>
-            <input type="text" class="bagage-txt">
+            <input type="text" class="bagage-txt" formControlName="tamanhoMala">
         </section>
 
-        <div class="button-photo">
-
-            <button class="button"><img class="camera" src="assets/camera.png">Upload Foto</button>
-
-        </div>
+        <section class="sec">
+            <p class="image-link">Link da imagem:</p>
+            <input type="text" class="bagage-txt" formControlName="imagem">
+        </section>
     </div>
 
     <!-- Coluna da direita -->
     <div class="col-right">
         <section class="sec">
             <p class="modelo">Modelo:</p>
-            <input type="text" class="modelo-txt">
+            <input type="text" class="modelo-txt" formControlName="nome">
         </section>
 
         <section class="sec">
             <p class="categoria">Categoria:</p>
-            <input type="text" class="categ-txt">
+            <input type="text" class="categ-txt" formControlName="categoria">
         </section>
 
         <section class="sec">
             <p class="cambio">Câmbio:</p>
-            <input type="text" class="cambio-txt">
+            <input type="text" class="cambio-txt" formControlName="cambio">
         </section>
 
         <section class="sec">
             <p class="assentos">Quantidade de Assentos:</p>
-            <input type="text" class="assentos-txt">
+            <input type="text" class="assentos-txt" formControlName="totAssentos">
         </section>
 
         <section class="sec">
             <p class="diaria">Preço da diária:</p>
-            <input type="text" class="diaria-txt">
+            <input type="text" class="diaria-txt" formControlName="preco">
         </section>
 
         <div class="button-confirm">
 
-            <button (click)="navigate_to_car_list_page()" class="button"><img class="disket" src="assets/disket.png">Adicionar</button>
+            <button type="submit" (click)="navigate_to_car_list_page()" class="button"><img class="disket" src="assets/disket.png">Adicionar</button>
 
         </div>
     </div>
 
-  </section>
+</form>
 
 </section>
-
-
-<!--
-<app-nav-bar></app-nav-bar>
-<section class="add-car-container">
-    <img class = "logo" src="assets/AluCar.png"/>
-
-    <div class="form-container">
-
-    </div>
-</section>
--->

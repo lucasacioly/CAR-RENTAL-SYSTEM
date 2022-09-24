@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
+import { CarService } from '../car.service';
 
 @Component({
   selector: 'app-add-car-page',
@@ -8,13 +10,41 @@ import { Router } from '@angular/router';
 })
 export class AddCarPageComponent implements OnInit {
 
-  constructor(private route: Router) { }
+  constructor(private route: Router, 
+    private formBuilder: FormBuilder, 
+    private carService: CarService) { }
 
   navigate_to_home_page(){
     this.route.navigate([''])
   }
 
   navigate_to_car_list_page(){
+    this.route.navigate(['/carlist'])
+  }
+
+  addCarForm = this.formBuilder.group({
+    marca: '',
+    nome: '',
+    imagem: '',
+    categoria: '',
+    totAssentos: '',
+    cambio: '',
+    tipoCombustivel: '',
+    tamanhoMala: '',
+    preco: 0
+  })
+
+  onSubmit() {
+    this.carService.addCar(this.addCarForm.value.nome!,
+      this.addCarForm.value.marca!,
+      this.addCarForm.value.imagem!,
+      this.addCarForm.value.categoria!,
+      this.addCarForm.value.totAssentos!,
+      this.addCarForm.value.cambio!,
+      this.addCarForm.value.tipoCombustivel!,
+      this.addCarForm.value.tamanhoMala!,
+      this.addCarForm.value.preco!)
+    this.addCarForm.reset()
     this.route.navigate(['/carlist'])
   }
 

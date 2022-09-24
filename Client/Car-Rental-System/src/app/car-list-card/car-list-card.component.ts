@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-car-list-card',
@@ -16,7 +17,10 @@ export class CarListCardComponent implements OnInit {
     @Input() tipoCombustivel!: string;
     @Input() preco!: string;
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
+
+  isClient = this.authService.isClient;
+  isAdmin = this.authService.isAdmin;
 
   ngOnInit(): void {
   }

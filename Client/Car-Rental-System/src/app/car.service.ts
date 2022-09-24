@@ -6,7 +6,28 @@ import { Injectable } from '@angular/core';
 export class CarService {
   constructor() {}
   
-  public cars: CarType[] = []
+  public cars: CarType[] = [{
+    marca: 'Fox', 
+    nome: 'VolksWagen', 
+    imagem: 'https://cdn.autopapo.com.br/carro/volkswagen/fox-16-16v-msi-highline-flex-2018/destaque-v1.png', 
+    categoria: 'Hatch',
+    totAssentos: '5',
+    cambio: 'Manual',
+    tipoCombustivel: 'Flex',
+    tamanhoMala: 'P',
+    preco: 57.00
+  },
+  {
+    marca: 'New Fiesta', 
+    nome: 'Ford',
+    imagem: 'https://morena.actfly.top/storage/2017/07/fiesta.png', 
+    categoria: 'Hatch',
+    totAssentos: '5',
+    cambio: 'Automático',
+    tipoCombustivel: 'Flex',
+    tamanhoMala: 'P',
+    preco: 65.00 
+  }]
 
   addCar(nome: string,
     marca: string,
@@ -28,7 +49,9 @@ export class CarService {
       tamanhoMala: tamanhoMala,
       preco: preco
     })
+    console.log(nome);  
   }
+
 }
 
 interface CarType {
@@ -43,9 +66,4 @@ interface CarType {
   preco: number
 
 }
-
-
-
-
-
 
