@@ -1,7 +1,7 @@
 <div class="card" style="width: 18rem;">
-    <img src="assets/carro1.png" class="card-img-top" alt="...">
+    <img src="{{imagem}}" class="card-img-top" alt="...">
     <div class="card-body">
-        <h5 class="card-title">Car Name</h5>
+        <h5 class="card-title">{{marca}} - {{nome}}</h5>
         <div class="info">
             <div class="feature">
                 <i class="bi bi-snow"></i>
@@ -10,29 +10,29 @@
 
             <div class="feature">
                 <i class="bi bi-gear-fill"></i>
-                <p>M</p>
+                <p>{{cambio}}</p>
             </div>
 
             <div class="feature">
                 <i class="bi bi-people-fill"></i>
-                <p>5</p>
+                <p>{{totAssentos}}</p>
             </div>
 
             <div class="feature">
                 <i class="bi bi-briefcase-fill"></i>
-                <p>3</p>
+                <p>{{tamanhoMala}}</p>
             </div>
 
             <div class="feature">
                 <i class="bi bi-fuel-pump-fill"></i>
-                <p>G</p>
+                <p>{{tipoCombustivel}}</p>
             </div>
         </div>
     </div>
 
     <div class="card preco">
         <div class="card-body">
-            R$ 164,00 / dia
+            R$ {{preco}} / dia
         </div>
     </div>
 

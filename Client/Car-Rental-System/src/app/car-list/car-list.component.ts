@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { CarService } from '../car.service';
 
 @Component({
   selector: 'app-car-list',
@@ -9,7 +10,7 @@ import { AuthService } from '../auth.service';
 })
 export class CarListComponent implements OnInit {
 
-  constructor(private route: Router, private authService: AuthService) { }
+  constructor(private route: Router, private authService: AuthService, private carService: CarService) { }
 
   navigate_to_home_page(){
     this.route.navigate([''])
@@ -37,10 +38,82 @@ export class CarListComponent implements OnInit {
 
   isClient = this.authService.isClient;
   isAdmin = this.authService.isAdmin;
-
-
+  cars = this.carService.cars
+  addCar() {
+    this.carService.addCar(
+      'New Fiesta', 
+      'Ford',
+      'https://morena.actfly.top/storage/2017/07/fiesta.png', 
+      'Hatch',
+      '5',
+      'Automático',
+      'Flex',
+      'P',
+      65.00)
+    this.carService.addCar(
+      'New Fiesta', 
+      'Ford',
+      'https://morena.actfly.top/storage/2017/07/fiesta.png', 
+      'Hatch',
+      '5',
+      'Automático',
+      'Flex',
+      'P',
+      65.00)
+    this.carService.addCar(
+      'New Fiesta', 
+      'Ford',
+      'https://morena.actfly.top/storage/2017/07/fiesta.png', 
+      'Hatch',
+      '5',
+      'Automático',
+      'Flex',
+      'P',
+      65.00)
+    this.carService.addCar(
+      'New Fiesta', 
+      'Ford',
+      'https://morena.actfly.top/storage/2017/07/fiesta.png', 
+      'Hatch',
+      '5',
+      'Automático',
+      'Flex',
+      'P',
+      65.00)
+    this.carService.addCar(
+      'New Fiesta', 
+      'Ford',
+      'https://morena.actfly.top/storage/2017/07/fiesta.png', 
+      'Hatch',
+      '5',
+      'Automático',
+      'Flex',
+      'P',
+      65.00)
+    this.carService.addCar(
+      'New Fiesta', 
+      'Ford',
+      'https://morena.actfly.top/storage/2017/07/fiesta.png', 
+      'Hatch',
+      '5',
+      'Automático',
+      'Flex',
+      'P',
+      65.00)
+    this.carService.addCar(
+      'New Fiesta', 
+      'Ford',
+      'https://morena.actfly.top/storage/2017/07/fiesta.png', 
+      'Hatch',
+      '5',
+      'Automático',
+      'Flex',
+      'P',
+      65.00)
+  }
 
   ngOnInit(): void {
+    this.addCar()
   }
 
 }

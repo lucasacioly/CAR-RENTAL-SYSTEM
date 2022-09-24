@@ -48,47 +48,13 @@
     padding-left: 200px;
     margin-right: 50px;
     .car-cards{
-      display: flex;
-      flex-direction: column;
-      .row1{
-        @media (min-width: 1000px) {
-          margin-right: 30px;
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          padding-bottom: 30px;
-
-        }
-
-        @media (max-width: 1000px) {
-          margin-right: 30px;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          padding-bottom: 30px;
-
-        }
-
-      }
-      .row2{
-        @media (min-width: 1000px) {
-          margin-right: 30px;
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          padding-bottom: 30px;
-        }
-
-        @media (max-width: 1000px) {
-          margin-right: 30px;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          padding-bottom: 30px;
-        }
-      }
-
+      display: grid;
+      flex-direction: row;
+      grid-template-columns: 1fr 1fr 1fr;
     }
+    // depois deixar responsivo colocando 2 colunas ou 1 coluna
+    // dependendo do tamanho da tela
+    
 
   }
 }
