@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { CarService } from '../car.service';
 
 @Component({
   selector: 'app-car-list-card',
@@ -8,21 +9,28 @@ import { AuthService } from '../auth.service';
 })
 export class CarListCardComponent implements OnInit {
 
-    @Input() nome!: string;
-    @Input() imagem!: string;
-    @Input() marca!: string;
-    @Input() cambio!: string;
-    @Input() totAssentos!: string;
-    @Input() tamanhoMala!: string;
-    @Input() tipoCombustivel!: string;
-    @Input() preco!: string;
+  @Input() id!: string;
+  @Input() nome!: string;
+  @Input() imagem!: string;
+  @Input() marca!: string;
+  @Input() cambio!: string;
+  @Input() totAssentos!: string;
+  @Input() tamanhoMala!: string;
+  @Input() tipoCombustivel!: string;
+  @Input() preco!: string;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService,
+  private carService: CarService) { }
 
   isClient = this.authService.isClient;
   isAdmin = this.authService.isAdmin;
 
   ngOnInit(): void {
+  }
+
+  removeCar(id: string) {
+    console.log(id);
+    this.carService.removeCar(parseInt(id, 10));
   }
 
 }
