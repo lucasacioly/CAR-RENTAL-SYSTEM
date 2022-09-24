@@ -41,7 +41,7 @@
 
         <section class="editremove">
             <button *ngIf="isAdmin" class="edit">EDITAR</button>
-            <button *ngIf="isAdmin" class="remove">REMOVER</button>
+            <button *ngIf="isAdmin" (click)="removeCar(id)" class="remove">REMOVER</button>
           </section>
     </div>
 </div>

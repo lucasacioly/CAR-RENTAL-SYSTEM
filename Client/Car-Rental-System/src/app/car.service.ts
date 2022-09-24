@@ -5,8 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class CarService {
   constructor() {}
-  
+
   public cars: CarType[] = [{
+    id: 1,
     marca: 'Fox', 
     nome: 'VolksWagen', 
     imagem: 'https://cdn.autopapo.com.br/carro/volkswagen/fox-16-16v-msi-highline-flex-2018/destaque-v1.png', 
@@ -18,6 +19,7 @@ export class CarService {
     preco: 57.00
   },
   {
+    id: 2,
     marca: 'New Fiesta', 
     nome: 'Ford',
     imagem: 'https://morena.actfly.top/storage/2017/07/fiesta.png', 
@@ -38,7 +40,9 @@ export class CarService {
     tipoCombustivel: string,
     tamanhoMala: string,
     preco: number) {
+    let nextid = this.cars[this.cars.length-1].id + 1
     this.cars.push({
+      id : nextid,
       nome: nome,
       marca: marca,
       imagem: imagem,
@@ -52,9 +56,15 @@ export class CarService {
     console.log(nome);  
   }
 
+  removeCar(id: number) {
+    this.cars = this.cars.filter(car => car.id != id)
+    console.log(this.cars.length)
+  }
+
 }
 
 interface CarType {
+  id: number
   nome: string
   marca: string
   imagem: string

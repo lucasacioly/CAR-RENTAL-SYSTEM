@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { CarService } from '../car.service';
@@ -31,16 +31,23 @@ export class CarListComponent implements OnInit {
     this.route.navigate(['/addcar'])
   }
 
-  remove(){
-
-  }
 
   isClient = this.authService.isClient;
   isAdmin = this.authService.isAdmin;
   cars = this.carService.cars;
   
+  
+
   ngOnInit(): void {
-    
+    if (this.carService.cars.length != this.cars.length) {
+      this.cars = this.carService.cars
+    }
   }
+
+  ngDoCheck() {
+    console.log(this.carService.cars);
+    this.cars = this.carService.cars;
+  }
+
 
 }

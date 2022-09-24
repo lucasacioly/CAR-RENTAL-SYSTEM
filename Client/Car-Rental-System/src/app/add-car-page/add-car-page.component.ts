@@ -9,7 +9,19 @@ import { CarService } from '../car.service';
   styleUrls: ['./add-car-page.component.scss']
 })
 export class AddCarPageComponent implements OnInit {
-
+  
+  addCarForm = this.formBuilder.group({
+    marca: '',
+    nome: '',
+    imagem: '',
+    categoria: '',
+    totAssentos: '',
+    cambio: '',
+    tipoCombustivel: '',
+    tamanhoMala: '',
+    preco: 0
+  })
+  
   constructor(private route: Router, 
     private formBuilder: FormBuilder, 
     private carService: CarService) { }
@@ -22,19 +34,11 @@ export class AddCarPageComponent implements OnInit {
     this.route.navigate(['/carlist'])
   }
 
-  addCarForm = this.formBuilder.group({
-    marca: '',
-    nome: '',
-    imagem: '',
-    categoria: '',
-    totAssentos: '',
-    cambio: '',
-    tipoCombustivel: '',
-    tamanhoMala: '',
-    preco: 0
-  })
+  
 
   onSubmit() {
+    console.log('Entrou')
+    console.log(this.addCarForm.value.nome!)
     this.carService.addCar(this.addCarForm.value.nome!,
       this.addCarForm.value.marca!,
       this.addCarForm.value.imagem!,
