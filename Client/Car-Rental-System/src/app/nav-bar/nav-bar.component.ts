@@ -33,6 +33,10 @@ export class NavBarComponent implements OnInit {
     this.route.navigate(['/carreturn'])
   }
 
+  navigate_to_car_history_page(){
+    this.route.navigate(['/carhistory'])
+  }
+
   isClient = this.authService.isClient;
   isAdmin = this.authService.isAdmin;
   clientName = this.authService.clientName;

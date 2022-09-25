@@ -11,7 +11,7 @@ import {FeedbackPageComponent} from './feedback-page/feedback-page.component';
 import {OptionsLocationComponent} from './options-location-page/options-location-page.component';
 import {ClientRegistrationComponent} from './client-registration/client-registration.component';
 import { EditCarPageComponent } from './edit-car-page/edit-car-page.component';
-
+import { CarHistoryComponent } from './car-history/car-history.component';
 
 const routes: Routes = [
   { path: '', component:  HomePageComponent},
@@ -23,7 +23,8 @@ const routes: Routes = [
   { path: 'feedback', component: FeedbackPageComponent},
   { path: 'options', component: OptionsLocationComponent},
   { path: 'clientregistration', component: ClientRegistrationComponent},
-  { path: 'editcar', component: EditCarPageComponent}
+  { path: 'editcar', component: EditCarPageComponent},
+  { path: 'carhistory', component: CarHistoryComponent}
 ];
 
 @NgModule({

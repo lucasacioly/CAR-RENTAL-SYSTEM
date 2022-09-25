@@ -37,12 +37,15 @@
     </div>
 
     <div class="card-body">
-        <button *ngIf="!isAdmin" type="button" class="btn btn-danger">ALUGAR</button>
+
+        <button *ngIf="!isAdmin && route.url === '/carhistory'" type="button" class="btn btn-danger">FEEDBACK</button>
+
+        <button *ngIf="!isAdmin && route.url !== '/carhistory'" type="button" class="btn btn-danger">ALUGAR</button>
 
         <section class="editremove">
             <button *ngIf="isAdmin" class="edit">EDITAR</button>
             <button *ngIf="isAdmin" class="remove">REMOVER</button>
-          </section>
+        </section>
     </div>
 </div>
 

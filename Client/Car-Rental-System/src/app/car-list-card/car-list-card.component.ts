@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-car-list-card',
@@ -17,7 +18,7 @@ export class CarListCardComponent implements OnInit {
     @Input() tipoCombustivel!: string;
     @Input() preco!: string;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, public route: Router) { }
 
   isClient = this.authService.isClient;
   isAdmin = this.authService.isAdmin;

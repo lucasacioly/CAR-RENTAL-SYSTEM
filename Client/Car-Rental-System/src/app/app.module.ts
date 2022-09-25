@@ -19,6 +19,7 @@ import { EditCarPageComponent } from './edit-car-page/edit-car-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
+import { CarHistoryComponent } from './car-history/car-history.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { environment } from 'src/environments/environment';
     ListFiltersComponent,
     ClientRegistrationComponent,
     EditCarPageComponent,
+    CarHistoryComponent,
 
   ],
   imports: [
