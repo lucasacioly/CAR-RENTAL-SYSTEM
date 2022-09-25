@@ -21,7 +21,7 @@ describe('CarListComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should go to location page', fakeAsync((): void => {
+  /*it('should go to location page', fakeAsync((): void => {
     // observa a função de navegar para a página de locação
     spyOn(component, 'navigate_to_location_page')
 
@@ -33,5 +33,5 @@ describe('CarListComponent', () => {
     // espera-se que a função de navegar para página de locação seja chamada
     expect(component.navigate_to_location_page).toHaveBeenCalled()
 
-  }))
+  }))*/
 });

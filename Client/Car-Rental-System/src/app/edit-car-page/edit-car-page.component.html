@@ -11,76 +11,75 @@
 
   <h1>Editar Carro</h1>
 
-  <section class="form-container">
+  <form [formGroup]="editCarForm" class="form-container" (ngSubmit)="onSubmit()">
     <!-- Coluna da direita -->
     <div class="col-left">
         <section class="sec">
             <p class="marca">Marca:</p>
-            <input type="text" class="marca-txt" value="foo">
+            <input type="text" class="marca-txt" value="foo" formControlName="marca">
         </section>
 
         <section class="sec">
             <p class="ano">Ano:</p>
-            <input type="text" class="ano-txt" value="foo">
+            <input type="text" class="ano-txt" value="foo" formControlName="ano">
         </section>
 
         <section class="sec">
             <p class="direcao">Direção:</p>
-            <input type="text" class="direcao-txt" value="foo">
+            <input type="text" class="direcao-txt" value="foo" formControlName="direcao">
         </section>
 
         <section class="sec">
             <p class="combustivel">Combustível:</p>
-            <input type="text" class="comb-txt" value="foo">
+            <input type="text" class="comb-txt" value="foo" formControlName="tipoCombustivel">
         </section>
 
         <section class="sec">
             <p class="bagage">Tamanho do bagageiro:</p>
-            <input type="text" class="bagage-txt" value="foo">
+            <input type="text" class="bagage-txt" value="foo" formControlName="tamanhoMala">
         </section>
 
-        <div class="button-photo">
-
-            <button class="button"><img class="camera" src="assets/camera.png">Upload Foto</button>
-
-        </div>
+        <section class="sec">
+            <p class="bagage">Link da imagem:</p>
+            <input type="text" class="bagage-txt" value="foo" formControlName="imagem">
+        </section>
     </div>
 
     <!-- Coluna da direita -->
     <div class="col-right">
         <section class="sec">
             <p class="modelo">Modelo:</p>
-            <input type="text" class="modelo-txt" value="foo">
+            <input type="text" class="modelo-txt" value="foo" formControlName="nome">
         </section>
 
         <section class="sec">
             <p class="categoria">Categoria:</p>
-            <input type="text" class="categ-txt" value="foo">
+            <input type="text" class="categ-txt" value="foo" formControlName="categoria">
         </section>
 
         <section class="sec">
             <p class="cambio">Câmbio:</p>
-            <input type="text" class="cambio-txt" value="foo">
+            <input type="text" class="cambio-txt" value="foo" formControlName="cambio">
         </section>
 
         <section class="sec">
             <p class="assentos">Quantidade de Assentos:</p>
-            <input type="text" class="assentos-txt" value="foo">
+            <input type="text" class="assentos-txt" value="foo" formControlName="totAssentos">
         </section>
 
         <section class="sec">
             <p class="diaria">Preço da diária:</p>
-            <input type="text" class="diaria-txt" value="foo">
+            <input type="text" class="diaria-txt" value="foo" formControlName="preco">
         </section>
 
         <div class="button-confirm">
 
-            <button type="submit" (click)="navigate_to_car_list_page()" class="button"><img class="disket" src="assets/disket.png">Salvar</button>
+            <button type="submit" class="button"><img class="disket" src="assets/disket.png">Salvar</button>
 
         </div>
     </div>
 
-  </section>
+</form>
 
 
 </section>

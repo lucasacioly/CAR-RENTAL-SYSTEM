@@ -13,6 +13,8 @@ export class AddCarPageComponent implements OnInit {
   addCarForm = this.formBuilder.group({
     marca: '',
     nome: '',
+    ano: 2022,
+    direcao: '',
     imagem: '',
     categoria: '',
     totAssentos: '',
@@ -41,6 +43,8 @@ export class AddCarPageComponent implements OnInit {
     console.log(this.addCarForm.value.nome!)
     this.carService.addCar(this.addCarForm.value.nome!,
       this.addCarForm.value.marca!,
+      this.addCarForm.value.ano!,
+      this.addCarForm.value.direcao!,
       this.addCarForm.value.imagem!,
       this.addCarForm.value.categoria!,
       this.addCarForm.value.totAssentos!,

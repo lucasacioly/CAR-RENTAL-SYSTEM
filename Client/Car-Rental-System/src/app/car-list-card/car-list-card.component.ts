@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { CarService } from '../car.service';
+import { EditCarPageComponent } from '../edit-car-page/edit-car-page.component';
 
 @Component({
   selector: 'app-car-list-card',
@@ -20,7 +21,10 @@ export class CarListCardComponent implements OnInit {
   @Input() tipoCombustivel!: string;
   @Input() preco!: string;
 
-  constructor(private authService: AuthService, public route: Router, private carService: CarService) { }
+  constructor(private authService: AuthService,
+     public route: Router,
+      private carService: CarService,
+      private editCarPage: EditCarPageComponent) { }
 
   isClient = this.authService.isClient;
   isAdmin = this.authService.isAdmin;
@@ -39,6 +43,11 @@ export class CarListCardComponent implements OnInit {
   removeCar(id: string) {
     console.log(id);
     this.carService.removeCar(parseInt(id, 10));
+  }
+
+  editCar(id: string) {
+    this.editCarPage.editCarFormBuilder(this.carService.getCar(Number(id))!)
+    this.route.navigate(['/editcar'])
   }
 
 }
