@@ -43,7 +43,7 @@
         <button *ngIf="!isAdmin && route.url !== '/carhistory'" (click)="navigate_to_location_page()" type="button" class="btn btn-danger">ALUGAR</button>
 
         <section class="editremove">
-            <button *ngIf="isAdmin" (click)="navigate_to_edit_page()" class="edit">EDITAR</button>
+            <button *ngIf="isAdmin" (click)="editCar(id)" class="edit">EDITAR</button>
             <button *ngIf="isAdmin" (click)="removeCar(id)" class="remove">REMOVER</button>
           </section>
     </div>
