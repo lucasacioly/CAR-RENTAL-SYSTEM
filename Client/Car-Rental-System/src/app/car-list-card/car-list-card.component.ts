@@ -28,6 +28,14 @@ export class CarListCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  navigate_to_edit_page(){
+    this.route.navigate(['/editcar'])
+  }
+
+  navigate_to_location_page(){
+    this.route.navigate(['/location'])
+  }
+  
   removeCar(id: string) {
     console.log(id);
     this.carService.removeCar(parseInt(id, 10));

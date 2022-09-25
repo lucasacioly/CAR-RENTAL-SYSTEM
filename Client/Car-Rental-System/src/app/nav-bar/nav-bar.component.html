@@ -5,7 +5,7 @@
 
             <p class="nav_button_text"><a (click)="navigate_to_home_page()" class="nav_button">Home</a></p>
             <p class="nav_button_text"><a (click)="navigate_to_car_list()" class="nav_button" id="nav_button_carlist">Carros</a></p>
-            <p *ngIf="isClient && !isAdmin" class="nav_button_text"><a (click)="navigate_to_car_history_page()" class="nav_button">Car History</a></p>
+            <p *ngIf="isClient && !isAdmin" class="nav_button_text"><a (click)="navigate_to_car_history_page()" class="nav_button">Meus Aluguéis</a></p>
             <p *ngIf="isClient && !isAdmin" class="nav_button_text"><a (click)="navigate_to_feedback_page()" class="nav_button">Feedback</a></p>
             <p *ngIf="!isClient && isAdmin" class="nav_button_text"><a (click)="navigate_to_car_return_page()" class="nav_button">Devolução de carro</a></p>
 

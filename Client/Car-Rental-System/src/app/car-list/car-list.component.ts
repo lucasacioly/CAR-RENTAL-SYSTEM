@@ -19,14 +19,6 @@ export class CarListComponent implements OnInit {
     this.route.navigate(['/login'])
   }
 
-  navigate_to_location_page(){
-    this.route.navigate(['/location'])
-  }
-
-  navigate_to_edit_page(){
-    this.route.navigate(['/editcar'])
-  }
-
   navigate_to_add_car_page(){
     this.route.navigate(['/addcar'])
   }
