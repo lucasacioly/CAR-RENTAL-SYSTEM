@@ -74,7 +74,18 @@ export class EditCarPageComponent implements OnInit {
     console.log(car);
     
     this.carroId = car.id
-    this.editCarForm.setValue(car)
+    this.editCarForm.controls['id'].setValue(car.id)
+    this.editCarForm.controls['marca'].setValue(car.marca)
+    this.editCarForm.controls['nome'].setValue(car.nome)
+    this.editCarForm.controls['ano'].setValue(car.ano)
+    this.editCarForm.controls['direcao'].setValue(car.direcao)
+    this.editCarForm.controls['imagem'].setValue(car.imagem)
+    this.editCarForm.controls['categoria'].setValue(car.categoria)
+    this.editCarForm.controls['totAssentos'].setValue(car.totAssentos)
+    this.editCarForm.controls['cambio'].setValue(car.cambio)
+    this.editCarForm.controls['tipoCombustivel'].setValue(car.tipoCombustivel)
+    this.editCarForm.controls['tamanhoMala'].setValue(car.tamanhoMala)
+    this.editCarForm.controls['preco'].setValue(car.preco)
     console.log(this.editCarForm.value.marca!);
     
 
