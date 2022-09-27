@@ -18,7 +18,8 @@ export class CarService {
     cambio: 'Manual',
     tipoCombustivel: 'Flex',
     tamanhoMala: 'P',
-    preco: 57.00
+    preco: 57.00,
+    feedbacks: []
   },
   {
     id: 2,
@@ -32,7 +33,8 @@ export class CarService {
     cambio: 'Automático',
     tipoCombustivel: 'Flex',
     tamanhoMala: 'P',
-    preco: 65.00
+    preco: 65.00,
+    feedbacks: []
   },
   {
     id: 3,
@@ -46,7 +48,8 @@ export class CarService {
     cambio: 'Automático',
     tipoCombustivel: 'Flex',
     tamanhoMala: 'M',
-    preco: 132.00
+    preco: 132.00,
+    feedbacks: []
   },
   {
     id: 4,
@@ -60,7 +63,8 @@ export class CarService {
     cambio: 'Manual',
     tipoCombustivel: 'Flex',
     tamanhoMala: 'G',
-    preco: 150.00
+    preco: 150.00,
+    feedbacks: []
   },
   {
     id: 5,
@@ -74,7 +78,8 @@ export class CarService {
     cambio: 'Automático',
     tipoCombustivel: 'Gasolina',
     tamanhoMala: 'G',
-    preco: 200.00
+    preco: 200.00,
+    feedbacks: []
   },
   {
     id: 6,
@@ -88,7 +93,8 @@ export class CarService {
     cambio: 'Manual',
     tipoCombustivel: 'Gasolina',
     tamanhoMala: 'P',
-    preco: 60.00
+    preco: 60.00,
+    feedbacks: []
   },
   {
     id: 7,
@@ -102,7 +108,8 @@ export class CarService {
     cambio: 'Automático',
     tipoCombustivel: 'Gasolina',
     tamanhoMala: 'M',
-    preco: 170.00
+    preco: 170.00,
+    feedbacks: []
   },
   {
     id: 8,
@@ -116,7 +123,8 @@ export class CarService {
     cambio: 'Automático',
     tipoCombustivel: 'Gasolina',
     tamanhoMala: 'M',
-    preco: 250.00
+    preco: 250.00,
+    feedbacks: []
   },
 ]
 
@@ -144,7 +152,8 @@ export class CarService {
       cambio: cambio,
       tipoCombustivel: tipoCombustivel,
       tamanhoMala: tamanhoMala,
-      preco: preco
+      preco: preco,
+      feedbacks: []
     })
     console.log(nome);
   }
@@ -165,6 +174,19 @@ export class CarService {
     this.cars[index] = newCar
   }
 
+  addFeedback(id: number, feedback: FeedbackType) {
+    console.log(feedback.nome);
+    
+    let car = this.getCar(id)
+    let index = this.cars.indexOf(car!)
+    console.log(this.cars[index]);
+    
+    this.cars[index].feedbacks.push(feedback)
+    console.log(this.cars[index].feedbacks);
+    
+  }
+  
+
 }
 
 export interface CarType {
@@ -180,6 +202,12 @@ export interface CarType {
   tipoCombustivel: string
   tamanhoMala: string
   preco: number
+  feedbacks: FeedbackType[]
 
 }
 
+export interface FeedbackType {
+  nome: string
+  nota: number
+  descricao: string
+}

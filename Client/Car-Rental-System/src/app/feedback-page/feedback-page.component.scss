@@ -89,7 +89,7 @@
     font-size: 200%;
     background: var(--green);
     border-radius: 31px;
-    padding: 2%;
+    padding: 1%;
     @media (min-width: 1000px) {
       margin-left: 50%;
     }
@@ -105,4 +105,9 @@
       background-color: #346224;
   }
 
+
+  .car-img {
+    margin-top: 20px;
+    width: 500px;
+  }
 }
