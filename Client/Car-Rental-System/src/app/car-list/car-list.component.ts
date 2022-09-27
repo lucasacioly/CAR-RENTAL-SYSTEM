@@ -29,11 +29,13 @@ export class CarListComponent implements OnInit {
   cars = this.carService.cars;
   
   
+  
 
   ngOnInit(): void {
     if (this.carService.cars.length != this.cars.length) {
       this.cars = this.carService.cars
     }
+    console.log(this.cars);
   }
 
   ngDoCheck() {

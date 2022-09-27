@@ -38,7 +38,8 @@ export class EditCarPageComponent implements OnInit {
     cambio: '',
     tipoCombustivel: '',
     tamanhoMala: '',
-    preco: 0
+    preco: 0,
+    feedbacks: []
   }
 
   ngOnInit(): void {
@@ -93,6 +94,7 @@ export class EditCarPageComponent implements OnInit {
       tipoCombustivel: this.editCarForm.value.tipoCombustivel!,
       tamanhoMala: this.editCarForm.value.tamanhoMala!,
       preco: this.editCarForm.value.preco!,
+      feedbacks: this.carService.carTransition!.feedbacks
     }
     console.log(newCar);
     

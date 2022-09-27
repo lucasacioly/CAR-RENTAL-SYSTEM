@@ -38,7 +38,7 @@
 
     <div class="card-body">
 
-        <button *ngIf="!isAdmin && route.url === '/carhistory'" type="button" class="btn btn-danger">FEEDBACK</button>
+        <button *ngIf="!isAdmin && route.url === '/carhistory'" (click)="feedbackCar(id)" type="button" class="btn btn-danger">FEEDBACK</button>
 
         <button *ngIf="!isAdmin && route.url !== '/carhistory'" (click)="navigate_to_location_page()" type="button" class="btn btn-danger">ALUGAR</button>
 

@@ -3,6 +3,7 @@ import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { CarService } from '../car.service';
 import { EditCarPageComponent } from '../edit-car-page/edit-car-page.component';
+import { FeedbackPageComponent } from '../feedback-page/feedback-page.component';
 
 @Component({
   selector: 'app-car-list-card',
@@ -24,11 +25,12 @@ export class CarListCardComponent implements OnInit {
   constructor(private authService: AuthService,
      public route: Router,
       private carService: CarService,
-      private editCarPage: EditCarPageComponent) { }
+      private editCarPage: EditCarPageComponent,
+      private feedbackPage: FeedbackPageComponent) { }
 
   isClient = this.authService.isClient;
   isAdmin = this.authService.isAdmin;
-
+  
   ngOnInit(): void {
   }
 
@@ -46,8 +48,21 @@ export class CarListCardComponent implements OnInit {
   }
 
   editCar(id: string) {
+    console.log(id);
+    
     this.editCarPage.editCarFormBuilder(this.carService.getCar(Number(id))!)
     this.route.navigate(['/editcar'])
+  }
+
+  feedbackCar(id: string) {
+    console.log(Number(id));
+    console.log(this.carService.cars);
+    
+    
+    console.log(this.carService.getCar(Number(id))!);
+    
+    this.feedbackPage.getFeedbackCar(this.carService.getCar(Number(id))!)
+    this.route.navigate(['feedback'])
   }
 
 }

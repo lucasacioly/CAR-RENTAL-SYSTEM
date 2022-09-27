@@ -1,38 +1,26 @@
 <app-nav-bar></app-nav-bar>
 
-<nav class="feedback-container">
+<form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()" class="feedback-container">
     <img (click)="navigate_to_home_page()" class="titles" src="assets/AluCar.png" alt="">
     <h1 class="titles">FEEDBACK DO CARRO</h1>
     <section class="question">
         <h2 class="titles">O carro cumpriu com as expectativas?</h2>
-        <section class="stars">
-            <img src="assets/star.svg" alt="" class="star-vote">
-            <img src="assets/star.svg" alt="" class="star-vote">
-            <img src="assets/star.svg" alt="" class="star-vote">
-            <img src="assets/star.svg" alt="" class="star-vote">
-            <img src="assets/star.svg" alt="" class="star-vote">
-        </section>
+        <select formControlName="avaliacao" class="form-control" type="text">
+            <option *ngFor="let nota of notas"
+                [value]="nota">{{nota}}</option>
+        </select>
+        <img src="{{imagem}}" class="car-img">
     </section>
 
-    <section class="question">
-        <h2 class="titles">O quanto você recomendaria o AluCar?</h2>
-
-        <section class="stars">
-            <img src="assets/star.svg" alt="" class="star-vote">
-            <img src="assets/star.svg" alt="" class="star-vote">
-            <img src="assets/star.svg" alt="" class="star-vote">
-            <img src="assets/star.svg" alt="" class="star-vote">
-            <img src="assets/star.svg" alt="" class="star-vote">
-        </section>
-    </section>
+    
 
     <section class="question" id="obs">
         <h2 class="titles">Observações</h2>
 
-        <textarea name="observacoes" cols="60" rows="7"></textarea>
+        <textarea formControlName="descricao" name="observacoes" cols="50" rows="5"></textarea>
     </section>
 
-    <button (click)="navigate_to_home_page()" class="submit-button titles">
+    <button type="submit" class="submit-button titles button">
         ENVIAR
     </button>
-</nav>
+</form>
