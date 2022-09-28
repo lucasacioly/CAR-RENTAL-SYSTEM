@@ -1,18 +1,18 @@
 .general{
     display: flex;
     flex-direction: column;
-  
+
     .container{
       display: flex;
       flex-direction: column;
       align-items: center;
-  
+
       .logo{
         margin-top: 10px;
         height: 8%;
         margin-bottom: 3px;
       }
-  
+
       .topbar{
         display: flex;
         width: 100%;
@@ -33,12 +33,12 @@
           width: 100%;
           display: flex;
           justify-content: flex-end;
-  
+
         }
-  
+
       }
-  
-  
+
+
     }
     .estruction{
       display: flex;
@@ -50,11 +50,19 @@
       .car-cards{
         display: grid;
         flex-direction: row;
-        grid-template-columns: 1fr 1fr 1fr;
+        @media (min-width: 1200px) {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+        @media (max-width: 1200px) and (min-width: 800px) {
+          grid-template-columns: 1fr 1fr;
+        }
+        @media (max-width: 800px) {
+          grid-template-columns: 1fr;
+        }
       }
       // depois deixar responsivo colocando 2 colunas ou 1 coluna
       // dependendo do tamanho da tela
-      
-  
+
+
     }
   }

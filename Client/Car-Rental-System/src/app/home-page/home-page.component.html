@@ -7,9 +7,9 @@
     <section class="showcase">
         <h2>PROMOÇÕES</h2>
         <section class="car-images">
-            <img (click)="navigate_to_location_page()" src="assets/carro2.png" class="fix-car">
-            <img (click)="navigate_to_location_page()" src="assets/carro1.png">
-            <img (click)="navigate_to_location_page()" src="assets/carro7.png">
+            <img [routerLink]="['/location', 8]" src="assets/carro2.png" class="fix-car">
+            <img [routerLink]="['/location', 7]" src="assets/carro1.png">
+            <img [routerLink]="['/location', 5]" src="assets/carro7.png">
         </section>
         <a (click)="navigate_to_car_list()" class="lista">ver lista completa</a>
     </section>
@@ -17,9 +17,9 @@
     <section class="showcase">
         <h2>MAIS ALUGADOS</h2>
         <section class="car-images">
-            <img (click)="navigate_to_location_page()" src="assets/carro8.png" class="fix-car">
-            <img (click)="navigate_to_location_page()" src="assets/carro4.png" class="fix-car fix-car-red" >
-            <img (click)="navigate_to_location_page()" src="assets/carro9.png" class="fix-car wrong-car">
+            <img [routerLink]="['/location', 5]" src="assets/carro8.png" class="fix-car">
+            <img [routerLink]="['/location', 4]" src="assets/carro4.png" class="fix-car fix-car-red" >
+            <img [routerLink]="['/location', 6]" src="assets/carro9.png" class="fix-car wrong-car">
         </section>
         <a (click)="navigate_to_car_list()" class="lista">ver lista completa</a>
     </section>
