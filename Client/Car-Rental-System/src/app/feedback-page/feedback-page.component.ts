@@ -49,23 +49,26 @@ export class FeedbackPageComponent implements OnInit {
   ngOnInit(): void {
     this.newCar = this.carService.carTransition!
     console.log(this.newCar);
-    
+
     this.getFeedbackCar(this.newCar)
   }
+
+  isClient = this.authService.isClient;
+  isAdmin = this.authService.isAdmin;
 
   onSubmit() {
     console.log(this.feedbackForm.value.avaliacao!);
     console.log(this.feedbackForm.value.descricao!);
     console.log(this.authService.clientName);
-    
-    
+
+
     let newFeedback: FeedbackType = {
       nome: this.authService.clientName,
       nota: Number(this.feedbackForm.value.avaliacao!),
       descricao: this.feedbackForm.value.descricao!
     }
 
-    
+
     this.carService.addFeedback(this.newCar.id, newFeedback)
     this.feedbackForm.reset();
     this.route.navigate(['/carhistory'])

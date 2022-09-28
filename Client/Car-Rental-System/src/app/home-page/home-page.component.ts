@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CarService, CarType } from '../car.service';
 
 @Component({
   selector: 'app-home-page',
@@ -8,16 +9,13 @@ import { Router } from '@angular/router';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(private route: Router) {
+  constructor(private route: Router, private carService: CarService, ) {
 
   }
+
 
   navigate_to_car_list(){
     this.route.navigate(['/carlist'])
-  }
-
-  navigate_to_location_page(){
-    this.route.navigate(['/location'])
   }
 
   ngOnInit(): void {

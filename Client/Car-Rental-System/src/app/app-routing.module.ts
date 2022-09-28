@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'addcar', component: AddCarPageComponent},
   { path: 'carlist', component: CarListComponent},
   { path: 'carreturn', component: CarReturnComponent},
-  { path: 'location', component: LocationPageComponent},
+  { path: 'location/:id', component: LocationPageComponent},
   { path: 'feedback', component: FeedbackPageComponent},
   { path: 'options', component: OptionsLocationComponent},
   { path: 'clientregistration', component: ClientRegistrationComponent},

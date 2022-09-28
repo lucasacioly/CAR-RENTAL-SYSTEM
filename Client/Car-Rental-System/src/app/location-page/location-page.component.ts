@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { ParamMap, Route, Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { CarType, CarService } from '../car.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-location-page',
@@ -8,8 +10,7 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./location-page.component.scss']
 })
 export class LocationPageComponent implements OnInit {
-
-  constructor(private route: Router, private authService: AuthService) { }
+  constructor(private route: Router, private authService: AuthService, private routeActivated: ActivatedRoute, private carService: CarService) { }
 
   navigate_to_accessories(){
     this.route.navigate(['/options'])
@@ -32,8 +33,28 @@ export class LocationPageComponent implements OnInit {
     }
   }
 
+  selectedCar: CarType = {
+    id: 0,
+    marca: '',
+    nome: '',
+    ano: 2022,
+    direcao: '',
+    imagem: '',
+    categoria: '',
+    totAssentos: '',
+    cambio: '',
+    tipoCombustivel: '',
+    tamanhoMala: '',
+    preco: 0,
+    feedbacks: []
+  }
+
+  id = 0
+
   ngOnInit(): void {
     this.PastDateTime();
+    this.id = +this.routeActivated.snapshot.paramMap.get('id')!
+    this.selectedCar = this.carService.getCar(this.id)!
   }
 
   isClient = this.authService.isClient;
@@ -66,7 +87,7 @@ export class LocationPageComponent implements OnInit {
       this.values="";
       alert("Please, select a valid date and time");
     }
-    
+
 
   }
 }

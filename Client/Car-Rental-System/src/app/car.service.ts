@@ -79,7 +79,16 @@ export class CarService {
     tipoCombustivel: 'Gasolina',
     tamanhoMala: 'G',
     preco: 200.00,
-    feedbacks: []
+    feedbacks: [{
+      nome: 'Gustavo',
+      nota: 5,
+      descricao: 'Carro muito confortável, com uma mala grande, mas com preço um pouco caro!'
+    },
+    {
+      nome: 'Marina',
+      nota: 3,
+      descricao: 'MUITO CARO!!!!! Confortável, mas não vale pelo preço'
+    }]
   },
   {
     id: 6,
@@ -94,7 +103,11 @@ export class CarService {
     tipoCombustivel: 'Gasolina',
     tamanhoMala: 'P',
     preco: 60.00,
-    feedbacks: []
+    feedbacks: [{
+      nome: 'Yuri',
+      nota: 4,
+      descricao: 'Gostei muito do carro, preço justo, só achei a mala um pouco pequena'
+    }]
   },
   {
     id: 7,
@@ -176,16 +189,15 @@ export class CarService {
 
   addFeedback(id: number, feedback: FeedbackType) {
     console.log(feedback.nome);
-    
+
     let car = this.getCar(id)
     let index = this.cars.indexOf(car!)
     console.log(this.cars[index]);
-    
+
     this.cars[index].feedbacks.push(feedback)
     console.log(this.cars[index].feedbacks);
-    
+
   }
-  
 
 }
 

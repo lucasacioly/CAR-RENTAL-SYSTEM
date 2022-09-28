@@ -5,7 +5,7 @@
     <h1 class="titles">LOCAÇÃO</h1>
 
     <div class="image">
-        <img src="assets/carro1.png" class="img-fluid" alt="Responsive image">
+        <img src="{{this.selectedCar.imagem}}" class="imagemPrincipal" alt="Responsive image">
     </div>
 
     <div class="rental">
@@ -18,37 +18,37 @@
                     <tbody>
                         <tr>
                             <td>Marca</td>
-                            <td>Otto</td>
+                            <td>{{this.selectedCar.marca}}</td>
                         </tr>
 
                         <tr>
                             <td>Modelo</td>
-                            <td>Otto</td>
+                            <td>{{this.selectedCar.nome}}</td>
                         </tr>
 
                         <tr>
                             <td>Categoria</td>
-                            <td>Otto</td>
+                            <td>{{this.selectedCar.categoria}}</td>
                         </tr>
 
                         <tr>
                             <td>Câmbio</td>
-                            <td>Otto</td>
+                            <td>{{this.selectedCar.cambio}}</td>
                         </tr>
 
                         <tr>
                             <td>Assentos</td>
-                            <td>Otto</td>
+                            <td>{{this.selectedCar.totAssentos}}</td>
                         </tr>
 
                         <tr>
                             <td>Bagageiro</td>
-                            <td>Otto</td>
+                            <td>{{this.selectedCar.tamanhoMala}}</td>
                         </tr>
 
                         <tr>
                             <td>Combustível</td>
-                            <td>Otto</td>
+                            <td>{{this.selectedCar.tipoCombustivel}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -75,9 +75,11 @@
 
 
     <section class="feedback-card-section">
-      <app-card-feedback class="feedback-card"></app-card-feedback>
-
-      <app-card-feedback class="feedback-card"></app-card-feedback>
+        <app-card-feedback  *ngFor="let feedback of selectedCar.feedbacks"
+            nome={{feedback.nome}}
+            nota={{feedback.nota}}
+            descricao={{feedback.descricao}}
+        ></app-card-feedback>
     </section>
 
 

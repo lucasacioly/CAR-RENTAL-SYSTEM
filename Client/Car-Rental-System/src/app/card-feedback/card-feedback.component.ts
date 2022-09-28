@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-card-feedback',
@@ -6,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card-feedback.component.scss']
 })
 export class CardFeedbackComponent implements OnInit {
+
+  @Input() nome!: string;
+  @Input() nota!: string;
+  @Input() descricao!: string;
+
 
   constructor() { }
 

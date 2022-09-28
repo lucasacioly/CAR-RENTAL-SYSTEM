@@ -50,11 +50,19 @@
     .car-cards{
       display: grid;
       flex-direction: row;
-      grid-template-columns: 1fr 1fr 1fr;
+      @media (min-width: 1200px) {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      @media (max-width: 1200px) and (min-width: 800px) {
+        grid-template-columns: 1fr 1fr;
+      }
+      @media (max-width: 800px) {
+        grid-template-columns: 1fr;
+      }
     }
     // depois deixar responsivo colocando 2 colunas ou 1 coluna
     // dependendo do tamanho da tela
-    
+
 
   }
 }
