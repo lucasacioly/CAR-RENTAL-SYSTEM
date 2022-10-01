@@ -1,10 +1,19 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarService {
-  constructor() {}
+  constructor(private http: HttpClient) {}
+
+  getAllCars(): Observable<CarType[]>{
+    return this.http.get<CarType[]>(`${environment.url}/car`);
+  }
+
   carTransition: CarType | undefined = undefined
   public cars: CarType[] = [{
     id: 1,
@@ -223,3 +232,4 @@ export interface FeedbackType {
   nota: number
   descricao: string
 }
+

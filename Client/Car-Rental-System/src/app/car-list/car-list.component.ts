@@ -1,7 +1,8 @@
 import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
-import { CarService } from '../car.service';
+import { CarService, CarType} from '../car.service';
+
 @Component({
   selector: 'app-car-list',
   templateUrl: './car-list.component.html',
@@ -26,21 +27,36 @@ export class CarListComponent implements OnInit {
 
   isClient = this.authService.isClient;
   isAdmin = this.authService.isAdmin;
-  cars = this.carService.cars;
-  
-  
-  
+  listaCarros : CarType[] = [];
+
+
+  getAllCars() {
+    return this.carService.getAllCars().subscribe({
+      next: (cars) =>{
+        this.listaCarros = cars;
+        console.log(this.listaCarros);
+      },
+      error: () => {
+        alert("fudeu")
+      }
+    })
+  }
 
   ngOnInit(): void {
+    /*
     if (this.carService.cars.length != this.cars.length) {
       this.cars = this.carService.cars
     }
-    console.log(this.cars);
+    console.log(this.cars);*/
+    this.getAllCars();
+    console.log(this.listaCarros);
   }
 
   ngDoCheck() {
+    /*
     console.log(this.carService.cars);
-    this.cars = this.carService.cars;
+    this.cars = this.carService.cars;*/
+    //this.getAllCars();
   }
 
 

@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'login', component: LoginPageComponent },
   { path: 'addcar', component: AddCarPageComponent},
   { path: 'carlist', component: CarListComponent},
-  { path: 'carreturn', component: CarReturnComponent},
+  { path: 'carreturn/:id', component: CarReturnComponent},
   { path: 'location/:id', component: LocationPageComponent},
   { path: 'feedback', component: FeedbackPageComponent},
   { path: 'options', component: OptionsLocationComponent},
