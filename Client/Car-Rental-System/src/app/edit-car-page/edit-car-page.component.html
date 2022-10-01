@@ -16,7 +16,10 @@
     <div class="col-left">
         <section class="sec">
             <p class="marca">Marca:</p>
-            <input type="text" class="marca-txt" value="foo" formControlName="marca">
+            <select formControlName="marca" class="marca-txt" type="text">
+              <option *ngFor="let marca of Marca"
+                  [value]="Marca">{{marca}}</option>
+          </select>
         </section>
 
         <section class="sec">
@@ -26,17 +29,26 @@
 
         <section class="sec">
             <p class="direcao">Direção:</p>
-            <input type="text" class="direcao-txt" value="foo" formControlName="direcao">
+            <select formControlName="direcao" class="direcao-txt" type="text">
+              <option *ngFor="let direcao of Direcao"
+                  [value]="Direcao">{{direcao}}</option>
+          </select>
         </section>
 
         <section class="sec">
             <p class="combustivel">Combustível:</p>
-            <input type="text" class="comb-txt" value="foo" formControlName="tipoCombustivel">
+            <select formControlName="tipoCombustivel" class="comb-txt" type="text">
+              <option *ngFor="let combustivel of Combustivel"
+                  [value]="Combustivel">{{combustivel}}</option>
+          </select>
         </section>
 
         <section class="sec">
             <p class="bagage">Tamanho do bagageiro:</p>
-            <input type="text" class="bagage-txt" value="foo" formControlName="tamanhoMala">
+            <select formControlName="tamanhoMala" class="bagage-txt" type="text">
+              <option *ngFor="let bagageiro of Bagageiro"
+                  [value]="Bagageiro">{{bagageiro}}</option>
+          </select>
         </section>
 
         <section class="sec">
@@ -54,17 +66,29 @@
 
         <section class="sec">
             <p class="categoria">Categoria:</p>
-            <input type="text" class="categ-txt" value="foo" formControlName="categoria">
+            <select formControlName="categoria" class="categ-txt" type="text">
+              <option *ngFor="let categoria of Categoria"
+                  [value]="Categoria">{{categoria}}</option>
+          </select>
         </section>
 
         <section class="sec">
             <p class="cambio">Câmbio:</p>
-            <input type="text" class="cambio-txt" value="foo" formControlName="cambio">
+            <select formControlName="cambio" class="cambio-txt" type="text">
+              <!--option *ngFor="let cambio of Cambio"
+                  [value]="Cambio">{{cambio}}</option-->
+              <option value="" selected="selected">{{this.selectedCar.cambio}}</option>
+              <option value="manual">Manual</option>
+              <option value="automatico">Automatico</option>
+          </select>
         </section>
 
         <section class="sec">
             <p class="assentos">Quantidade de Assentos:</p>
-            <input type="text" class="assentos-txt" value="foo" formControlName="totAssentos">
+            <select formControlName="totAssentos" class="assentos-txt" type="text" defa>
+              <option *ngFor="let assentos of Assentos"
+                  [value]="Assentos">{{assentos}}</option>
+          </select>
         </section>
 
         <section class="sec">

@@ -30,7 +30,7 @@ export class CarListCardComponent implements OnInit {
 
   isClient = this.authService.isClient;
   isAdmin = this.authService.isAdmin;
-  
+
   ngOnInit(): void {
   }
 
@@ -41,7 +41,7 @@ export class CarListCardComponent implements OnInit {
   navigate_to_location_page(){
     this.route.navigate(['/location'])
   }
-  
+
   removeCar(id: string) {
     console.log(id);
     this.carService.removeCar(parseInt(id, 10));
@@ -49,7 +49,7 @@ export class CarListCardComponent implements OnInit {
 
   editCar(id: string) {
     console.log(id);
-    
+
     this.editCarPage.editCarFormBuilder(this.carService.getCar(Number(id))!)
     this.route.navigate(['/editcar'])
   }
@@ -57,10 +57,10 @@ export class CarListCardComponent implements OnInit {
   feedbackCar(id: string) {
     console.log(Number(id));
     console.log(this.carService.cars);
-    
-    
+
+
     console.log(this.carService.getCar(Number(id))!);
-    
+
     this.feedbackPage.getFeedbackCar(this.carService.getCar(Number(id))!)
     this.route.navigate(['feedback'])
   }

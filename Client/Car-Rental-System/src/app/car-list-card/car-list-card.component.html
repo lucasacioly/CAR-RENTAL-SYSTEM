@@ -38,12 +38,12 @@
 
     <div class="card-body">
 
-        <button *ngIf="!isAdmin && route.url === '/carhistory'" (click)="feedbackCar(id)" type="button" class="btn btn-danger">FEEDBACK</button>
+        <button *ngIf="!isAdmin && route.url === '/carhistory'" [routerLink]="['/feedback', id]" type="button" class="btn btn-danger">FEEDBACK</button>
 
         <button *ngIf="!isAdmin && route.url !== '/carhistory'" [routerLink]="['/location', id]" type="button" class="btn btn-danger">ALUGAR</button>
 
         <section class="editremove">
-            <button *ngIf="isAdmin" (click)="editCar(id)" class="edit">EDITAR</button>
+            <button *ngIf="isAdmin" [routerLink]="['/editcar', id]" class="edit">EDITAR</button>
             <button *ngIf="isAdmin" (click)="removeCar(id)" class="remove">REMOVER</button>
           </section>
     </div>
