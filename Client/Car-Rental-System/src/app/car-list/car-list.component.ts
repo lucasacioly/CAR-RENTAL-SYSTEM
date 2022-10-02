@@ -52,12 +52,13 @@ export class CarListComponent implements OnInit {
     console.log(this.listaCarros);
   }
 
+  /*
   ngDoCheck() {
-    /*
+
     console.log(this.carService.cars);
-    this.cars = this.carService.cars;*/
+    this.cars = this.carService.cars;
     //this.getAllCars();
   }
-
+  */
 
 }

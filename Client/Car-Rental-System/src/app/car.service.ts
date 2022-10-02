@@ -43,6 +43,10 @@ export class CarService {
       return this.http.post<any>(`${environment.url}/car`, newCar)
     }
 
+  removeCar(id : string) : Observable<any> {
+    return this.http.delete<any>(`${environment.url}/car/${id}`)
+  }
+
   carTransition: CarType | undefined = undefined
   public cars: CarType[] = [{
     id: 1,
@@ -209,10 +213,11 @@ export class CarService {
     console.log(nome);
   } */
 
+  /*
   removeCar(id: number) {
     this.cars = this.cars.filter(car => car.id != id)
     console.log(this.cars.length)
-  }
+  }*/
 
   getCar(id: number) {
     this.carTransition = this.cars.find(car => car.id == id)
