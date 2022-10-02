@@ -86,12 +86,13 @@ export class LocationPageComponent implements OnInit {
 
     this.selectedCar = this.carService.getCar(this.id)!
     this.getCarFeedbacks()
+    this.getCar(String(this.id))
   }
 
   listaFeedback : FeedbackType[] = []
-  
-  this.getCar(String(this.id))
-   
+
+
+
   getCarFeedbacks(){
     this.carService.getCarFeedbacks(this.id).subscribe({
       next: (feedbacks) => {
@@ -102,7 +103,7 @@ export class LocationPageComponent implements OnInit {
       }
     })
 
-   
+
 
   }
 
