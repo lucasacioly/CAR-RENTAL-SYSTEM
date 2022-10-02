@@ -24,6 +24,21 @@ export class OptionsLocationComponent implements OnInit {
   devolucao = ''
   total = 0
 
+  seguros = [
+    {name: 'Proteção de Vidros', value : 18},
+    {name: 'Proteção de Pneus', value : 14},
+    {name: 'Cobertura para Terceiros ', value : 10},
+    {name : 'Seguro Premium', value : 45}
+  ];
+
+  acessorios = [
+    {name: 'GPS', value : 50},
+    {name: 'Wi-Fi', value : 50},
+    {name: 'Limpeza do Veículo', value : 30},
+    {name: 'Bebê Conforto', value : 20},
+    {name: 'Assento de Elevação', value : 20}
+  ]
+
   selectedCar: CarType = {
     id: 0,
     marca: '',
@@ -42,6 +57,24 @@ export class OptionsLocationComponent implements OnInit {
   }
 
   imagem = ''
+
+  onChange(value: number, event : any, type : string): void {
+    if (type === '1') {
+      if (event.target.checked) {
+        this.total += value*this.dias;
+      } else {
+        this.total -= value*this.dias;
+      }
+    }
+    else if (type === '2') {
+      if (event.target.checked) {
+        this.total += value;
+      } else {
+        this.total -= value;
+      }
+    }
+
+  }
 
   getDayDiff(startDate: string, endDate: string) {
     const msInDay = 24 * 60 * 60 * 1000;

@@ -16,41 +16,41 @@
 
                 <div class="input-group mb-3">
                         <div class="input-group-text">
-                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1" aria-label="Checkbox for following text input">
+                            <input class="form-check-input mt-0" type="checkbox" (change)="onChange(seguros[0].value, $event, '1')" value="" id="defaultCheck1" aria-label="Checkbox for following text input">
                         </div>
 
                         <label class="form-control" for="defaultCheck1" aria-label="Text input with checkbox">
-                            Proteção de Vidros - R$ 18,00 / dia
+                            {{seguros[0].name}} - R$ {{seguros[0].value}} / dia
                         </label>
                   </div>
 
                 <div class="input-group mb-3">
                         <div class="input-group-text">
-                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1" aria-label="Checkbox for following text input">
+                            <input class="form-check-input mt-0" type="checkbox" (change)="onChange(seguros[1].value, $event, '1')" value="" id="defaultCheck1" aria-label="Checkbox for following text input">
                         </div>
 
                         <label class="form-control" for="defaultCheck1" aria-label="Text input with checkbox">
-                            Proteção de Pneus - R$ 14,00 / dia
+                          {{seguros[1].name}} - R$ {{seguros[1].value}} / dia
                         </label>
                   </div>
 
                   <div class="input-group mb-3">
                         <div class="input-group-text">
-                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1" aria-label="Checkbox for following text input">
+                            <input class="form-check-input mt-0" type="checkbox" (change)="onChange(seguros[2].value, $event, '1')" value="" id="defaultCheck1" aria-label="Checkbox for following text input">
                         </div>
 
                         <label class="form-control" for="defaultCheck1" aria-label="Text input with checkbox">
-                            Cobertura para Terceiros - R$ 10,00 / dia
+                          {{seguros[2].name}} - R$ {{seguros[2].value}} / dia
                         </label>
                   </div>
 
                   <div class="input-group mb-3">
                         <div class="input-group-text">
-                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1" aria-label="Checkbox for following text input">
+                            <input class="form-check-input mt-0" type="checkbox" (change)="onChange(seguros[3].value, $event, '1')" value="" id="defaultCheck1" aria-label="Checkbox for following text input">
                         </div>
 
                         <label class="form-control" for="defaultCheck1" aria-label="Text input with checkbox">
-                            Seguro Premium - R$ 45,00 / dia
+                          {{seguros[3].name}} - R$ {{seguros[3].value}} / dia
                         </label>
                   </div>
 
@@ -61,51 +61,51 @@
 
                 <div class="input-group mb-3">
                         <div class="input-group-text">
-                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1" aria-label="Checkbox for following text input">
+                            <input class="form-check-input mt-0" type="checkbox" (change)="onChange(acessorios[0].value, $event, '2')" value="" id="defaultCheck1" aria-label="Checkbox for following text input">
                         </div>
 
                         <label class="form-control" for="defaultCheck1" aria-label="Text input with checkbox">
-                            GPS - R$ 50,00
+                          {{acessorios[0].name}} - R$ {{acessorios[0].value}}
                         </label>
                   </div>
 
                   <div class="input-group mb-3">
                         <div class="input-group-text">
-                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1" aria-label="Checkbox for following text input">
+                            <input class="form-check-input mt-0" type="checkbox" (change)="onChange(acessorios[1].value, $event, '2')" value="" id="defaultCheck1" aria-label="Checkbox for following text input">
                         </div>
 
                         <label class="form-control" for="defaultCheck1" aria-label="Text input with checkbox">
-                            Wi-Fi - R$ 50,00
+                          {{acessorios[1].name}} - R$ {{acessorios[1].value}}
                         </label>
                   </div>
 
                   <div class="input-group mb-3">
                         <div class="input-group-text">
-                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1" aria-label="Checkbox for following text input">
+                            <input class="form-check-input mt-0" type="checkbox" (change)="onChange(acessorios[2].value, $event, '2')" value="" id="defaultCheck1" aria-label="Checkbox for following text input">
                         </div>
 
                         <label class="form-control" for="defaultCheck1" aria-label="Text input with checkbox">
-                            Limpeza do Veículo - R$ 30,00
+                          {{acessorios[2].name}} - R$ {{acessorios[2].value}}
                         </label>
                   </div>
 
                   <div class="input-group mb-3">
                         <div class="input-group-text">
-                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1" aria-label="Checkbox for following text input">
+                            <input class="form-check-input mt-0" type="checkbox" (change)="onChange(acessorios[3].value, $event, '2')" value="" id="defaultCheck1" aria-label="Checkbox for following text input">
                         </div>
 
                         <label class="form-control" for="defaultCheck1" aria-label="Text input with checkbox">
-                            Bebê Conforto - R$ 25,00
+                          {{acessorios[3].name}} - R$ {{acessorios[3].value}}
                         </label>
                   </div>
 
                   <div class="input-group mb-3">
                         <div class="input-group-text">
-                            <input class="form-check-input mt-0" type="checkbox" value="" id="defaultCheck1" aria-label="Checkbox for following text input">
+                            <input class="form-check-input mt-0" type="checkbox" (change)="onChange(acessorios[4].value, $event, '2')" value="" id="defaultCheck1" aria-label="Checkbox for following text input">
                         </div>
 
                         <label class="form-control" for="defaultCheck1" aria-label="Text input with checkbox">
-                            Assento de Elevação - R$ 25,00
+                          {{acessorios[4].name}} - R$ {{acessorios[4].value}}
                         </label>
                   </div>
 
