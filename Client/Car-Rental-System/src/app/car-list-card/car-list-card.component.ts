@@ -29,7 +29,7 @@ export class CarListCardComponent implements OnInit {
     private carService: CarService,
     private editCarPage: EditCarPageComponent,
     private feedbackPage: FeedbackPageComponent,
-    public carList : CarListComponent) { }
+    private carList : CarListComponent) { }
 
   isClient = this.authService.isClient;
   isAdmin = this.authService.isAdmin;

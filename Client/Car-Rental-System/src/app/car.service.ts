@@ -14,6 +14,10 @@ export class CarService {
     return this.http.get<CarType[]>(`${environment.url}/car`);
   }
 
+  getAllCarsh(): Observable<CarType[]>{
+    return this.http.get<CarType[]>(`${environment.url}/car`);
+  }
+
   addCar(nome: string,
     marca: string,
     ano: number,

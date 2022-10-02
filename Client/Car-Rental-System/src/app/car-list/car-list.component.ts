@@ -1,5 +1,5 @@
 import { Component, OnInit, SimpleChanges } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { CarService, CarType} from '../car.service';
 
@@ -10,7 +10,10 @@ import { CarService, CarType} from '../car.service';
 })
 export class CarListComponent implements OnInit {
 
-  constructor(private route: Router, private authService: AuthService, private carService: CarService) { }
+  constructor(private route: Router, 
+    private authService: AuthService, 
+    private routeActivated: ActivatedRoute,
+    private carService: CarService) { }
 
   navigate_to_home_page(){
     this.route.navigate([''])
@@ -42,13 +45,15 @@ export class CarListComponent implements OnInit {
     })
   }
 
+  id_page = 0
   ngOnInit(): void {
-    /*
-    if (this.carService.cars.length != this.cars.length) {
-      this.cars = this.carService.cars
-    }
-    console.log(this.cars);*/
+    this.id_page = +this.routeActivated.snapshot.paramMap.get('id')!
     this.getAllCars();
+  }
+
+  ngDoCheck(){
+    this.id_page = +this.routeActivated.snapshot.paramMap.get('id')!
+
   }
 
   /*
