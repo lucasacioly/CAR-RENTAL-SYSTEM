@@ -130,16 +130,7 @@ export class CarService {
     tamanhoMala: 'G',
     preco: 200.00,
     quantidade_disponivel: 5,
-    feedbacks: [{
-      nome: 'Gustavo',
-      nota: 5,
-      descricao: 'Carro muito confortável, com uma mala grande, mas com preço um pouco caro!'
-    },
-    {
-      nome: 'Marina',
-      nota: 3,
-      descricao: 'MUITO CARO!!!!! Confortável, mas não vale pelo preço'
-    }]
+    feedbacks: []
   },
   {
     id: 6,
@@ -155,11 +146,7 @@ export class CarService {
     tamanhoMala: 'P',
     preco: 60.00,
     quantidade_disponivel: 5,
-    feedbacks: [{
-      nome: 'Yuri',
-      nota: 4,
-      descricao: 'Gostei muito do carro, preço justo, só achei a mala um pouco pequena'
-    }]
+    feedbacks: []
   },
   {
     id: 7,
@@ -244,16 +231,18 @@ export class CarService {
   }
 
 
-  addFeedback(id: number, feedback: FeedbackType) {
-    console.log(feedback.nome);
+  addFeedback(id: number, nome: string, nota: number, descricao: string) : Observable<any> {
+    const feedback : any = {
+      id: id,
+      nome: nome,
+      nota: nota,
+      descricao: descricao
+    }
+    return this.http.post<FeedbackType>(`${environment.url}/feedback`, feedback);
+  }
 
-    let car = this.getCar(id)
-    let index = this.cars.indexOf(car!)
-    console.log(this.cars[index]);
-
-    this.cars[index].feedbacks.push(feedback)
-    console.log(this.cars[index].feedbacks);
-
+  getCarFeedbacks(id: number): Observable<FeedbackType[]>{
+    return this.http.get<FeedbackType[]>(`${environment.url}/feedback/${id}`)
   }
 
 }
@@ -277,6 +266,7 @@ export interface CarType {
 }
 
 export interface FeedbackType {
+  id: number
   nome: string
   nota: number
   descricao: string

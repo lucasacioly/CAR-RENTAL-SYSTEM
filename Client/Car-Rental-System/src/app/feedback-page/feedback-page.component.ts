@@ -59,20 +59,31 @@ export class FeedbackPageComponent implements OnInit {
   isClient = this.authService.isClient;
   isAdmin = this.authService.isAdmin;
 
-  onSubmit() {
-    console.log(this.feedbackForm.value.avaliacao!);
-    console.log(this.feedbackForm.value.descricao!);
-    console.log(this.authService.clientName);
+  addFeedback(id: number, nome: string, nota: number, descricao: string){
+    this.carService.addFeedback(id, nome, nota, descricao).subscribe({
+      next: (message) =>{
+        //this.newFeedback.reset();
+        this.route.navigate(['/'])
+        alert(message.mensagem);
+      },
+      error: () => {
+        alert('Error');
+      }
+    })
+  }
 
+  onSubmit() {
 
     let newFeedback: FeedbackType = {
+      id: this.id,
       nome: this.authService.clientName,
       nota: Number(this.feedbackForm.value.avaliacao!),
       descricao: this.feedbackForm.value.descricao!
     }
 
+    this.addFeedback(newFeedback.id, newFeedback.nome, newFeedback.nota, newFeedback.descricao)
 
-    this.carService.addFeedback(this.newCar.id, newFeedback)
+
     this.feedbackForm.reset();
     this.route.navigate(['/carhistory'])
   }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ParamMap, Route, Router } from '@angular/router';
 import { AuthService } from '../auth.service';
-import { CarType, CarService } from '../car.service';
+import { CarType, CarService, FeedbackType } from '../car.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -56,6 +56,20 @@ export class LocationPageComponent implements OnInit {
     this.PastDateTime();
     this.id = +this.routeActivated.snapshot.paramMap.get('id')!
     this.selectedCar = this.carService.getCar(this.id)!
+    this.getCarFeedbacks()
+  }
+
+  listaFeedback : FeedbackType[] = []
+
+  getCarFeedbacks(){
+    this.carService.getCarFeedbacks(this.id).subscribe({
+      next: (feedbacks) => {
+        this.listaFeedback = feedbacks
+      },
+      error: () => {
+        alert("Não possui feedbacks")
+      }
+    })
   }
 
   isClient = this.authService.isClient;

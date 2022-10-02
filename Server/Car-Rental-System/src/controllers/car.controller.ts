@@ -83,16 +83,7 @@ export class CarController {
             tamanhoMala: 'G',
             preco: 200.00,
             quantidade_disponivel: 5,
-            feedbacks: [{
-              nome: 'Gustavo',
-              nota: 5,
-              descricao: 'Carro muito confortável, com uma mala grande, mas com preço um pouco caro!'
-            },
-            {
-              nome: 'Marina',
-              nota: 3,
-              descricao: 'MUITO CARO!!!!! Confortável, mas não vale pelo preço'
-            }]
+            feedbacks: []
           },
           {
             id: 6,
@@ -108,11 +99,7 @@ export class CarController {
             tamanhoMala: 'P',
             preco: 60.00,
             quantidade_disponivel: 5,
-            feedbacks: [{
-              nome: 'Yuri',
-              nota: 4,
-              descricao: 'Gostei muito do carro, preço justo, só achei a mala um pouco pequena'
-            }]
+            feedbacks: []
           },
           {
             id: 7,
