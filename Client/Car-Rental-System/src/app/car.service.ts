@@ -51,6 +51,40 @@ export class CarService {
     return this.http.get<CarType>(`${environment.url}/car/${id}`)
   }
 
+  editCar(id : string,
+    nome: string,
+    marca: string,
+    ano: number,
+    direcao: string,
+    imagem: string,
+    categoria: string,
+    totAssentos: string,
+    cambio: string,
+    tipoCombustivel: string,
+    tamanhoMala: string,
+    preco: number,
+    quantidade_disponivel: number,
+    feedbacks: FeedbackType[]) : Observable<any> {
+
+    const editedCar : any = {id: id,
+        nome : nome,
+        marca : marca,
+        ano : ano,
+        direcao : direcao,
+        imagem : imagem,
+        categoria : categoria,
+        totAssentos : totAssentos,
+        cambio : cambio,
+        tipoCombustivel : tipoCombustivel,
+        tamanhoMala : tamanhoMala,
+        preco : preco,
+        quantidade_disponivel : quantidade_disponivel,
+        feedbacks : feedbacks
+    }
+    console.log(editedCar.quantidade_disponivel)
+    return this.http.put<any>(`${environment.url}/car/${id}`, editedCar)
+  }
+
   carTransition: CarType | undefined = undefined
   public cars: CarType[] = [{
     id: 1,
@@ -224,11 +258,12 @@ export class CarService {
     return this.carTransition
   }
 
+  /*
   editCar(id: number, newCar: CarType) {/*
     let oldCar = this.getCar(id)
     let index = this.cars.indexOf(oldCar!)
-    this.cars[index] = newCar*/
-  }
+    this.cars[index] = newCar
+  }*/
 
 
   addFeedback(id: number, nome: string, nota: number, descricao: string) : Observable<any> {

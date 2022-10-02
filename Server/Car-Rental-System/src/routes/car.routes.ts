@@ -1,5 +1,6 @@
 import { Router, Request, Response } from 'express';
 import{ CarController } from '../controllers/car.controller'
+import { Feedback } from '../models/feedback'
 
 const carRouter = Router();
 
@@ -72,8 +73,10 @@ carRouter.route('/:id')
         let tipoCombustivel : string = req.body.tipoCombustivel
         let tamanhoMala : string = req.body.tamanhoMala
         let preco : number = Number(req.body.preco)
-        let quantidade_disponnivel: number = Number(req.body.quantidade_disponnivel)
-
+        let quantidade_disponivel: number = Number(req.body.quantidade_disponivel)
+        let feedbacks : Feedback[]  = req.body.feedbacks
+        
+        console.log()
         carController.editCar(id,  
             marca,
             nome, 
@@ -86,9 +89,10 @@ carRouter.route('/:id')
             tipoCombustivel, 
             tamanhoMala, 
             preco,
-            quantidade_disponnivel)
+            quantidade_disponivel,
+            feedbacks)
         
-        return res.send("CAR modified")
+        return res.json({mensagem : "CAR modified"})
     })
 
     .delete((req, res) => {
