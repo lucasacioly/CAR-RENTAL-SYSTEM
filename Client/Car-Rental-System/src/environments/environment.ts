@@ -11,8 +11,9 @@ export const environment = {
     storageBucket: "car-rental-system-b2d29.appspot.com",
     messagingSenderId: "789041382600",
     appId: "1:789041382600:web:0f7522d5242c013b7a51fd"
-  }
-  
+  },
+  url: "http://localhost:3000"
+
 };
 
 /*

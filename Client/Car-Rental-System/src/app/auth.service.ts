@@ -12,10 +12,12 @@ export class AuthService {
   public isClient = false;
   public isAdmin = false;
   public clientName = '';
+  public clientEmail = '';
 
   login(email : string, password : string) {
     this.fireauth.signInWithEmailAndPassword(email, password).then( (user) => {
       this.clientName = user.user?.displayName!
+      this.clientEmail = email
       localStorage.setItem('token', 'true');
       this.router.navigate(['']);
       if (email == 'admin@alucar.com' && password == 'admin123') {

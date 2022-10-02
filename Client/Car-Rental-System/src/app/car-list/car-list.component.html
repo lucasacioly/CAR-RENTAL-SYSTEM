@@ -15,7 +15,7 @@
 
   <nav class="estruction">
     <div class="car-cards">
-        <app-car-list-card *ngFor="let car of cars"
+        <app-car-list-card *ngFor="let car of listaCarros"
         id = {{car.id}}
         nome = {{car.nome}}
         imagem = {{car.imagem}}
@@ -26,6 +26,7 @@
         tipoCombustivel = {{car.tipoCombustivel}}
         preco = {{car.preco}}
         ></app-car-list-card>
+
     </div>
 
   </nav>

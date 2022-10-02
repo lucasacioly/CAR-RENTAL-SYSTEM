@@ -9,7 +9,7 @@ import { CarService } from '../car.service';
   styleUrls: ['./add-car-page.component.scss']
 })
 export class AddCarPageComponent implements OnInit {
-  
+
   addCarForm = this.formBuilder.group({
     marca: '',
     nome: '',
@@ -21,11 +21,12 @@ export class AddCarPageComponent implements OnInit {
     cambio: '',
     tipoCombustivel: '',
     tamanhoMala: '',
-    preco: 0
+    preco: 0,
+    quantidade_disponivel: 0
   })
-  
-  constructor(private route: Router, 
-    private formBuilder: FormBuilder, 
+
+  constructor(private route: Router,
+    private formBuilder: FormBuilder,
     private carService: CarService) { }
 
   navigate_to_home_page(){
@@ -36,9 +37,32 @@ export class AddCarPageComponent implements OnInit {
     this.route.navigate(['/carlist'])
   }
 
-  
+  addCar(){
+    return this.carService.addCar(this.addCarForm.value.nome!,
+      this.addCarForm.value.marca!,
+      this.addCarForm.value.ano!,
+      this.addCarForm.value.direcao!,
+      this.addCarForm.value.imagem!,
+      this.addCarForm.value.categoria!,
+      this.addCarForm.value.totAssentos!,
+      this.addCarForm.value.cambio!,
+      this.addCarForm.value.tipoCombustivel!,
+      this.addCarForm.value.tamanhoMala!,
+      this.addCarForm.value.preco!,
+      this.addCarForm.value.quantidade_disponivel!).subscribe({
+      next: (message) =>{
+        this.addCarForm.reset();
+        this.route.navigate(['/carlist'])
+        alert(message.mensagem);
+      },
+      error: () => {
+        alert('fudeu');
+      }
+    })
+  }
 
   onSubmit() {
+    /*
     console.log('Entrou')
     console.log(this.addCarForm.value.nome!)
     this.carService.addCar(this.addCarForm.value.nome!,
@@ -52,8 +76,8 @@ export class AddCarPageComponent implements OnInit {
       this.addCarForm.value.tipoCombustivel!,
       this.addCarForm.value.tamanhoMala!,
       this.addCarForm.value.preco!)
-    this.addCarForm.reset()
-    this.route.navigate(['/carlist'])
+    */
+    this.addCar()
   }
 
   ngOnInit(): void {
