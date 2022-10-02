@@ -3,6 +3,7 @@ import { ParamMap, Route, Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { CarType, CarService, FeedbackType } from '../car.service';
 import { ActivatedRoute } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-location-page',
@@ -10,7 +11,11 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./location-page.component.scss']
 })
 export class LocationPageComponent implements OnInit {
-  constructor(private route: Router, private authService: AuthService, private routeActivated: ActivatedRoute, private carService: CarService) { }
+  constructor(private route: Router,
+    private authService: AuthService,
+    private routeActivated: ActivatedRoute,
+    private carService: CarService,
+    private formBuilder: FormBuilder) { }
 
   navigate_to_accessories(){
     this.route.navigate(['/options'])
@@ -24,9 +29,13 @@ export class LocationPageComponent implements OnInit {
     this.route.navigate(['/login'])
   }
 
-  advance_button(){
+  onSubmit(){
     if(this.isClient || this.isAdmin){
-      this.navigate_to_accessories()
+      console.log(this.locationForm.value.retirada!);
+
+      this.route.navigate(['/options', this.id],{queryParams: {retirada: this.locationForm.value.retirada!, devolucao: this.locationForm.value.devolucao!}})
+      this.locationForm.reset();
+
     }
     else {
       this.navigate_to_login_page()
@@ -52,15 +61,37 @@ export class LocationPageComponent implements OnInit {
 
   id = 0
 
+  locationForm = this.formBuilder.group({
+    retirada: '',
+    devolucao: ''
+  })
+
+
+  getCar(id: string) {
+    console.log(id);
+    return this.carService.getCarById(id).subscribe({
+      next: (car) =>{
+        this.selectedCar = car;
+        console.log(car);
+      },
+      error: () => {
+        alert("fudeu")
+      }
+    })
+  }
+
   ngOnInit(): void {
     this.PastDateTime();
     this.id = +this.routeActivated.snapshot.paramMap.get('id')!
+
     this.selectedCar = this.carService.getCar(this.id)!
     this.getCarFeedbacks()
   }
 
   listaFeedback : FeedbackType[] = []
-
+  
+  this.getCar(String(this.id))
+   
   getCarFeedbacks(){
     this.carService.getCarFeedbacks(this.id).subscribe({
       next: (feedbacks) => {
@@ -70,6 +101,9 @@ export class LocationPageComponent implements OnInit {
         alert("Não possui feedbacks")
       }
     })
+
+   
+
   }
 
   isClient = this.authService.isClient;

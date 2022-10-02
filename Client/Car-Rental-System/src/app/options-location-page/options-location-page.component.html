@@ -6,7 +6,7 @@
     <section class='division'>
         <div class="imagem">
             <figure class="figure">
-                    <img src="assets/carro1.png" class="figure-img img-fluid rounded" alt="...">
+                    <img src="{{imagem}}" class="figure-img img-fluid rounded" alt="...">
               </figure>
         </div>
 
@@ -113,8 +113,8 @@
             </div>
 
             <div class="pagamento">
-                <h3 class="titles">TOTAL:XXXXXXXXX</h3>
-                    
+                <h3 class="titles">TOTAL - R$ {{total}}</h3>
+
                 <button (click)="navigate_to_home_page()" class="btn btn-danger pagar">
                     PAGAR
                 </button>
