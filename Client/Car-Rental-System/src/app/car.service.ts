@@ -47,6 +47,10 @@ export class CarService {
     return this.http.delete<any>(`${environment.url}/car/${id}`)
   }
 
+  getCarById(id : string) : Observable<CarType> {
+    return this.http.get<CarType>(`${environment.url}/car/${id}`)
+  }
+
   carTransition: CarType | undefined = undefined
   public cars: CarType[] = [{
     id: 1,
@@ -61,6 +65,7 @@ export class CarService {
     tipoCombustivel: 'Flex',
     tamanhoMala: 'P',
     preco: 57.00,
+    quantidade_disponivel: 5,
     feedbacks: []
   },
   {
@@ -76,6 +81,7 @@ export class CarService {
     tipoCombustivel: 'Flex',
     tamanhoMala: 'P',
     preco: 65.00,
+    quantidade_disponivel: 5,
     feedbacks: []
   },
   {
@@ -91,6 +97,7 @@ export class CarService {
     tipoCombustivel: 'Flex',
     tamanhoMala: 'M',
     preco: 132.00,
+    quantidade_disponivel: 5,
     feedbacks: []
   },
   {
@@ -106,6 +113,7 @@ export class CarService {
     tipoCombustivel: 'Flex',
     tamanhoMala: 'G',
     preco: 150.00,
+    quantidade_disponivel: 5,
     feedbacks: []
   },
   {
@@ -121,6 +129,7 @@ export class CarService {
     tipoCombustivel: 'Gasolina',
     tamanhoMala: 'G',
     preco: 200.00,
+    quantidade_disponivel: 5,
     feedbacks: [{
       nome: 'Gustavo',
       nota: 5,
@@ -145,6 +154,7 @@ export class CarService {
     tipoCombustivel: 'Gasolina',
     tamanhoMala: 'P',
     preco: 60.00,
+    quantidade_disponivel: 5,
     feedbacks: [{
       nome: 'Yuri',
       nota: 4,
@@ -164,6 +174,7 @@ export class CarService {
     tipoCombustivel: 'Gasolina',
     tamanhoMala: 'M',
     preco: 170.00,
+    quantidade_disponivel: 5,
     feedbacks: []
   },
   {
@@ -179,6 +190,7 @@ export class CarService {
     tipoCombustivel: 'Gasolina',
     tamanhoMala: 'M',
     preco: 250.00,
+    quantidade_disponivel: 5,
     feedbacks: []
   },
 ]
@@ -219,16 +231,18 @@ export class CarService {
     console.log(this.cars.length)
   }*/
 
+
   getCar(id: number) {
     this.carTransition = this.cars.find(car => car.id == id)
     return this.carTransition
   }
 
-  editCar(id: number, newCar: CarType) {
+  editCar(id: number, newCar: CarType) {/*
     let oldCar = this.getCar(id)
     let index = this.cars.indexOf(oldCar!)
-    this.cars[index] = newCar
+    this.cars[index] = newCar*/
   }
+
 
   addFeedback(id: number, feedback: FeedbackType) {
     console.log(feedback.nome);
@@ -257,6 +271,7 @@ export interface CarType {
   tipoCombustivel: string
   tamanhoMala: string
   preco: number
+  quantidade_disponivel : number
   feedbacks: FeedbackType[]
 
 }

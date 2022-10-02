@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
-import { CarService } from '../car.service';
+import { CarService, CarType } from '../car.service';
 import { EditCarPageComponent } from '../edit-car-page/edit-car-page.component';
 import { FeedbackPageComponent } from '../feedback-page/feedback-page.component';
 import { CarListComponent } from '../car-list/car-list.component';
@@ -32,6 +32,21 @@ export class CarListCardComponent implements OnInit {
 
   isClient = this.authService.isClient;
   isAdmin = this.authService.isAdmin;
+  car : CarType = { id : 0,
+                    marca: '',
+                    nome: '',
+                    ano: 2022,
+                    direcao: '',
+                    imagem: '',
+                    categoria: '',
+                    totAssentos: '',
+                    cambio: '',
+                    tipoCombustivel: '',
+                    tamanhoMala: '',
+                    preco: 0,
+                    quantidade_disponivel: 0,
+                    feedbacks : []}
+
 
   ngOnInit(): void {
   }
@@ -62,12 +77,20 @@ export class CarListCardComponent implements OnInit {
 
   editCar(id: string) {
     console.log(id);
-
-    this.editCarPage.editCarFormBuilder(this.carService.getCar(Number(id))!)
-    this.route.navigate(['/editcar'])
+    return this.carService.getCarById(id).subscribe({
+      next: (car) =>{
+        this.car = car;
+        this.editCarPage.editCarFormBuilder(this.car!)
+        this.route.navigate(['/editcar'])
+        console.log(car);
+      },
+      error: () => {
+        alert("fudeu")
+      }
+    })
   }
 
-  feedbackCar(id: string) {
+  feedbackCar(id: string) {/*
     console.log(Number(id));
     console.log(this.carService.cars);
 
@@ -75,7 +98,7 @@ export class CarListCardComponent implements OnInit {
     console.log(this.carService.getCar(Number(id))!);
 
     this.feedbackPage.getFeedbackCar(this.carService.getCar(Number(id))!)
-    this.route.navigate(['feedback'])
+    this.route.navigate(['feedback'])*/
   }
 
 }

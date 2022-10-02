@@ -48,6 +48,7 @@ export class EditCarPageComponent implements OnInit {
     tipoCombustivel: '',
     tamanhoMala: '',
     preco: 0,
+    quantidade_disponivel: 5,
     feedbacks: []
   }
 
@@ -121,6 +122,7 @@ export class EditCarPageComponent implements OnInit {
       tipoCombustivel: this.editCarForm.value.tipoCombustivel!,
       tamanhoMala: this.editCarForm.value.tamanhoMala!,
       preco: this.editCarForm.value.preco!,
+      quantidade_disponivel: 5,
       feedbacks: this.carService.carTransition!.feedbacks
     }
     console.log(newCar);
