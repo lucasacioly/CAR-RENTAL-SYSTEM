@@ -22,6 +22,7 @@ export class CarListCardComponent implements OnInit {
   @Input() tamanhoMala!: string;
   @Input() tipoCombustivel!: string;
   @Input() preco!: string;
+  @Input() qtdeCarros!: string;
 
   constructor(private authService: AuthService,
     public route: Router,

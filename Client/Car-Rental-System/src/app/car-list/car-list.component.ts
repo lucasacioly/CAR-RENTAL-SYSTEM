@@ -49,7 +49,6 @@ export class CarListComponent implements OnInit {
     }
     console.log(this.cars);*/
     this.getAllCars();
-    console.log(this.listaCarros);
   }
 
   /*

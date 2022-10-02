@@ -271,7 +271,7 @@ export interface CarType {
   tipoCombustivel: string
   tamanhoMala: string
   preco: number
-  quantidade_disponivel : number
+  quantidade_disponivel: number
   feedbacks: FeedbackType[]
 
 }

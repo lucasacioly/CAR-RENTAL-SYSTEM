@@ -1,5 +1,5 @@
 import { Component, Injectable, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ParamMap, Route, ActivatedRoute, Router } from '@angular/router';
 import { CarService, CarType, FeedbackType } from '../car.service';
 import { FormBuilder } from '@angular/forms';
 import { AuthService } from '../auth.service';
@@ -17,11 +17,13 @@ export class FeedbackPageComponent implements OnInit {
   constructor(private route: Router,
     private carService: CarService,
     private formBuilder: FormBuilder,
-    private authService: AuthService) { }
+    private authService: AuthService,
+    private routeActivated: ActivatedRoute) { }
   notas: number[] = [1,2,3,4,5]
   imagem = 'assets/carro2.png'
   navigate_to_home_page(){
     this.route.navigate([''])
+
   }
   feedbackForm = this.formBuilder.group({
     avaliacao: 0,
@@ -47,11 +49,11 @@ export class FeedbackPageComponent implements OnInit {
     quantidade_disponivel: 0,
     feedbacks: []
   }
-  ngOnInit(): void {
-    this.newCar = this.carService.carTransition!
-    console.log(this.newCar);
 
-    this.getFeedbackCar(this.newCar)
+  id = 0
+  ngOnInit(): void {
+    this.id = +this.routeActivated.snapshot.paramMap.get('id')!
+    this.getFeedbackCar(this.carService.getCar(Number(this.id))!)
   }
 
   isClient = this.authService.isClient;

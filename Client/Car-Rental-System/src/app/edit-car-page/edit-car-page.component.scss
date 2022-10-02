@@ -133,14 +133,14 @@
         }
 
         .marca-txt,.ano-txt,.modelo-txt,.categ-txt,.direcao-txt,.cambio-txt,.comb-txt,
-        .assentos-txt,.bagage-txt,.diaria-txt {
+        .assentos-txt,.bagage-txt,.diaria-txt, .disponiveis-txt {
             margin-left: 20px;
             border-radius: 13px;
             border-style: hidden;
         }
 
         .marca-txt:hover,.ano-txt:hover,.modelo-txt:hover,.categ-txt:hover,.direcao-txt:hover,
-        .cambio-txt:hover,.comb-txt:hover,.assentos-txt:hover,.bagage-txt:hover,.diaria-txt:hover {
+        .cambio-txt:hover,.comb-txt:hover,.assentos-txt:hover,.bagage-txt:hover,.diaria-txt:hover, .disponiveis-txt {
             border-style: groove;
         }
 
@@ -190,4 +190,8 @@
         background: #46b11f;
     }
   }
+}
+
+select{
+  width: 232px;
 }
