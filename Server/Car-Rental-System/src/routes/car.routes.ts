@@ -97,10 +97,10 @@ carRouter.route('/:id')
         let deleted = carController.deleteCar(id)
 
         if (deleted) {
-            return res.status(200).send("CAR deleted")
+            return res.status(200).json({message :"CAR deleted"})
         }
         else{
-            return res.status(404).send("CAR not found")
+            return res.status(404).json({message : "CAR not found"})
         }
     })
 export default carRouter;

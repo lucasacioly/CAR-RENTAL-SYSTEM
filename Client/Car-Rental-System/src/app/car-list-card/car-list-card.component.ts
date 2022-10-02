@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { CarService } from '../car.service';
 import { EditCarPageComponent } from '../edit-car-page/edit-car-page.component';
 import { FeedbackPageComponent } from '../feedback-page/feedback-page.component';
+import { CarListComponent } from '../car-list/car-list.component';
 
 @Component({
   selector: 'app-car-list-card',
@@ -24,10 +25,11 @@ export class CarListCardComponent implements OnInit {
   @Input() qtdeCarros!: string;
 
   constructor(private authService: AuthService,
-     public route: Router,
-      private carService: CarService,
-      private editCarPage: EditCarPageComponent,
-      private feedbackPage: FeedbackPageComponent) { }
+    public route: Router,
+    private carService: CarService,
+    private editCarPage: EditCarPageComponent,
+    private feedbackPage: FeedbackPageComponent,
+    public carList : CarListComponent) { }
 
   isClient = this.authService.isClient;
   isAdmin = this.authService.isAdmin;
@@ -44,8 +46,19 @@ export class CarListCardComponent implements OnInit {
   }
 
   removeCar(id: string) {
+    /*
     console.log(id);
     this.carService.removeCar(parseInt(id, 10));
+    */
+    return this.carService.removeCar(id).subscribe({
+      next: (message) =>{
+        this.carList.getAllCars()
+        alert(message.message);
+      },
+      error: () => {
+        alert('fudeu');
+      }
+    })
   }
 
   editCar(id: string) {
