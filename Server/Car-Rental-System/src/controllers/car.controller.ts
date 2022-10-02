@@ -1,4 +1,5 @@
 import { Car } from '../models/Car';
+import { Feedback } from '../models/Feedback';
 
 export class CarController {
 
@@ -209,7 +210,8 @@ export class CarController {
         tipoCombustivel: string,
         tamanhoMala: string,
         preco: number,
-        quantidade_disponivel: number) : boolean {
+        quantidade_disponivel: number,
+        feedbacks: Feedback[]) : boolean {
         
         let car =  this.cars.find(c => c.id == id)
 
@@ -230,7 +232,7 @@ export class CarController {
                 tamanhoMala: tamanhoMala,
                 preco: preco,
                 quantidade_disponivel: quantidade_disponivel,
-                feedbacks : []};
+                feedbacks : feedbacks};
 
         let oldCar = this.getCarById(id)
         let index = this.cars.indexOf(oldCar!)
