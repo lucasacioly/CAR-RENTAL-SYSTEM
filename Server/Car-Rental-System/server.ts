@@ -1,5 +1,6 @@
 import express from 'express';
 import carRouter from './src/routes/car.routes'
+import feedbackRouter from './src/routes/feedback.routes';
 
 const server = express();
 const port = 3000;
@@ -14,6 +15,7 @@ var allowCrossDomain = function(req: any, res: any, next: any) {
 server.use(allowCrossDomain);
 server.use(express.json());
 server.use('/car', carRouter);
+server.use('/feedback', feedbackRouter);
 //server.use('/user', userRouter)
 
 server.listen(port, () => {
