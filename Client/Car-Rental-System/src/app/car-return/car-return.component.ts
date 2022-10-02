@@ -36,6 +36,7 @@ export class CarReturnComponent implements OnInit {
     tipoCombustivel: '',
     tamanhoMala: '',
     preco: 0,
+    quantidade_disponivel: 0,
     feedbacks: []
   }
 

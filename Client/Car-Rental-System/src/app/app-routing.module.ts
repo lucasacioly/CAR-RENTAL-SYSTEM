@@ -20,10 +20,10 @@ const routes: Routes = [
   { path: 'carlist', component: CarListComponent},
   { path: 'carreturn/:id', component: CarReturnComponent},
   { path: 'location/:id', component: LocationPageComponent},
-  { path: 'feedback', component: FeedbackPageComponent},
+  { path: 'feedback/:id', component: FeedbackPageComponent},
   { path: 'options', component: OptionsLocationComponent},
   { path: 'clientregistration', component: ClientRegistrationComponent},
-  { path: 'editcar', component: EditCarPageComponent},
+  { path: 'editcar/:id', component: EditCarPageComponent},
   { path: 'carhistory', component: CarHistoryComponent}
 ];
 

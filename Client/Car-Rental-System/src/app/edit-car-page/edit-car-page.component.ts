@@ -1,5 +1,5 @@
 import { Component, Injectable, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder } from '@angular/forms';
 import { CarService, CarType } from '../car.service';
 import { AuthService } from '../auth.service';
@@ -18,7 +18,16 @@ export class EditCarPageComponent implements OnInit {
   constructor(private route: Router,
      private formBuilder: FormBuilder,
      private carService: CarService,
-     private authService: AuthService) { }
+     private authService: AuthService,
+     private routeActivated: ActivatedRoute) { }
+
+    Marca:String[] = ["Ford", "Fiat", "Toyota", "Wolkswagen", "Mercedez", "Chevrolet", "Honda", "Nissan", "Hyundai", "Jeep", "BMW", "Audi"]
+    Direcao:String[] = ["Elétrica", "Hidráulica", "Mecânica"]
+    Combustivel:String[] = ["Gasolina", "Etanol", "Flex", "Elétrico", "Híbrido"]
+    Bagageiro:String[] = ["P", "M", "G"]
+    Categoria:String[] = ["Hatch", "Sedan", "SUV", "Caminhonete"]
+    Cambio:String[] = ["Automático", "Manual"]
+    Assentos:String[] = ["2", "5", "7+"]
 
   navigate_to_car_list_page(){
     this.route.navigate(['/carlist'])
@@ -48,16 +57,34 @@ export class EditCarPageComponent implements OnInit {
     tipoCombustivel: '',
     tamanhoMala: '',
     preco: 0,
+    quantidade_disponivel: 0,
     feedbacks: []
   }
 
+  selectedCar: CarType = {
+    id: 0,
+    marca: '',
+    nome: '',
+    ano: 2022,
+    direcao: '',
+    imagem: '',
+    categoria: '',
+    totAssentos: '',
+    cambio: '',
+    tipoCombustivel: '',
+    tamanhoMala: '',
+    preco: 0,
+    quantidade_disponivel: 0,
+    feedbacks: []
+  }
+
+  id = 0
+
   ngOnInit(): void {
-    console.log(this.carroId);
-    this.newCar = this.carService.carTransition!
-    console.log("aaa" + this.carService.carTransition!.marca);
-    this.editCarFormBuilder(this.newCar)
-
-
+    this.id = +this.routeActivated.snapshot.paramMap.get('id')!
+    this.selectedCar = this.carService.getCar(this.id)!
+    this.editCarFormBuilder(this.selectedCar)
+    console.log(this.selectedCar.marca)
   }
 
   ngDoCheck(): void{
@@ -79,6 +106,7 @@ export class EditCarPageComponent implements OnInit {
     cambio: '',
     tipoCombustivel: '',
     tamanhoMala: '',
+    quantidade_disponivel: 0,
     preco: 0
   })
 
@@ -101,6 +129,7 @@ export class EditCarPageComponent implements OnInit {
     this.editCarForm.controls['cambio'].setValue(car.cambio)
     this.editCarForm.controls['tipoCombustivel'].setValue(car.tipoCombustivel)
     this.editCarForm.controls['tamanhoMala'].setValue(car.tamanhoMala)
+    //this.editCarForm.controls['disponiveis'].setValue(car.quantidade_disponivel)
     this.editCarForm.controls['preco'].setValue(car.preco)
     console.log(this.editCarForm.value.marca!);
 
@@ -121,6 +150,7 @@ export class EditCarPageComponent implements OnInit {
       tipoCombustivel: this.editCarForm.value.tipoCombustivel!,
       tamanhoMala: this.editCarForm.value.tamanhoMala!,
       preco: this.editCarForm.value.preco!,
+      quantidade_disponivel: this.editCarForm.value.quantidade_disponivel!,
       feedbacks: this.carService.carTransition!.feedbacks
     }
     console.log(newCar);

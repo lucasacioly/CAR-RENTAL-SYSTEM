@@ -61,6 +61,7 @@ export class CarService {
     tipoCombustivel: 'Flex',
     tamanhoMala: 'P',
     preco: 57.00,
+    quantidade_disponivel: 5,
     feedbacks: []
   },
   {
@@ -76,6 +77,7 @@ export class CarService {
     tipoCombustivel: 'Flex',
     tamanhoMala: 'P',
     preco: 65.00,
+    quantidade_disponivel: 5,
     feedbacks: []
   },
   {
@@ -91,6 +93,7 @@ export class CarService {
     tipoCombustivel: 'Flex',
     tamanhoMala: 'M',
     preco: 132.00,
+    quantidade_disponivel: 5,
     feedbacks: []
   },
   {
@@ -106,6 +109,7 @@ export class CarService {
     tipoCombustivel: 'Flex',
     tamanhoMala: 'G',
     preco: 150.00,
+    quantidade_disponivel: 5,
     feedbacks: []
   },
   {
@@ -121,6 +125,7 @@ export class CarService {
     tipoCombustivel: 'Gasolina',
     tamanhoMala: 'G',
     preco: 200.00,
+    quantidade_disponivel: 5,
     feedbacks: [{
       nome: 'Gustavo',
       nota: 5,
@@ -145,6 +150,7 @@ export class CarService {
     tipoCombustivel: 'Gasolina',
     tamanhoMala: 'P',
     preco: 60.00,
+    quantidade_disponivel: 5,
     feedbacks: [{
       nome: 'Yuri',
       nota: 4,
@@ -163,6 +169,7 @@ export class CarService {
     cambio: 'Automático',
     tipoCombustivel: 'Gasolina',
     tamanhoMala: 'M',
+    quantidade_disponivel: 5,
     preco: 170.00,
     feedbacks: []
   },
@@ -179,6 +186,7 @@ export class CarService {
     tipoCombustivel: 'Gasolina',
     tamanhoMala: 'M',
     preco: 250.00,
+    quantidade_disponivel: 5,
     feedbacks: []
   },
 ]
@@ -257,6 +265,7 @@ export interface CarType {
   tipoCombustivel: string
   tamanhoMala: string
   preco: number
+  quantidade_disponivel: number
   feedbacks: FeedbackType[]
 
 }
