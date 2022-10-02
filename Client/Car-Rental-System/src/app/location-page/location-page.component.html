@@ -56,21 +56,21 @@
 
         </div>
 
-        <section class="selections">
+        <form [formGroup]="locationForm" (ngSubmit)="onSubmit()" class="selections">
             <div>
                 <h3 class="titles">Retirada</h3>
-                <input type="datetime-local" #input (change)="onChange(input.value)" min="{{min_date}}">  <!--[(ngModel)]="values"-->
+                <input formControlName="retirada" type="datetime-local" #input (change)="onChange(input.value)" min="{{min_date}}">  <!--[(ngModel)]="values"-->
             </div>
 
             <div>
                 <h3 class="titles">Devolução</h3>
-                <input class="date" type="datetime-local">
+                <input formControlName="devolucao" class="date" type="datetime-local">
             </div>
 
-            <button (click)="advance_button()" type="button" class="btn btn-success" >
+            <button (click)="onSubmit()" type="button" class="btn btn-success">
                 AVANÇAR
             </button>
-        </section>
+        </form>
     </div>
 
 

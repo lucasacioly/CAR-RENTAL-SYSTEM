@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'carreturn/:id', component: CarReturnComponent},
   { path: 'location/:id', component: LocationPageComponent},
   { path: 'feedback/:id', component: FeedbackPageComponent},
-  { path: 'options', component: OptionsLocationComponent},
+  { path: 'options/:id', component: OptionsLocationComponent},
   { path: 'clientregistration', component: ClientRegistrationComponent},
   { path: 'editcar/:id', component: EditCarPageComponent},
   { path: 'carhistory', component: CarHistoryComponent}
