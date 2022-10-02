@@ -39,7 +39,7 @@ carRouter.route('/')
             preco,
             quantidade_disponnivel)
             
-        return res.json({message : "new CAR added"})
+        return res.json({ mensagem: "new CAR added"})
     })
 
 carRouter.route('/:id')
@@ -50,10 +50,10 @@ carRouter.route('/:id')
         let car = carController.getCarById(id)
 
         if (!car){
-            return res.status(404).json({car : car});
+            return res.status(404).send("CAR not found");
         }
         else{
-            return res.json({car : car})
+            return res.send(car)
         }
     })
 
@@ -88,7 +88,7 @@ carRouter.route('/:id')
             preco,
             quantidade_disponnivel)
         
-        return res.json({message : "CAR modified"})
+        return res.send("CAR modified")
     })
 
     .delete((req, res) => {
@@ -97,10 +97,10 @@ carRouter.route('/:id')
         let deleted = carController.deleteCar(id)
 
         if (deleted) {
-            return res.status(200).json({message : "CAR deleted"})
+            return res.status(200).send("CAR deleted")
         }
         else{
-            return res.status(404).json({message : "CAR not found"})
+            return res.status(404).send("CAR not found")
         }
     })
 export default carRouter;

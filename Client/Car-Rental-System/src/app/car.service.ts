@@ -14,6 +14,35 @@ export class CarService {
     return this.http.get<CarType[]>(`${environment.url}/car`);
   }
 
+  addCar(nome: string,
+    marca: string,
+    ano: number,
+    direcao: string,
+    imagem: string,
+    categoria: string,
+    totAssentos: string,
+    cambio: string,
+    tipoCombustivel: string,
+    tamanhoMala: string,
+    preco: number,
+    quantidade_disponivel: number) : Observable<any> {
+
+      const newCar : any = {nome : nome,
+        marca : marca,
+        ano : ano,
+        direcao : direcao,
+        imagem : imagem,
+        categoria : categoria,
+        totAssentos : totAssentos,
+        cambio : cambio,
+        tipoCombustivel : tipoCombustivel,
+        tamanhoMala : tamanhoMala,
+        preco : preco,
+        quantidade_disponivel : quantidade_disponivel};
+
+      return this.http.post<any>(`${environment.url}/car`, newCar)
+    }
+
   carTransition: CarType | undefined = undefined
   public cars: CarType[] = [{
     id: 1,
@@ -149,7 +178,7 @@ export class CarService {
     feedbacks: []
   },
 ]
-
+  /*
   addCar(nome: string,
     marca: string,
     ano: number,
@@ -178,7 +207,7 @@ export class CarService {
       feedbacks: []
     })
     console.log(nome);
-  }
+  } */
 
   removeCar(id: number) {
     this.cars = this.cars.filter(car => car.id != id)
