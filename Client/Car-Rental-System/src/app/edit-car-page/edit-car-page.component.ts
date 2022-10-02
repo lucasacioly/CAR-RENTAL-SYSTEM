@@ -57,6 +57,7 @@ export class EditCarPageComponent implements OnInit {
     tipoCombustivel: '',
     tamanhoMala: '',
     preco: 0,
+    quantidade_disponivel: 0,
     feedbacks: []
   }
 
@@ -73,6 +74,7 @@ export class EditCarPageComponent implements OnInit {
     tipoCombustivel: '',
     tamanhoMala: '',
     preco: 0,
+    quantidade_disponivel: 0,
     feedbacks: []
   }
 
@@ -104,6 +106,7 @@ export class EditCarPageComponent implements OnInit {
     cambio: '',
     tipoCombustivel: '',
     tamanhoMala: '',
+    quantidade_disponivel: 0,
     preco: 0
   })
 
@@ -126,6 +129,7 @@ export class EditCarPageComponent implements OnInit {
     this.editCarForm.controls['cambio'].setValue(car.cambio)
     this.editCarForm.controls['tipoCombustivel'].setValue(car.tipoCombustivel)
     this.editCarForm.controls['tamanhoMala'].setValue(car.tamanhoMala)
+    //this.editCarForm.controls['disponiveis'].setValue(car.quantidade_disponivel)
     this.editCarForm.controls['preco'].setValue(car.preco)
     console.log(this.editCarForm.value.marca!);
 
@@ -146,6 +150,7 @@ export class EditCarPageComponent implements OnInit {
       tipoCombustivel: this.editCarForm.value.tipoCombustivel!,
       tamanhoMala: this.editCarForm.value.tamanhoMala!,
       preco: this.editCarForm.value.preco!,
+      quantidade_disponivel: this.editCarForm.value.quantidade_disponivel!,
       feedbacks: this.carService.carTransition!.feedbacks
     }
     console.log(newCar);
