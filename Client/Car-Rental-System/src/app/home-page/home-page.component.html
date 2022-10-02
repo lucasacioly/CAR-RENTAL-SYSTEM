@@ -11,7 +11,7 @@
             <img [routerLink]="['/location', 7]" src="assets/carro1.png" class="carro">
             <img [routerLink]="['/location', 5]" src="assets/carro7.png" class="carro">
         </section>
-        <a (click)="navigate_to_car_list()" class="lista">ver lista completa</a>
+        <a [routerLink]="['/carlist', 0]" class="lista">ver lista completa</a>
     </section>
 
     <section class="showcase">
@@ -21,7 +21,7 @@
             <img [routerLink]="['/location', 4]" src="assets/carro4.png" class="fix-car fix-car-red carro" >
             <img [routerLink]="['/location', 6]" src="assets/carro9.png" class="fix-car wrong-car carro">
         </section>
-        <a (click)="navigate_to_car_list()" class="lista">ver lista completa</a>
+        <a [routerLink]="['/carlist', 0]" class="lista">ver lista completa</a>
     </section>
 </nav>
 

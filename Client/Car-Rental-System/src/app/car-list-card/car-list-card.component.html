@@ -42,15 +42,15 @@
 
     <div class="card-body">
 
-        <button *ngIf="!isAdmin && route.url === '/carhistory'" [routerLink]="['/feedback', id]" type="button" class="btn btn-danger">FEEDBACK</button>
+        <button *ngIf="!isAdmin && route.url === '/carlist/1'" [routerLink]="['/feedback', id]" type="button" class="btn btn-danger">FEEDBACK</button>
 
-        <button *ngIf="!isAdmin && route.url !== '/carhistory'" [routerLink]="['/location', id]" type="button" class="btn btn-danger">ALUGAR</button>
+        <button *ngIf="!isAdmin && route.url === '/carlist/0'" [routerLink]="['/location', id]" type="button" class="btn btn-danger">ALUGAR</button>
 
-        <button *ngIf="isAdmin && route.url === '/carhistory'" [routerLink]="['/carreturn', id]" type="button" class="btn btn-danger">DEVOLUÇÃO</button>
+        <button *ngIf="isAdmin && route.url === '/carlist/1'" [routerLink]="['/carreturn', id]" type="button" class="btn btn-danger">DEVOLUÇÃO</button>
 
         <section class="editremove">
-            <button *ngIf="isAdmin" [routerLink]="['/editcar', id]" class="edit">EDITAR</button>
-            <button *ngIf="isAdmin" (click)="removeCar(id)" class="remove">REMOVER</button>
+            <button *ngIf="isAdmin && route.url === '/carlist/0'" [routerLink]="['/editcar', id]" class="edit">EDITAR</button>
+            <button *ngIf="isAdmin && route.url === '/carlist/0'" (click)="removeCar(id)" class="remove">REMOVER</button>
           </section>
     </div>
 </div>
