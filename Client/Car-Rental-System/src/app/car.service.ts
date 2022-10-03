@@ -286,8 +286,8 @@ export class CarService {
   }
 
   // Retorna todos os alugueis de um usuário (email)
-  getUserRents(email: string): Observable<CarType[]> {
-    return this.http.get<CarType[]>(`${environment.url}/rent/${email}`)
+  getUserRents(email: string): Observable<AluguelType[]> {
+    return this.http.get<AluguelType[]>(`${environment.url}/rent/${email}`)
   }
 
   // Novo aluguel

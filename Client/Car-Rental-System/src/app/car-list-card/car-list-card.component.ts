@@ -24,6 +24,10 @@ export class CarListCardComponent implements OnInit {
   @Input() preco!: string;
   @Input() qtdeCarros!: string;
   @Input() email!: string;
+  @Input() retirada!: string;
+  @Input() devolucao!: string;
+  @Input() pagamento!: string;
+  @Input() devolvido!: string;
 
   constructor(private authService: AuthService,
     public route: Router,
@@ -34,6 +38,8 @@ export class CarListCardComponent implements OnInit {
 
   isClient = this.authService.isClient;
   isAdmin = this.authService.isAdmin;
+  retiradaData = new Date();
+  devolucaoData = new Date();
   car : CarType = { id : 0,
                     marca: '',
                     nome: '',
@@ -49,8 +55,13 @@ export class CarListCardComponent implements OnInit {
                     quantidade_disponivel: 0,
                     feedbacks : []}
 
-
   ngOnInit(): void {
+    console.log(this.nome, this.devolvido);
+    this.retiradaData = new Date(this.retirada)
+    this.devolucaoData = new Date(this.devolucao)
+    this.retirada = this.retiradaData.toLocaleDateString("pt-BR")
+    this.devolucao = this.devolucaoData.toLocaleDateString("pt-BR")
+    
   }
 
   navigate_to_edit_page(){
@@ -101,6 +112,13 @@ export class CarListCardComponent implements OnInit {
 
     this.feedbackPage.getFeedbackCar(this.carService.getCar(Number(id))!)
     this.route.navigate(['feedback'])*/
+  }
+
+  goToReturn() {
+    console.log("retirada: ",this.retirada);
+    console.log("devolucao: ",this.devolucao);
+    
+    this.route.navigate(['/carreturn', this.id],{queryParams: {email: this.email, retirada: this.retirada, devolucao: this.devolucao, pagamento: this.pagamento}})
   }
 
 }

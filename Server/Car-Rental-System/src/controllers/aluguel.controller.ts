@@ -69,13 +69,13 @@ export class AluguelController {
 
     // retorna todos os carros alugados de um email específico
     getUserRents(email: string) {
-        let listaCarrosAux: Car[] = []
+        let listaAluguelAux: Aluguel[] = []
         for (let i = 0; i < this.listaAlugado.length; i++) {
             if (this.listaAlugado[i].email == email) {
-                listaCarrosAux.push(carController.getCarById(this.listaAlugado[i].id))
+                listaAluguelAux.push(this.listaAlugado[i])
             }
         }
-        return listaCarrosAux
+        return listaAluguelAux
     }
 
     // adicionar carro alugado

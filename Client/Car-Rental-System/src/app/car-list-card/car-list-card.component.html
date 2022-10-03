@@ -45,11 +45,12 @@
 
     <div class="card-body">
 
-        <button *ngIf="!isAdmin && route.url === '/carlist/1'" [routerLink]="['/feedback', id]" type="button" class="btn btn-danger">FEEDBACK</button>
+        <button *ngIf="!isAdmin && route.url === '/carlist/1' && devolvido == 'true'" [routerLink]="['/feedback', id]" type="button" class="btn btn-danger">FEEDBACK</button>
+        <button *ngIf="!isAdmin && route.url === '/carlist/1' && devolvido == 'false'" type="button" class="btn btn-danger">{{retirada}} - {{devolucao}}</button>
 
         <button *ngIf="!isAdmin && route.url === '/carlist/0'" [routerLink]="['/location', id]" type="button" class="btn btn-danger">ALUGAR</button>
 
-        <button *ngIf="isAdmin && route.url === '/carlist/1'" [routerLink]="['/carreturn', id]" type="button" class="btn btn-danger">DEVOLUÇÃO</button>
+        <button *ngIf="isAdmin && route.url === '/carlist/1'" (click)="goToReturn()" type="button" class="btn btn-danger">DEVOLUÇÃO</button>
 
         <section class="editremove">
             <button *ngIf="isAdmin && route.url === '/carlist/0'" [routerLink]="['/editcar', id]" class="edit">EDITAR</button>

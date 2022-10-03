@@ -47,7 +47,7 @@ export class CarListComponent implements OnInit {
   isAdmin = this.authService.isAdmin;
   listaCarros : CarType[] = [];
   listaAlugueis: AluguelType[] = [];
-  listaCarroEmail: [[CarType, string]] = [[this.newCar, '']];
+  listaCarroEmail: [[CarType, string, Date, Date, number, boolean]] = [[this.newCar, '', new Date(), new Date(), 0, false]];
 
 
   getAllCars() {
@@ -66,16 +66,16 @@ export class CarListComponent implements OnInit {
     return this.carService.getAllRents().subscribe({
       next: (rents) =>{
         this.listaAlugueis = rents;
-        
-        
         this.listaCarroEmail.pop()
         for (let i = 0; i < this.listaAlugueis.length; i++) {
           this.carService.getCarById(String(this.listaAlugueis[i].id)).subscribe({
             next: (car) =>{
               console.log(i);
               console.log(this.listaCarroEmail);
+              if (this.listaAlugueis[i].devolvido == false) {
+                this.listaCarroEmail.push([car, this.listaAlugueis[i].email, this.listaAlugueis[i].data_retirada, this.listaAlugueis[i].data_devolucao, this.listaAlugueis[i].preco, this.listaAlugueis[i].devolvido])
+              }
               
-              this.listaCarroEmail.push([car, this.listaAlugueis[i].email])
               
             },
             error: () => {
@@ -94,9 +94,24 @@ export class CarListComponent implements OnInit {
 
   getUserRents(email: string) {
     return this.carService.getUserRents(email).subscribe({
-      next: (cars) =>{
-        this.listaCarros = cars;
-        console.log(this.listaCarros);
+      next: (rents) =>{
+        this.listaAlugueis = rents;
+        this.listaCarroEmail.pop()
+        for (let i = 0; i < this.listaAlugueis.length; i++) {
+          this.carService.getCarById(String(this.listaAlugueis[i].id)).subscribe({
+            next: (car) =>{
+              console.log(i);
+              console.log(this.listaCarroEmail);
+            
+              this.listaCarroEmail.push([car, this.listaAlugueis[i].email, this.listaAlugueis[i].data_retirada, this.listaAlugueis[i].data_devolucao, this.listaAlugueis[i].preco, this.listaAlugueis[i].devolvido])
+              
+            },
+            error: () => {
+              alert("fudeu")
+            }
+          })
+        }
+        return
       },
       error: () => {
         alert("fudeu")
@@ -107,6 +122,8 @@ export class CarListComponent implements OnInit {
   id_page = 0 
   ngOnInit(): void {
     this.id_page = +this.routeActivated.snapshot.paramMap.get('id')!
+    console.log(this.id_page);
+    
     if (this.id_page == 0) {
       this.getAllCars();
     }
@@ -114,7 +131,7 @@ export class CarListComponent implements OnInit {
       this.getAllRents();
     }
 
-    else if (this.id_page == 1 && !this.isAdmin) {
+    else if (this.id_page == 1 && !this.isAdmin && this.isClient) {
       this.getUserRents(this.authService.clientEmail);
     }
     
