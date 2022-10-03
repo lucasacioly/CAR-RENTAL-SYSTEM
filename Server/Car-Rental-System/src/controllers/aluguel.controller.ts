@@ -93,10 +93,9 @@ export class AluguelController {
         console.log(id);
         
         let car = carController.getCarById(id)
-        carController.editCar(car.id, car.marca, car.nome, car.ano, car.direcao, car.imagem, car.categoria, car.totAssentos, car.cambio, car.tipoCombustivel, car.tamanhoMala, car.preco, car.quantidade_disponivel-1, car.feedbacks)
+        car.quantidade_disponivel -= 1
+        carController.editCar(car.id, car.marca, car.nome, car.ano, car.direcao, car.imagem, car.categoria, car.totAssentos, car.cambio, car.tipoCombustivel, car.tamanhoMala, car.preco, car.quantidade_disponivel, car.feedbacks)
         this.listaAlugado.push(newAluguel);
-        console.log(newAluguel);
-        console.log(this.listaAlugado);
         
     }
 

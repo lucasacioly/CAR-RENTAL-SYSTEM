@@ -1,5 +1,6 @@
 import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { faCashRegister } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '../auth.service';
 import { AluguelType, CarService, CarType} from '../car.service';
 
@@ -10,8 +11,8 @@ import { AluguelType, CarService, CarType} from '../car.service';
 })
 export class CarListComponent implements OnInit {
 
-  constructor(private route: Router, 
-    private authService: AuthService, 
+  constructor(private route: Router,
+    private authService: AuthService,
     private routeActivated: ActivatedRoute,
     private carService: CarService) { }
 
@@ -75,8 +76,8 @@ export class CarListComponent implements OnInit {
               if (this.listaAlugueis[i].devolvido == false) {
                 this.listaCarroEmail.push([car, this.listaAlugueis[i].email, this.listaAlugueis[i].data_retirada, this.listaAlugueis[i].data_devolucao, this.listaAlugueis[i].preco, this.listaAlugueis[i].devolvido])
               }
-              
-              
+
+
             },
             error: () => {
               alert("fudeu")
@@ -84,7 +85,7 @@ export class CarListComponent implements OnInit {
           })
         }
         return
-        
+
       },
       error: () => {
         alert("fudeu")
@@ -102,9 +103,9 @@ export class CarListComponent implements OnInit {
             next: (car) =>{
               console.log(i);
               console.log(this.listaCarroEmail);
-            
+
               this.listaCarroEmail.push([car, this.listaAlugueis[i].email, this.listaAlugueis[i].data_retirada, this.listaAlugueis[i].data_devolucao, this.listaAlugueis[i].preco, this.listaAlugueis[i].devolvido])
-              
+
             },
             error: () => {
               alert("fudeu")
@@ -119,11 +120,11 @@ export class CarListComponent implements OnInit {
     })
   }
 
-  id_page = 0 
+  id_page = 0
   ngOnInit(): void {
     this.id_page = +this.routeActivated.snapshot.paramMap.get('id')!
     console.log(this.id_page);
-    
+
     if (this.id_page == 0) {
       this.getAllCars();
     }
@@ -134,7 +135,7 @@ export class CarListComponent implements OnInit {
     else if (this.id_page == 1 && !this.isAdmin && this.isClient) {
       this.getUserRents(this.authService.clientEmail);
     }
-    
+
   }
 
   ngDoCheck(){
