@@ -84,7 +84,7 @@ export class CarListCardComponent implements OnInit {
         alert(message.message);
       },
       error: () => {
-        alert('fudeu');
+        alert('deu ruim');
       }
     })
   }
@@ -99,21 +99,11 @@ export class CarListCardComponent implements OnInit {
         console.log(car);
       },
       error: () => {
-        alert("fudeu")
+        alert("deu ruim")
       }
     })
   }
 
-  feedbackCar(id: string) {/*
-    console.log(Number(id));
-    console.log(this.carService.cars);
-
-
-    console.log(this.carService.getCar(Number(id))!);
-
-    this.feedbackPage.getFeedbackCar(this.carService.getCar(Number(id))!)
-    this.route.navigate(['feedback'])*/
-  }
 
   goToReturn() {
     console.log("retirada: ",this.retirada);

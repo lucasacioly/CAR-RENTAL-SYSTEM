@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'options/:id', component: OptionsLocationComponent},
   { path: 'clientregistration', component: ClientRegistrationComponent},
   { path: 'editcar/:id', component: EditCarPageComponent},
-  { path: 'carhistory', component: CarHistoryComponent}
+  { path: 'carhistory/:id', component: CarHistoryComponent}
 ];
 
 @NgModule({

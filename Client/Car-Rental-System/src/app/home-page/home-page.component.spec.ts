@@ -20,7 +20,7 @@ describe('HomePageComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
+/*
   it('should navigate to location page', fakeAsync((): void => {
     // observa a função de navegar para página de locação
     spyOn(component, 'navigate_to_location_page')
@@ -33,7 +33,7 @@ describe('HomePageComponent', () => {
     // espera-se que a função de navegar para página de locação seja chamada
     expect(component.navigate_to_location_page).toHaveBeenCalled()
 
-  }))
+  }))*/
 
   it('should navigate to car list', fakeAsync((): void => {
     // observa a função de navegar para página de car list

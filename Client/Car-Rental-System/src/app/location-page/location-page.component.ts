@@ -75,7 +75,7 @@ export class LocationPageComponent implements OnInit {
         console.log(car);
       },
       error: () => {
-        alert("fudeu")
+        alert("Deu ruim")
       }
     })
   }
@@ -84,7 +84,16 @@ export class LocationPageComponent implements OnInit {
     this.PastDateTime();
     this.id = +this.routeActivated.snapshot.paramMap.get('id')!
 
-    this.selectedCar = this.carService.getCar(this.id)!
+    this.carService.getCarById(String(this.id)).subscribe({
+      next: (car) =>{
+        this.selectedCar = car;
+        console.log(car);
+      },
+      error: () => {
+        alert("deu ruim")
+      }
+    })
+    //this.selectedCar = this.carService.getCar(this.id)!
     this.getCarFeedbacks()
     this.getCar(String(this.id))
   }

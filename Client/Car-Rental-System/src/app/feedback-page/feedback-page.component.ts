@@ -54,7 +54,16 @@ export class FeedbackPageComponent implements OnInit {
   email = this.authService.clientEmail
   ngOnInit(): void {
     this.id = +this.routeActivated.snapshot.paramMap.get('id')!
-    this.getFeedbackCar(this.carService.getCar(Number(this.id))!)
+    this.carService.getCarById(String(this.id)).subscribe({
+      next: (car) =>{
+        this.newCar = car;
+        console.log(car);
+        this.getFeedbackCar(this.newCar)
+      },
+      error: () => {
+        alert("Deu ruim")
+      }
+    })
   }
 
   isClient = this.authService.isClient;
@@ -65,7 +74,7 @@ export class FeedbackPageComponent implements OnInit {
       next: (feedbacks) =>{
         //this.newFeedback.reset();
         console.log(feedbacks);
-        
+
 
       },
       error: () => {
@@ -95,7 +104,7 @@ export class FeedbackPageComponent implements OnInit {
       descricao: this.feedbackForm.value.descricao!
     }
     console.log("id:",this.id);
-    
+
     this.addFeedback(this.id, newFeedback.nome, newFeedback.nota, newFeedback.descricao)
     this.feedbackForm.reset();
     this.deleteRent(this.id, this.email)

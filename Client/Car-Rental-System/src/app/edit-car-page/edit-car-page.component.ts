@@ -82,8 +82,18 @@ export class EditCarPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = +this.routeActivated.snapshot.paramMap.get('id')!
-    this.selectedCar = this.carService.getCar(this.id)!
-    this.editCarFormBuilder(this.selectedCar)
+    //this.selectedCar = this.carService.getCar(this.id)!
+    this.carService.getCarById(String(this.id)).subscribe({
+      next: (car) =>{
+        this.selectedCar = car
+        console.log(this.selectedCar)
+        this.editCarFormBuilder(this.selectedCar)
+      },
+      error: () => {
+        alert("deu ruim")
+      }
+    })
+
     console.log(this.selectedCar.marca)
   }
 
@@ -137,8 +147,8 @@ export class EditCarPageComponent implements OnInit {
   }
 
   editCar(){
-    return this.carService.editCar(String(this.carroId), this.editCarForm.value.marca!,
-    this.editCarForm.value.nome!,
+    return this.carService.editCar(String(this.carroId), this.editCarForm.value.nome!,
+    this.editCarForm.value.marca!,
     this.editCarForm.value.ano!,
     this.editCarForm.value.direcao!,
     this.editCarForm.value.imagem!,
@@ -149,54 +159,21 @@ export class EditCarPageComponent implements OnInit {
     this.editCarForm.value.tamanhoMala!,
     this.editCarForm.value.preco!,
     this.editCarForm.value.disponiveis!,
-    this.carService.carTransition!.feedbacks).subscribe({
+    this.selectedCar.feedbacks).subscribe({
       next: (message) =>{
         this.editCarForm.reset()
-        this.route.navigate(['/carlist'])
+        this.route.navigate(['/carlist/0'])
         alert(message.mensagem);
       },
       error: () => {
-        alert('krai deu pau');
+        alert('Deu ruim');
       }
     })
   }
 
   onSubmit() {
     this.editCar()
-    /*
-    let newCar = {
-      id: this.carroId,
-      marca: this.editCarForm.value.marca!,
-      nome: this.editCarForm.value.nome!,
-      ano: this.editCarForm.value.ano!,
-      direcao: this.editCarForm.value.direcao!,
-      imagem: this.editCarForm.value.imagem!,
-      categoria: this.editCarForm.value.categoria!,
-      totAssentos: this.editCarForm.value.totAssentos!,
-      cambio: this.editCarForm.value.cambio!,
-      tipoCombustivel: this.editCarForm.value.tipoCombustivel!,
-      tamanhoMala: this.editCarForm.value.tamanhoMala!,
-      preco: this.editCarForm.value.preco!,
-      quantidade_disponivel: this.editCarForm.value.disponiveis!,
-      feedbacks: this.carService.carTransition!.feedbacks
-    }
-    console.log(newCar.quantidade_disponivel);
 
-    this.carService.editCar(String(this.carroId), this.editCarForm.value.marca!,
-      this.editCarForm.value.nome!,
-      this.editCarForm.value.ano!,
-      this.editCarForm.value.direcao!,
-      this.editCarForm.value.imagem!,
-      this.editCarForm.value.categoria!,
-      this.editCarForm.value.totAssentos!,
-      this.editCarForm.value.cambio!,
-      this.editCarForm.value.tipoCombustivel!,
-      this.editCarForm.value.tamanhoMala!,
-      this.editCarForm.value.preco!,
-      this.editCarForm.value.disponiveis!,
-      this.carService.carTransition!.feedbacks)
-    this.editCarForm.reset()
-    this.route.navigate(['/carlist'])*/
   }
 
 }

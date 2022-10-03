@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { FormBuilder } from '@angular/forms';
 import { CarType, CarService, AluguelType } from '../car.service';
 
 @Component({
@@ -12,6 +13,7 @@ export class OptionsLocationComponent implements OnInit {
 
   constructor(private route: Router,
     private routeActivated: ActivatedRoute,
+    private formBuilder: FormBuilder,
     private carService: CarService,
     private authService: AuthService) { }
 
@@ -97,7 +99,7 @@ export class OptionsLocationComponent implements OnInit {
         this.total = this.dias*this.selectedCar.preco
       },
       error: () => {
-        alert("fudeu")
+        alert("deu ruim")
       }
     })
   }
@@ -123,22 +125,80 @@ export class OptionsLocationComponent implements OnInit {
     this.email = this.authService.clientEmail
   }
 
+  newCar: CarType = {
+    id: 0,
+    marca: '',
+    nome: '',
+    ano: 2022,
+    direcao: '',
+    imagem: '',
+    categoria: '',
+    totAssentos: '',
+    cambio: '',
+    tipoCombustivel: '',
+    tamanhoMala: '',
+    preco: 0,
+    quantidade_disponivel: 0,
+    feedbacks: []
+  }
+
+  editCar(car: CarType){
+    return this.carService.editCar(String(car.id),
+    car.nome,
+    car.marca,
+    car.ano,
+    car.direcao,
+    car.imagem,
+    car.categoria,
+    car.totAssentos,
+    car.cambio,
+    car.tipoCombustivel,
+    car.tamanhoMala,
+    car.preco,
+    car.quantidade_disponivel - 1,
+    car.feedbacks).subscribe({
+      next: (message) =>{
+        //this.newCar.reset()
+        this.route.navigate(['/carlist/0'])
+      },
+      error: () => {
+        alert('Deu ruim');
+      }
+    })
+
+  }
+
+  getCarbyId(id: string){
+    return this.carService.getCarById(id).subscribe({
+      next: (car) =>{
+        this.newCar = car;
+        console.log(car);
+        this.editCar(this.newCar)
+      },
+      error: () => {
+        alert("deu ruim")
+      }
+    })
+  }
+
   createRent() {
     console.log(this.email);
     console.log(this.id);
     console.log(this.retiradaData);
     console.log(this.devolucaoData);
-    
+
     this.carService.addRent(this.email, this.id, this.retiradaData, this.devolucaoData, this.total).subscribe({
       next: (message) =>{
-        this.route.navigate([''])
+        this.getCarbyId(String(this.id))
         alert(message.mensagem);
       },
       error: () => {
-        alert("fudeu")
+        alert("deu ruim")
       }
     })
   }
+
+
 
 
 }

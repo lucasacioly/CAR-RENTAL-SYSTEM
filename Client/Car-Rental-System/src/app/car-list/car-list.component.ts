@@ -58,7 +58,7 @@ export class CarListComponent implements OnInit {
         console.log(this.listaCarros);
       },
       error: () => {
-        alert("fudeu")
+        alert("deu ruim")
       }
     })
   }
@@ -80,7 +80,7 @@ export class CarListComponent implements OnInit {
 
             },
             error: () => {
-              alert("fudeu")
+              alert("deu ruim")
             }
           })
         }
@@ -88,7 +88,7 @@ export class CarListComponent implements OnInit {
 
       },
       error: () => {
-        alert("fudeu")
+        alert("deu ruim")
       }
     })
   }
@@ -108,14 +108,14 @@ export class CarListComponent implements OnInit {
 
             },
             error: () => {
-              alert("fudeu")
+              alert("deu ruim")
             }
           })
         }
         return
       },
       error: () => {
-        alert("fudeu")
+        alert("deu ruim")
       }
     })
   }
