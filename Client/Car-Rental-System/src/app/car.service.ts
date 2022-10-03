@@ -270,9 +270,9 @@ export class CarService {
   }*/
 
 
-  addFeedback(id: number, nome: string, nota: number, descricao: string) : Observable<any> {
+  addFeedback(idCar: number, nome: string, nota: number, descricao: string) : Observable<FeedbackType> {
     const feedback : any = {
-      id: id,
+      idCar: idCar,
       nome: nome,
       nota: nota,
       descricao: descricao

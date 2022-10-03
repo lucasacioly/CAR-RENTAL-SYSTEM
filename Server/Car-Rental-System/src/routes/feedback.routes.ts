@@ -19,8 +19,8 @@ feedbackRouter.route('/')
             let descricao: string = req.body.descricao
 
             feedbackController.addFeedback(idCar, nome, nota, descricao)
-
-            return res.json({ mensagem: "new Feedback added"})
+            let feedback = feedbackController.getAllFeedback()
+            return res.json(feedback)
         }
     )
 
