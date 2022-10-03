@@ -41,9 +41,10 @@
     }
 
     .image{
-        height: 20%;
+        height: 250px;
+        //width: 150px;
         color: var(--white);
-        margin-bottom: 100px;
+        //margin-bottom: 100px;
     }
 
     .info{
@@ -100,5 +101,5 @@
 
 
 .imagemPrincipal{
-  height: 300px;
+  width: 300px;
 }
