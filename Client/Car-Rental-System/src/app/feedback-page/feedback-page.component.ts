@@ -59,12 +59,13 @@ export class FeedbackPageComponent implements OnInit {
   isClient = this.authService.isClient;
   isAdmin = this.authService.isAdmin;
 
-  addFeedback(id: number, nome: string, nota: number, descricao: string){
-    this.carService.addFeedback(id, nome, nota, descricao).subscribe({
-      next: (message) =>{
+  addFeedback(idCar: number, nome: string, nota: number, descricao: string){
+    this.carService.addFeedback(idCar, nome, nota, descricao).subscribe({
+      next: (feedbacks) =>{
         //this.newFeedback.reset();
         this.route.navigate(['/'])
-        alert(message.mensagem);
+        console.log(feedbacks)
+        alert('feedback adicionado')
       },
       error: () => {
         alert('Error');
