@@ -69,10 +69,15 @@ export class CarReturnComponent implements OnInit {
       this.pagamento = Number(params['pagamento']);
       console.log(this.retirada);
     });
+    console.log("aaa", this.retirada);
+    
     this.retiradaData = new Date(this.retirada)
     this.devolucaoData = new Date(this.devolucao)
-    this.retirada = this.retiradaData.toLocaleDateString("pt-BR")
-    this.devolucao = this.devolucaoData.toLocaleDateString("pt-BR")
+    console.log(this.retiradaData);
+    console.log(this.devolucaoData);
+    
+    //this.retirada = this.retiradaData.toLocaleDateString("en-US")
+    //this.devolucao = this.devolucaoData.toLocaleDateString("en-US")
 
     this.getReturnCar(this.newCar)
   }

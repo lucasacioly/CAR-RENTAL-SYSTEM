@@ -117,11 +117,16 @@ export class AluguelController {
         let deleted = false
         for (let i = 0; i < this.listaAlugado.length; i++) {
             if (this.listaAlugado[i].email == email && this.listaAlugado[i].id == id) {
-                this.listaAlugado.splice(i)
+                console.log(this.listaAlugado[i].id);
+                
+                this.listaAlugado.splice(i, 1)
+                
                 deleted = true
+                break
             }
         }
         if (deleted) {
+            console.log(this.listaAlugado);
             return true 
         }
         else {

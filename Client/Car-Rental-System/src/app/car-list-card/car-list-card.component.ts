@@ -56,7 +56,7 @@ export class CarListCardComponent implements OnInit {
                     feedbacks : []}
 
   ngOnInit(): void {
-    console.log(this.nome, this.devolvido);
+    console.log("teste", this.nome);
     this.retiradaData = new Date(this.retirada)
     this.devolucaoData = new Date(this.devolucao)
     this.retirada = this.retiradaData.toLocaleDateString("pt-BR")
