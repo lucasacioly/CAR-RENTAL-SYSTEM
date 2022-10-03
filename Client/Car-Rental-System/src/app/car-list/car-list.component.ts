@@ -1,7 +1,7 @@
 import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../auth.service';
-import { CarService, CarType} from '../car.service';
+import { AluguelType, CarService, CarType} from '../car.service';
 
 @Component({
   selector: 'app-car-list',
@@ -27,10 +27,27 @@ export class CarListComponent implements OnInit {
     this.route.navigate(['/addcar'])
   }
 
-
+  newCar: CarType = {
+    id: 0,
+    marca: '',
+    nome: '',
+    ano: 2022,
+    direcao: '',
+    imagem: '',
+    categoria: '',
+    totAssentos: '',
+    cambio: '',
+    tipoCombustivel: '',
+    tamanhoMala: '',
+    preco: 0,
+    quantidade_disponivel: 0,
+    feedbacks: []
+  }
   isClient = this.authService.isClient;
   isAdmin = this.authService.isAdmin;
   listaCarros : CarType[] = [];
+  listaAlugueis: AluguelType[] = [];
+  listaCarroEmail: [[CarType, string]] = [[this.newCar, '']];
 
 
   getAllCars() {
@@ -45,10 +62,62 @@ export class CarListComponent implements OnInit {
     })
   }
 
-  id_page = 0
+  getAllRents() {
+    return this.carService.getAllRents().subscribe({
+      next: (rents) =>{
+        this.listaAlugueis = rents;
+        
+        
+        this.listaCarroEmail.pop()
+        for (let i = 0; i < this.listaAlugueis.length; i++) {
+          this.carService.getCarById(String(this.listaAlugueis[i].id)).subscribe({
+            next: (car) =>{
+              console.log(i);
+              console.log(this.listaCarroEmail);
+              
+              this.listaCarroEmail.push([car, this.listaAlugueis[i].email])
+              
+            },
+            error: () => {
+              alert("fudeu")
+            }
+          })
+        }
+        return
+        
+      },
+      error: () => {
+        alert("fudeu")
+      }
+    })
+  }
+
+  getUserRents(email: string) {
+    return this.carService.getUserRents(email).subscribe({
+      next: (cars) =>{
+        this.listaCarros = cars;
+        console.log(this.listaCarros);
+      },
+      error: () => {
+        alert("fudeu")
+      }
+    })
+  }
+
+  id_page = 0 
   ngOnInit(): void {
     this.id_page = +this.routeActivated.snapshot.paramMap.get('id')!
-    this.getAllCars();
+    if (this.id_page == 0) {
+      this.getAllCars();
+    }
+    else if (this.id_page == 1 && this.isAdmin) {
+      this.getAllRents();
+    }
+
+    else if (this.id_page == 1 && !this.isAdmin) {
+      this.getUserRents(this.authService.clientEmail);
+    }
+    
   }
 
   ngDoCheck(){

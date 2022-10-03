@@ -69,3 +69,15 @@
   color: black;
   margin-bottom: 3%;
 }
+
+.email {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.email-text {
+    color: var(--black);
+    margin-right: 10px;
+    font-size: 15px;
+
+}

@@ -14,20 +14,35 @@
   </nav>
 
   <nav class="estruction">
-    <div class="car-cards">
-        <app-car-list-card *ngFor="let car of listaCarros"
-        id = {{car.id}}
-        nome = {{car.nome}}
-        imagem = {{car.imagem}}
-        marca = {{car.marca}}
-        cambio = {{car.cambio}}
-        totAssentos = {{car.totAssentos}}
-        tamanhoMala = {{car.tamanhoMala}}
-        tipoCombustivel = {{car.tipoCombustivel}}
-        preco = {{car.preco}}
-        qtdeCarros= {{car.quantidade_disponivel}}
-        ></app-car-list-card>
-
+    <div *ngIf="isAdmin && id_page == 1" class="car-cards">
+      <app-car-list-card *ngFor="let carroemail of listaCarroEmail"
+      id = {{carroemail[0].id}}
+      nome = {{carroemail[0].nome}}
+      imagem = {{carroemail[0].imagem}}
+      marca = {{carroemail[0].marca}}
+      cambio = {{carroemail[0].cambio}}
+      totAssentos = {{carroemail[0].totAssentos}}
+      tamanhoMala = {{carroemail[0].tamanhoMala}}
+      tipoCombustivel = {{carroemail[0].tipoCombustivel}}
+      preco = {{carroemail[0].preco}}
+      qtdeCarros= {{carroemail[0].quantidade_disponivel}}
+      email= {{carroemail[1]}}
+      ></app-car-list-card>
+    </div>
+    <div *ngIf="!(isAdmin && id_page == 1)" class="car-cards">
+      <app-car-list-card *ngFor="let car of listaCarros"
+      id = {{car.id}}
+      nome = {{car.nome}}
+      imagem = {{car.imagem}}
+      marca = {{car.marca}}
+      cambio = {{car.cambio}}
+      totAssentos = {{car.totAssentos}}
+      tamanhoMala = {{car.tamanhoMala}}
+      tipoCombustivel = {{car.tipoCombustivel}}
+      preco = {{car.preco}}
+      qtdeCarros= {{car.quantidade_disponivel}}
+      email= {{car.nome}}
+      ></app-car-list-card>
     </div>
 
   </nav>

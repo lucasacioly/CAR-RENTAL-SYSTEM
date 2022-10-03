@@ -1,4 +1,7 @@
 <div class="card" style="width: 18rem;">
+    <div *ngIf="isAdmin && route.url === '/carlist/1'" class="email">
+        <p class="email-text">cliente: {{email}}</p>
+    </div>
     <img src="{{imagem}}" class="card-img-top" alt="...">
     <div class="card-body">
         <h5 class="card-title">{{marca}} - {{nome}}</h5>

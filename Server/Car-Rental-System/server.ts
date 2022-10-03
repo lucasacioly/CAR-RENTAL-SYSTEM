@@ -1,4 +1,5 @@
 import express from 'express';
+import aluguelRouter from './src/routes/aluguel.routes';
 import carRouter from './src/routes/car.routes'
 import feedbackRouter from './src/routes/feedback.routes';
 
@@ -16,7 +17,7 @@ server.use(allowCrossDomain);
 server.use(express.json());
 server.use('/car', carRouter);
 server.use('/feedback', feedbackRouter);
-//server.use('/user', userRouter)
+server.use('/rent', aluguelRouter);
 
 server.listen(port, () => {
     console.log('Server listening on port ' + port);

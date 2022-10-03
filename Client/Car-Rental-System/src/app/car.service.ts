@@ -14,10 +14,6 @@ export class CarService {
     return this.http.get<CarType[]>(`${environment.url}/car`);
   }
 
-  getAllCarsh(): Observable<CarType[]>{
-    return this.http.get<CarType[]>(`${environment.url}/car`);
-  }
-
   addCar(nome: string,
     marca: string,
     ano: number,
@@ -284,6 +280,45 @@ export class CarService {
     return this.http.get<FeedbackType[]>(`${environment.url}/feedback/${id}`)
   }
 
+  // Retorna todos os alugueis (admin)
+  getAllRents(): Observable<AluguelType[]> {
+    return this.http.get<AluguelType[]>(`${environment.url}/rent`)
+  }
+
+  // Retorna todos os alugueis de um usuário (email)
+  getUserRents(email: string): Observable<CarType[]> {
+    return this.http.get<CarType[]>(`${environment.url}/rent/${email}`)
+  }
+
+  // Novo aluguel
+  addRent(email : string, id: number, data_retirada: Date, data_devolucao: Date, preco: number): Observable<any> {
+    const rent : any = {
+      email: email,
+      id: id,
+      data_retirada: data_retirada,
+      data_devolucao: data_devolucao,
+      preco: preco
+    }
+    console.log(rent);
+    
+    return this.http.post<any>(`${environment.url}/rent`, rent);
+  }
+
+  //  Devolução de um carro
+  returnCar(email: string, id: number, data_retirada: Date, data_devolucao: Date, preco: number): Observable<any>{
+    let editRent: any = {email: email,
+                         id: id,
+                         data_retirada: data_retirada,
+                         data_devolucao: data_devolucao,
+                         preco: preco,
+                         devolvido: false}
+    return this.http.put<any>(`${environment.url}/rent/${email}/${id}`, editRent)
+  }
+
+  // feedback foi feito de um carro
+  deleteRent(email: string, id: number): Observable<any> {
+    return this.http.delete<any>(`${environment.url}/rent/${email}/${id}`)
+  }
 }
 
 export interface CarType {
@@ -311,3 +346,11 @@ export interface FeedbackType {
   descricao: string
 }
 
+export interface AluguelType {
+  email: string
+  id: number
+  data_retirada: Date
+  data_devolucao: Date
+  preco: number
+  devolvido: boolean
+}
