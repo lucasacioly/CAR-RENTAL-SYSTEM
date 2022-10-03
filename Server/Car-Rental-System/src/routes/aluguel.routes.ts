@@ -20,12 +20,9 @@ aluguelRouter.route('/')
         let data_devolucao : Date = req.body.data_devolucao
         let preco : number = Number(req.body.preco)
         console.log('post aluguel.routes')
-
         aluguelController.addRent(email, id, data_retirada, data_devolucao, preco)
         return res.json({ mensagem: "new ALUGUEL added"})
     })
-
-
 
 aluguelRouter.route('/:email')
     .get((req, res) => {

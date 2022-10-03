@@ -29,6 +29,7 @@ export class CarListCardComponent implements OnInit {
   @Input() pagamento!: string;
   @Input() devolvido!: string;
 
+
   constructor(private authService: AuthService,
     public route: Router,
     private carService: CarService,
@@ -61,7 +62,7 @@ export class CarListCardComponent implements OnInit {
     this.devolucaoData = new Date(this.devolucao)
     this.retirada = this.retiradaData.toLocaleDateString("pt-BR")
     this.devolucao = this.devolucaoData.toLocaleDateString("pt-BR")
-    
+    console.log(this.qtdeCarros)
   }
 
   navigate_to_edit_page(){
@@ -117,7 +118,7 @@ export class CarListCardComponent implements OnInit {
   goToReturn() {
     console.log("retirada: ",this.retirada);
     console.log("devolucao: ",this.devolucao);
-    
+
     this.route.navigate(['/carreturn', this.id],{queryParams: {email: this.email, retirada: this.retirada, devolucao: this.devolucao, pagamento: this.pagamento}})
   }
 
