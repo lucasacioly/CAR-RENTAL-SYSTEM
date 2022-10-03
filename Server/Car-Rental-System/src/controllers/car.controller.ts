@@ -32,7 +32,7 @@ export class CarController {
       tipoCombustivel: 'Flex',
       tamanhoMala: 'P',
       preco: 65.00,
-      quantidade_disponivel: 5,
+      quantidade_disponivel: 3,
       feedbacks: []
     },
     {
@@ -48,7 +48,7 @@ export class CarController {
       tipoCombustivel: 'Flex',
       tamanhoMala: 'M',
       preco: 132.00,
-      quantidade_disponivel: 5,
+      quantidade_disponivel: 2,
       feedbacks: []
     },
     {
@@ -80,7 +80,7 @@ export class CarController {
       tipoCombustivel: 'Gasolina',
       tamanhoMala: 'G',
       preco: 200.00,
-      quantidade_disponivel: 5,
+      quantidade_disponivel: 3,
       feedbacks: []
     },
     {
@@ -96,7 +96,7 @@ export class CarController {
       tipoCombustivel: 'Gasolina',
       tamanhoMala: 'P',
       preco: 60.00,
-      quantidade_disponivel: 5,
+      quantidade_disponivel: 8,
       feedbacks: []
     },
     {
@@ -112,7 +112,7 @@ export class CarController {
       tipoCombustivel: 'Gasolina',
       tamanhoMala: 'M',
       preco: 170.00,
-      quantidade_disponivel: 5,
+      quantidade_disponivel: 4,
       feedbacks: []
     },
     {
@@ -128,7 +128,7 @@ export class CarController {
       tipoCombustivel: 'Gasolina',
       tamanhoMala: 'M',
       preco: 250.00,
-      quantidade_disponivel: 5,
+      quantidade_disponivel: 1,
       feedbacks: []
     }];
 
