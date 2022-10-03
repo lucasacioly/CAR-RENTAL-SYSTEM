@@ -64,7 +64,8 @@ export class FeedbackPageComponent implements OnInit {
     this.carService.addFeedback(idCar, nome, nota, descricao).subscribe({
       next: (feedbacks) =>{
         //this.newFeedback.reset();
-        alert(message.mensagem);
+        console.log(feedbacks);
+        
 
       },
       error: () => {
