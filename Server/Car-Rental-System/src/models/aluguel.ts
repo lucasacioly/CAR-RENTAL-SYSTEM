@@ -1,10 +1,8 @@
-import { Car } from '../models/car';
-
 export interface Aluguel {
-    //cliente: User;
     email: string
-    carro: Car
+    id: number
     data_retirada: Date
     data_devolucao: Date
+    preco: number
     devolvido: boolean
 }

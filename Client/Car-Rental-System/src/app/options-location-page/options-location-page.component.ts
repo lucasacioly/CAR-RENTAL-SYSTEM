@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { CarType, CarService } from '../car.service';
+import { AuthService } from '../auth.service';
+import { CarType, CarService, AluguelType } from '../car.service';
 
 @Component({
   selector: 'app-options-location-page',
@@ -11,7 +12,8 @@ export class OptionsLocationComponent implements OnInit {
 
   constructor(private route: Router,
     private routeActivated: ActivatedRoute,
-    private carService: CarService) { }
+    private carService: CarService,
+    private authService: AuthService) { }
 
   navigate_to_home_page(){
     this.route.navigate([''])
@@ -23,6 +25,7 @@ export class OptionsLocationComponent implements OnInit {
   dias = 0
   devolucao = ''
   total = 0
+  email = ''
 
   seguros = [
     {name: 'Proteção de Vidros', value : 18},
@@ -117,9 +120,24 @@ export class OptionsLocationComponent implements OnInit {
 
 
     this.getCar(String(this.id));
+    this.email = this.authService.clientEmail
+  }
 
-
-
+  createRent() {
+    console.log(this.email);
+    console.log(this.id);
+    console.log(this.retiradaData);
+    console.log(this.devolucaoData);
+    
+    this.carService.addRent(this.email, this.id, this.retiradaData, this.devolucaoData, this.total).subscribe({
+      next: (message) =>{
+        this.route.navigate([''])
+        alert(message.mensagem);
+      },
+      error: () => {
+        alert("fudeu")
+      }
+    })
   }
 
 
