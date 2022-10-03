@@ -13,9 +13,9 @@ feedbackRouter.route('/')
         })
 
     .post((req, res) =>{
-            let idCar : number = req.body.idCar
+            let idCar : number = Number(req.body.id)
             let nome : string = req.body.nome
-            let nota: number = req.body.nota
+            let nota: number = Number(req.body.nota)
             let descricao: string = req.body.descricao
 
             feedbackController.addFeedback(idCar, nome, nota, descricao)

@@ -92,12 +92,11 @@ export class FeedbackPageComponent implements OnInit {
       nota: Number(this.feedbackForm.value.avaliacao!),
       descricao: this.feedbackForm.value.descricao!
     }
-
-    this.addFeedback(newFeedback.id, newFeedback.nome, newFeedback.nota, newFeedback.descricao)
-    this.deleteRent(this.id, this.email)
-
+    console.log("id:",this.id);
+    
+    this.addFeedback(this.id, newFeedback.nome, newFeedback.nota, newFeedback.descricao)
     this.feedbackForm.reset();
-    this.route.navigate(['/carhistory'])
+    this.deleteRent(this.id, this.email)
   }
 
 }
