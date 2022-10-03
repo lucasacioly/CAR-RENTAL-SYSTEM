@@ -51,6 +51,7 @@ export class FeedbackPageComponent implements OnInit {
   }
 
   id = 0
+  email = this.authService.clientEmail
   ngOnInit(): void {
     this.id = +this.routeActivated.snapshot.paramMap.get('id')!
     this.getFeedbackCar(this.carService.getCar(Number(this.id))!)
@@ -59,12 +60,25 @@ export class FeedbackPageComponent implements OnInit {
   isClient = this.authService.isClient;
   isAdmin = this.authService.isAdmin;
 
-  addFeedback(id: number, nome: string, nota: number, descricao: string){
-    this.carService.addFeedback(id, nome, nota, descricao).subscribe({
-      next: (message) =>{
+  addFeedback(idCar: number, nome: string, nota: number, descricao: string){
+    this.carService.addFeedback(idCar, nome, nota, descricao).subscribe({
+      next: (feedbacks) =>{
         //this.newFeedback.reset();
-        this.route.navigate(['/'])
-        alert(message.mensagem);
+        console.log(feedbacks);
+        
+
+      },
+      error: () => {
+        alert('Error');
+      }
+    })
+  }
+
+  deleteRent(id: number, email: string) {
+    this.carService.deleteRent(email, id).subscribe({
+      next: (message) =>{
+        this.navigate_to_home_page()
+        //alert(message.mensagem);
       },
       error: () => {
         alert('Error');
@@ -80,12 +94,11 @@ export class FeedbackPageComponent implements OnInit {
       nota: Number(this.feedbackForm.value.avaliacao!),
       descricao: this.feedbackForm.value.descricao!
     }
-
-    this.addFeedback(newFeedback.id, newFeedback.nome, newFeedback.nota, newFeedback.descricao)
-
-
+    console.log("id:",this.id);
+    
+    this.addFeedback(this.id, newFeedback.nome, newFeedback.nota, newFeedback.descricao)
     this.feedbackForm.reset();
-    this.route.navigate(['/carhistory'])
+    this.deleteRent(this.id, this.email)
   }
 
 }

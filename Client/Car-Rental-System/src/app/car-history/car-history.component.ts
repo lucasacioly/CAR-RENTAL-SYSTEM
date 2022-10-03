@@ -21,23 +21,7 @@ export class CarHistoryComponent implements OnInit {
   isAdmin = this.authService.isAdmin;
   list_cars : CarType[] = [];
 
-
-  getAllCarsh() {
-    return this.carService.getAllCarsh().subscribe({
-      next: (cars1) =>{
-        this.list_cars = cars1;
-        console.log(this.list_cars);
-        console.log('vou coringar')
-      },
-      error: () => {
-        alert("fudeu")
-      }
-    })
-  }
-
   ngOnInit(): void {
-   
-    this.getAllCarsh();
   }
 
 }

@@ -6,6 +6,8 @@
   <h1 class="title">DEVOLUÇÃO DO CARRO</h1>
   <div class="form-container">
     <section class="questions">
+      <h2>Email do cliente:</h2>
+      <p>{{email}}</p>
       <img src="{{imagem}}" class="photo">
       <!--<h2>Marca do Carro:</h2>
       <input name="Marca" cols="30" rows="1"/>
@@ -20,24 +22,31 @@
       <h2>Quilometragem Final:</h2>
       <input name="Marca" cols="30" rows="1"/>-->
       <h2>Data de alocação:</h2>
-      <input type="datetime-local" min="2022-08-28T17:55">
-      <h2>Data de devolução:</h2>
-      <input type="datetime-local" min="2022-08-28T17:55">
-      <button (click)="navigate_to_home_page()" class="button"> Concluir</button>
+      <p>{{retirada}}</p>
+      <h2>Data de devolução prevista:</h2>
+      <p>{{devolucao}}</p>
+      
+      <button (click)="returnCar()" class="button"> Concluir</button>
     </section>
 
 
 
-    <section class="fine">
+    <form [formGroup]="returnForm" (ngSubmit)="onSubmit()" class="fine">
       <h2>Atraso:</h2>
-      <input name="Marca" cols="30" rows="1"/>
+      <select formControlName="atraso" class="form-control" type="text">
+        <option *ngFor="let atraso of atrasos"
+            [value]="atraso">{{atraso}}</option>
+      </select>
       <h2>Batido:</h2>
-      <input name="Marca" cols="30" rows="1"/>
-      <h2>Outros:</h2>
-      <input name="Marca" cols="30" rows="1"/>
-      <button class="button"> Calcular </button>
+      <select formControlName="batido" class="form-control" type="text">
+        <option *ngFor="let batido of batidos"
+            [value]="batido">{{batido}}</option>
+      </select>
+      <h2 *ngIf="!multa">Total: R$ {{pagamento}}</h2>
+      <h2 *ngIf="multa">Total com multa: R$ {{pagamento}}</h2>
+      <button type="submit" class="button"> Calcular </button>
 
-    </section>
+    </form>
 
 </div>
 

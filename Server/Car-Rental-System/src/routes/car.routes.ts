@@ -25,7 +25,7 @@ carRouter.route('/')
         let tipoCombustivel : string = req.body.tipoCombustivel
         let tamanhoMala : string = req.body.tamanhoMala
         let preco : number = Number(req.body.preco)
-        let quantidade_disponnivel: number = Number(req.body.quantidade_disponnivel)
+        let quantidade_disponivel: number = Number(req.body.quantidade_disponivel)
 
         carController.addCar(marca,
             nome,
@@ -38,7 +38,7 @@ carRouter.route('/')
             tipoCombustivel, 
             tamanhoMala, 
             preco,
-            quantidade_disponnivel)
+            quantidade_disponivel)
             
         return res.json({ mensagem: "new CAR added"})
     })
@@ -76,7 +76,6 @@ carRouter.route('/:id')
         let quantidade_disponivel: number = Number(req.body.quantidade_disponivel)
         let feedbacks : Feedback[]  = req.body.feedbacks
         
-        console.log()
         carController.editCar(id,  
             marca,
             nome, 

@@ -127,3 +127,14 @@ i:hover{
 .custom-tooltip {
   --bs-tooltip-bg: var(--bs-primary);
 }
+.email {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.email-text {
+    color: var(--black);
+    margin-right: 10px;
+    font-size: 15px;
+
+}
