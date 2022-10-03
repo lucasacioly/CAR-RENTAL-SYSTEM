@@ -65,7 +65,6 @@ export class CarReturnComponent implements OnInit {
     this.carService.getCarById(String(this.id)).subscribe({
       next: (car) =>{
         this.newCar = car;
-        console.log(car);
 
         this.routeActivated.queryParams
 
@@ -74,17 +73,10 @@ export class CarReturnComponent implements OnInit {
           this.retirada = params['retirada'];
           this.devolucao = params['devolucao'];
           this.pagamento = Number(params['pagamento']);
-          console.log(this.retirada);
         });
-        console.log("aaa", this.retirada);
 
         this.retiradaData = new Date(this.retirada)
         this.devolucaoData = new Date(this.devolucao)
-        console.log(this.retiradaData);
-        console.log(this.devolucaoData);
-
-        //this.retirada = this.retiradaData.toLocaleDateString("en-US")
-        //this.devolucao = this.devolucaoData.toLocaleDateString("en-US")
 
         this.getReturnCar(this.newCar)
       },
