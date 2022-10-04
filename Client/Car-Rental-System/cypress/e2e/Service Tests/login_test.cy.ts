@@ -1,8 +1,4 @@
-import { AuthService } from "src/app/auth.service"
-
 describe('empty spec', () => {
-
-  let authService: AuthService;
 
   it('passes', () => {
     cy.visit('http://localhost:4200/login')
@@ -10,8 +6,9 @@ describe('empty spec', () => {
     cy.get('input[name="senha"]').type('coxinha123')
     //cy.get('.login').submit()
     cy.get('.entrar').click()
-    
-    //cy.get('').type('').should('')
+    cy.url().should('eq', 'http://localhost:4200/')
+    cy.get('#open').click()
+    cy.contains('Matheus').should('exist')
 
   })
 })
