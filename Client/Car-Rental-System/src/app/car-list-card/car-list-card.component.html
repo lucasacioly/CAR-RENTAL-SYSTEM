@@ -54,8 +54,8 @@
         <button *ngIf="isAdmin && route.url === '/carlist/1'" (click)="goToReturn()" type="button" class="btn btn-danger">DEVOLUÇÃO</button>
 
         <section class="editremove">
-            <button *ngIf="isAdmin && route.url === '/carlist/0'" [routerLink]="['/editcar', id]" class="edit">EDITAR</button>
-            <button *ngIf="isAdmin && route.url === '/carlist/0'" (click)="removeCar(id)" class="remove">REMOVER</button>
+            <button *ngIf="isAdmin && route.url === '/carlist/0'" [routerLink]="['/editcar', id]" class="edit" id="edit{{id}}">EDITAR</button>
+            <button *ngIf="isAdmin && route.url === '/carlist/0'" (click)="removeCar(id)" class="remove" id="remove{{id}}">REMOVER</button>
           </section>
     </div>
 </div>

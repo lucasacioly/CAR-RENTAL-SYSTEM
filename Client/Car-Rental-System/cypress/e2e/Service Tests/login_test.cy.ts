@@ -1,4 +1,4 @@
-describe('empty spec', () => {
+describe('Login test', () => {
 
   it('passes', () => {
     cy.visit('http://localhost:4200/login')

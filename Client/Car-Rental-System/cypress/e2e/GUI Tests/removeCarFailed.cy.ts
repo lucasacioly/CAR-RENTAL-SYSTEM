@@ -1,4 +1,4 @@
-describe('Login as admin', () => {
+describe('empty spec', () => {
 
     it('passes', () => {
       cy.visit('http://localhost:4200/login')
@@ -6,8 +6,9 @@ describe('Login as admin', () => {
       cy.get('input[name="senha"]').type('admin123')
       cy.get('.entrar').click()
       cy.url().should('eq', 'http://localhost:4200/')
-      cy.get('#open').click()
-      cy.contains('admin').should('exist')
+      cy.get('#test').click()
+      cy.url().should('include', '/carlist/0')
+      cy.get('#remove2').click()
 
     })
   })

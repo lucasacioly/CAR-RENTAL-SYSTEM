@@ -1,4 +1,4 @@
-describe('empty spec', () => {
+describe('Login failed via invalid email or password', () => {
 
     it('passes', () => {
       cy.visit('http://localhost:4200/login')
@@ -9,7 +9,7 @@ describe('empty spec', () => {
         //assertions
         expect(t).to.contains('Usuário ou senha inválido');
      })
-      
-  
+
+
     })
   })

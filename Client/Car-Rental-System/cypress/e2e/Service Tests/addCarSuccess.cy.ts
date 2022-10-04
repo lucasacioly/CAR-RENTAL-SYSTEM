@@ -1,0 +1,31 @@
+describe('empty spec', () => {
+
+  it('passes', () => {
+    cy.visit('http://localhost:4200/login')
+    cy.get('input[name="e-mail"]').type('admin@alucar.com')
+    cy.get('input[name="senha"]').type('admin123')
+    cy.get('.entrar').click()
+    cy.wait(1000)
+    cy.url().should('eq', 'http://localhost:4200/')
+    cy.get('#open').click()
+    cy.get('#nav_button_carlist').click()
+    cy.wait(1000)
+    cy.get("#addcar").click()
+    cy.wait(1000)
+    //preencher form
+    cy.get('[formControlName="marca"]').type('Honda')
+    cy.get('[formControlName="ano"]').type('2020')
+    cy.get('[formControlName="direcao"]').type('Manual')
+    cy.get('[formControlName="tipoCombustivel"]').type('Flex')
+    cy.get('[formControlName="tamanhoMala"]').type('G')
+    cy.get('[formControlName="imagem"]').type('https://www.webmotors.com.br/imagens/prod/346783/HONDA_CIVIC_2.0_16V_FLEXONE_EXL_4P_CVT_34678302592300235.webp?s=fill&w=130&h=97&q=70&t=true)')
+    cy.get('[formControlName="nome"]').type('meucarro')
+    cy.get('[formControlName="categoria"]').type('Hatch')
+    cy.get('[formControlName="cambio"]').type('manual')
+    cy.get('[formControlName="totAssentos"]').type('5')
+    cy.get('[formControlName="preco"]').type('75')
+    cy.get('[formControlName="quantidade_disponivel"]').type('3')
+    cy.get('#button-confirm').click()
+
+  })
+})

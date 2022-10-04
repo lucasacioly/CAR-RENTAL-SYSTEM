@@ -1,4 +1,4 @@
-describe('empty spec', () => {
+describe('Logout after login', () => {
 
     it('passes', () => {
       cy.visit('http://localhost:4200/login')
@@ -11,6 +11,5 @@ describe('empty spec', () => {
       cy.url().should('eq', 'http://localhost:4200/login')
       cy.get('#open').click()
       cy.contains('Login').should('exist')
-  
     })
   })
