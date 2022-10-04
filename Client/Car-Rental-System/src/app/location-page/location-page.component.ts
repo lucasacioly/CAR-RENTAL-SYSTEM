@@ -30,7 +30,10 @@ export class LocationPageComponent implements OnInit {
   }
 
   onSubmit(){
-    if(this.isClient || this.isAdmin){
+    if(this.locationForm.value.retirada == '' || this.locationForm.value.devolucao == ''){
+      alert("Preencha todos os campos das datas")
+    }
+    else if(this.isClient || this.isAdmin){
       console.log(this.locationForm.value.retirada!);
 
       this.route.navigate(['/options', this.id],{queryParams: {retirada: this.locationForm.value.retirada!, devolucao: this.locationForm.value.devolucao!}})
@@ -79,10 +82,25 @@ export class LocationPageComponent implements OnInit {
       }
     })
   }
+  data = new Date();
+  dia = 0;
+  mes = 0;
+  ano = 0;
+  dataAtual = ''
+  
 
   ngOnInit(): void {
     this.PastDateTime();
     this.id = +this.routeActivated.snapshot.paramMap.get('id')!
+    this.dataAtual = String(this.data.getDate()).padStart(2, '0');
+    this.dia = Number(this.dataAtual)
+    this.dataAtual = String(this.data.getMonth() + 1).padStart(2, '0');
+    this.mes = Number(this.dataAtual)
+    this.ano = this.data.getFullYear();
+    this.dataAtual = this.dia + '/' + this.mes + '/' + this.ano;
+    console.log(this.dia);
+    console.log(this.mes);
+    console.log(this.ano);
 
     this.carService.getCarById(String(this.id)).subscribe({
       next: (car) =>{

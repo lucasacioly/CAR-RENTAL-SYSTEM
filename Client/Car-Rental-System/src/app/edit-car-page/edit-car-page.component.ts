@@ -147,28 +147,40 @@ export class EditCarPageComponent implements OnInit {
   }
 
   editCar(){
-    return this.carService.editCar(String(this.carroId), this.editCarForm.value.nome!,
-    this.editCarForm.value.marca!,
-    this.editCarForm.value.ano!,
-    this.editCarForm.value.direcao!,
-    this.editCarForm.value.imagem!,
-    this.editCarForm.value.categoria!,
-    this.editCarForm.value.totAssentos!,
-    this.editCarForm.value.cambio!,
-    this.editCarForm.value.tipoCombustivel!,
-    this.editCarForm.value.tamanhoMala!,
-    this.editCarForm.value.preco!,
-    this.editCarForm.value.disponiveis!,
-    this.selectedCar.feedbacks).subscribe({
-      next: (message) =>{
-        this.editCarForm.reset()
-        this.route.navigate(['/carlist/0'])
-        alert(message.mensagem);
-      },
-      error: () => {
-        alert('Deu ruim');
-      }
-    })
+    if (this.editCarForm.value.nome! == '' || this.editCarForm.value.nome! == '' || this.editCarForm.value.marca! == '' || this.editCarForm.value.ano! == 0 || this.editCarForm.value.direcao! == '' || this.editCarForm.value.imagem! == '' || this.editCarForm.value.categoria! == '' || this.editCarForm.value.totAssentos! == '' || this.editCarForm.value.cambio! == '' || this.editCarForm.value.tipoCombustivel! == '' || this.editCarForm.value.tamanhoMala! == '') {
+      alert("Preencha todos os campos")
+    }
+    else if (this.editCarForm.value.disponiveis! < 0) {
+      alert("A quantidade de carros não pode ser negativa")
+    }
+    else if (this.editCarForm.value.preco! < 0) {
+      alert("O preço do aluguel não pode ser negativo")
+    }
+    else {
+      return this.carService.editCar(String(this.carroId), this.editCarForm.value.nome!,
+      this.editCarForm.value.marca!,
+      this.editCarForm.value.ano!,
+      this.editCarForm.value.direcao!,
+      this.editCarForm.value.imagem!,
+      this.editCarForm.value.categoria!,
+      this.editCarForm.value.totAssentos!,
+      this.editCarForm.value.cambio!,
+      this.editCarForm.value.tipoCombustivel!,
+      this.editCarForm.value.tamanhoMala!,
+      this.editCarForm.value.preco!,
+      this.editCarForm.value.disponiveis!,
+      this.selectedCar.feedbacks).subscribe({
+        next: (message) =>{
+          this.editCarForm.reset()
+          this.route.navigate(['/carlist/0'])
+          alert(message.mensagem);
+        },
+        error: () => {
+          alert('Deu ruim');
+        }
+      })
+    }
+    return
   }
 
   onSubmit() {

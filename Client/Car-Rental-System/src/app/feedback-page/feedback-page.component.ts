@@ -96,18 +96,22 @@ export class FeedbackPageComponent implements OnInit {
   }
 
   onSubmit() {
+    if (this.feedbackForm.value.avaliacao! == 0) {
+      alert("É preciso informar uma nota")
+    } 
+    else {
+      let newFeedback: FeedbackType = {
+        id: this.id,
+        nome: this.authService.clientName,
+        nota: Number(this.feedbackForm.value.avaliacao!),
+        descricao: this.feedbackForm.value.descricao!
+      }
+      console.log("id:",this.id);
 
-    let newFeedback: FeedbackType = {
-      id: this.id,
-      nome: this.authService.clientName,
-      nota: Number(this.feedbackForm.value.avaliacao!),
-      descricao: this.feedbackForm.value.descricao!
+      this.addFeedback(this.id, newFeedback.nome, newFeedback.nota, newFeedback.descricao)
+      this.feedbackForm.reset();
+      this.deleteRent(this.id, this.email)
     }
-    console.log("id:",this.id);
-
-    this.addFeedback(this.id, newFeedback.nome, newFeedback.nota, newFeedback.descricao)
-    this.feedbackForm.reset();
-    this.deleteRent(this.id, this.email)
   }
 
 }
