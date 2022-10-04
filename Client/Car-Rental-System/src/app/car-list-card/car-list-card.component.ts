@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
-import { CarService, CarType } from '../car.service';
+import { AluguelType, CarService, CarType } from '../car.service';
 import { EditCarPageComponent } from '../edit-car-page/edit-car-page.component';
 import { FeedbackPageComponent } from '../feedback-page/feedback-page.component';
 import { CarListComponent } from '../car-list/car-list.component';
@@ -62,6 +62,7 @@ export class CarListCardComponent implements OnInit {
     this.devolucaoData = new Date(this.devolucao)
     this.retirada = this.retiradaData.toLocaleDateString("pt-BR")
     this.devolucao = this.devolucaoData.toLocaleDateString("pt-BR")
+    this.getAllRents()
     console.log(this.qtdeCarros)
   }
 
@@ -73,11 +74,29 @@ export class CarListCardComponent implements OnInit {
     this.route.navigate(['/location'])
   }
 
+  todosAlugueis : AluguelType[] = []
+
+  getAllRents(){
+    return this.carService.getAllRents().subscribe({
+      next: (rents) =>{
+        this.todosAlugueis = rents
+      },
+      error: () =>{
+        alert('deu ruim')
+      }
+    })
+  }
+
+  alugado = false
+
   removeCar(id: string) {
-    /*
-    console.log(id);
-    this.carService.removeCar(parseInt(id, 10));
-    */
+    for(let i = 0; i < this.todosAlugueis.length; i++){
+      if(+id == this.todosAlugueis[i].id){
+        //&& this.todosAlugueis[i].devolvido == false
+        this.alugado = true
+      }
+    }
+    if(!this.alugado){
     return this.carService.removeCar(id).subscribe({
       next: (message) =>{
         this.carList.getAllCars()
@@ -86,7 +105,11 @@ export class CarListCardComponent implements OnInit {
       error: () => {
         alert('deu ruim');
       }
-    })
+    })}
+    else{
+      alert("Não é possível excluir um carro que está alugado")
+    }
+    return
   }
 
   editCar(id: string) {

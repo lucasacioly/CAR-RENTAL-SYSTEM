@@ -34,17 +34,6 @@ export class AuthService {
     })
   }
 
-  /*signin(type: string){
-    if (type == 'admin') {
-      this.isAdmin = true
-    }
-    else {
-      this.isClient = true
-      console.log(type);
-      this.clientName = String(type)
-    }
-  }*/
-
   register(name : string, email : string, password : string) {
     this.fireauth.createUserWithEmailAndPassword(email, password).then((user) => {
       user.user?.updateProfile({displayName:name})
