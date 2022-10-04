@@ -8,7 +8,10 @@
 
     <div class="topbar">
       <button *ngIf="isAdmin && id_page == 0"  (click)="navigate_to_add_car_page()" class="addnewcar"  >Adicionar Carro</button>
-      <section class="filter-button"><app-list-filters></app-list-filters></section>
+      <br *ngIf="!isAdmin || id_page == 1">
+      <br *ngIf="!isAdmin || id_page == 1">
+      <br *ngIf="!isAdmin || id_page == 1">
+      <!--section class="filter-button"><app-list-filters></app-list-filters></section-->
     </div>
 
   </nav>

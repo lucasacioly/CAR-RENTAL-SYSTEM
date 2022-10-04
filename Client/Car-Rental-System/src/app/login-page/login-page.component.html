@@ -9,7 +9,7 @@
 
       <input formControlName="login" type="text" class="email" name="e-mail" id="" cols="30" rows="1" placeholder="Email"/>
       <section class = "password">
-          <input formControlName="password" class = "senha" [type]="show ? 'text' : 'password'"  placeholder="Senha"/>
+          <input formControlName="password" class = "senha" name="senha" [type]="show ? 'text' : 'password'"  placeholder="Senha"/>
           <button class = "eye-button" *ngIf="show"(click)="show_senha()">
             <img class = "eye"  src="assets/olho.svg">
           </button>

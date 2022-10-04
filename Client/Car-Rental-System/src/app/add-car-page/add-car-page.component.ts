@@ -38,27 +38,39 @@ export class AddCarPageComponent implements OnInit {
   }
 
   addCar(){
-    return this.carService.addCar(this.addCarForm.value.nome!,
-      this.addCarForm.value.marca!,
-      this.addCarForm.value.ano!,
-      this.addCarForm.value.direcao!,
-      this.addCarForm.value.imagem!,
-      this.addCarForm.value.categoria!,
-      this.addCarForm.value.totAssentos!,
-      this.addCarForm.value.cambio!,
-      this.addCarForm.value.tipoCombustivel!,
-      this.addCarForm.value.tamanhoMala!,
-      this.addCarForm.value.preco!,
-      this.addCarForm.value.quantidade_disponivel!).subscribe({
-      next: (message) =>{
-        this.addCarForm.reset();
-        this.route.navigate(['/carlist/0'])
-        alert(message.mensagem);
-      },
-      error: () => {
-        alert('deu ruim');
-      }
-    })
+    if (this.addCarForm.value.nome! == '' || this.addCarForm.value.nome! == '' || this.addCarForm.value.marca! == '' || this.addCarForm.value.ano! == 0 || this.addCarForm.value.direcao! == '' || this.addCarForm.value.imagem! == '' || this.addCarForm.value.categoria! == '' || this.addCarForm.value.totAssentos! == '' || this.addCarForm.value.cambio! == '' || this.addCarForm.value.tipoCombustivel! == '' || this.addCarForm.value.tamanhoMala! == '') {
+      alert("Preencha todos os campos")
+    }
+    else if (this.addCarForm.value.quantidade_disponivel! < 0) {
+      alert("A quantidade de carros não pode ser negativa")
+    }
+    else if (this.addCarForm.value.preco! < 0) {
+      alert("O preço do aluguel não pode ser negativo")
+    }
+    else {
+      return this.carService.addCar(this.addCarForm.value.nome!,
+        this.addCarForm.value.marca!,
+        this.addCarForm.value.ano!,
+        this.addCarForm.value.direcao!,
+        this.addCarForm.value.imagem!,
+        this.addCarForm.value.categoria!,
+        this.addCarForm.value.totAssentos!,
+        this.addCarForm.value.cambio!,
+        this.addCarForm.value.tipoCombustivel!,
+        this.addCarForm.value.tamanhoMala!,
+        this.addCarForm.value.preco!,
+        this.addCarForm.value.quantidade_disponivel!).subscribe({
+        next: (message) =>{
+          this.addCarForm.reset();
+          this.route.navigate(['/carlist/0'])
+          alert(message.mensagem);
+        },
+        error: () => {
+          alert('Houve um erro ao adicionar o carro');
+        }
+      })
+    }
+    return
   }
 
   onSubmit() {

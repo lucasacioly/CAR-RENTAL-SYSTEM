@@ -27,6 +27,7 @@ export class CarReturnComponent implements OnInit {
   retiradaData: Date = new Date();
   devolucaoData: Date = new Date();
   email = ''
+  clicado = false
   pagamento = 0
   multa = false
   atrasos = ['Não atrasou', 'Atrasou menos de uma semana', 'Atrasou entre uma semana e um mês', 'Atrasou mais de um mês']
@@ -116,6 +117,10 @@ export class CarReturnComponent implements OnInit {
       this.pagamento += 1500
       this.multa = true
     }
+    if (this.atrasoForm == '' || this.batidoForm == ''){
+      alert('Preencha todas as informações!')
+    }
+    else{ this.clicado = true }
     console.log(this.pagamento);
     console.log(this.multa);
 
@@ -178,7 +183,7 @@ export class CarReturnComponent implements OnInit {
     })
   }
 
-  returnCar() {
+  returnCarCheck(){
     return this.carService.returnCar(this.email, this.id, this.retiradaData, this.devolucaoData, this.pagamento).subscribe({
       next: (mensagem) =>{
         alert(mensagem.mensagem)
@@ -189,5 +194,18 @@ export class CarReturnComponent implements OnInit {
       }
     })
   }
+
+
+
+  returnCar() {
+    if (!this.clicado){
+      alert('Multa ainda não calculada')
+    }
+    else{
+      this.returnCarCheck()
+    }
+
+    }
+    
 
 }
