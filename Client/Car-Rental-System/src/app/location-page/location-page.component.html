@@ -57,12 +57,12 @@
         </div>
 
         <form [formGroup]="locationForm" (ngSubmit)="onSubmit()" class="selections">
-            <div>
+            <div id="retiradaData">
                 <h3 class="titles">Retirada</h3>
                 <input formControlName="retirada" type="datetime-local" #input (change)="onChange(input.value)" min="{{min_date}}">  <!--[(ngModel)]="values"-->
             </div>
 
-            <div>
+            <div id="devolucaoData">
                 <h3 class="titles">Devolução</h3>
                 <input formControlName="devolucao" class="date" type="datetime-local">
             </div>

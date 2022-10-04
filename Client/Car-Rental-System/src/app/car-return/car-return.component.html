@@ -14,7 +14,7 @@
       <h2>Data de devolução prevista:</h2>
       <p>{{devolucao}}</p>
 
-      <button (click)="returnCar()" class="button"> Concluir</button>
+      <button (click)="returnCar()" class="button" id="concluir"> Concluir</button>
       <div *ngIf="!alertMultaCalc" class="alert alert-danger" role="alert">
         Multa ainda não calculada
         <button (click)="closeAlerts()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>

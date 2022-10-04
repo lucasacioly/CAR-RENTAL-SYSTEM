@@ -1,0 +1,20 @@
+describe('Add car', () => {
+
+  it('passes', () => {
+    cy.visit('http://localhost:4200/login')
+    cy.get('input[name="e-mail"]').type('admin@alucar.com')
+    cy.get('input[name="senha"]').type('admin123')
+    cy.get('.entrar').click()
+    cy.wait(1000)
+    cy.url().should('eq', 'http://localhost:4200/')
+    cy.get('#open').click()
+    cy.get('#nav_button_carlist').click()
+    cy.wait(1000)
+    cy.get("#addcar").click()
+    cy.wait(1000)
+    cy.get('#button-confirm').click()
+    cy.wait(1000)
+    cy.url().should('eq', 'http://localhost:4200/addcar')
+    cy.contains('Preencha todos os campos').should('exist')
+  })
+})
