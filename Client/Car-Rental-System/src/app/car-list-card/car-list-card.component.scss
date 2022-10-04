@@ -73,57 +73,7 @@
 i:hover{
   color: var(--white);
 }
-/*
-.bi-snow:hover::after{
-  content: "Your tooltip";
-    display: block;
-    position: relative;
-    top: -16px;
-    right: -16px;
-    width: 100px;
-    background: lightblue;
-}
 
-.bi-gear-fill:hover::after{
-  content: "Your tooltip";
-    display: block;
-    position: relative;
-    top: -16px;
-    right: -16px;
-    width: 100px;
-    background: lightblue;
-}
-
-.bi-people-fill:hover::after{
-  content: "Your tooltip";
-    display: block;
-    position: relative;
-    top: -16px;
-    right: -16px;
-    width: 100px;
-    background: lightblue;
-}
-
-.bi-briefcase-fill:hover::after{
-  content: "Your tooltip";
-    display: block;
-    position: relative;
-    top: -16px;
-    right: -16px;
-    width: 100px;
-    background: lightblue;
-}
-
-.bi-fuel-pump-fill:hover::after{
-  content: "Your tooltip";
-    display: block;
-    position: relative;
-    top: -16px;
-    right: -16px;
-    width: 100px;
-    background: lightblue;
-}
-*/
 .custom-tooltip {
   --bs-tooltip-bg: var(--bs-primary);
 }
@@ -141,4 +91,10 @@ i:hover{
 
 .indsp{
 background-color: grey;
+}
+
+.alert{
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
 }

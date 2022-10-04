@@ -1,8 +1,4 @@
-import { Car } from '../models/Car';
 import { Aluguel } from '../models/Aluguel';
-import { CarController } from './car.controller';
-
-const carController = new CarController();
 
 export class AluguelController {
     listaAlugado: Aluguel[] = [
@@ -80,7 +76,6 @@ export class AluguelController {
 
     // adicionar carro alugado
     addRent(email : string, id: number, data_retirada: Date, data_devolucao: Date, preco: number) {
-        console.log('chegou no addRent')
         const newAluguel: Aluguel = {
             email: email,
             id: id,
@@ -89,15 +84,7 @@ export class AluguelController {
             preco: preco,
             devolvido: false
         }
-        console.log(newAluguel);
-        console.log(id);
         this.listaAlugado.push(newAluguel);
-        
-        //let car = carController.getCarById(id)
-        //car.quantidade_disponivel -= 1
-        //carController.editCar(car.id, car.marca, car.nome, car.ano, car.direcao, car.imagem, car.categoria, car.totAssentos, car.cambio, car.tipoCombustivel, car.tamanhoMala, car.preco, car.quantidade_disponivel, car.feedbacks)
-        
-        
     }
 
     // carro devolvido
@@ -108,8 +95,6 @@ export class AluguelController {
                 break
             }
         }
-        //let car = carController.getCarById(id)
-        //carController.editCar(car.id, car.marca, car.nome, car.ano, car.direcao, car.imagem, car.categoria, car.totAssentos, car.cambio, car.tipoCombustivel, car.tamanhoMala, car.preco, car.quantidade_disponivel+1, car.feedbacks)
     }
 
     // retirar carro da lista de alugados (teve o feedback)
@@ -117,7 +102,6 @@ export class AluguelController {
         let deleted = false
         for (let i = 0; i < this.listaAlugado.length; i++) {
             if (this.listaAlugado[i].email == email && this.listaAlugado[i].id == id) {
-                console.log(this.listaAlugado[i].id);
                 
                 this.listaAlugado.splice(i, 1)
                 
@@ -126,7 +110,6 @@ export class AluguelController {
             }
         }
         if (deleted) {
-            console.log(this.listaAlugado);
             return true 
         }
         else {

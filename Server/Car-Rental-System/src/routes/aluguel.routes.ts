@@ -1,6 +1,5 @@
 import { Router } from "express";
 import { AluguelController } from "../controllers/aluguel.controller";
-import { Car } from "../models/Car";
 
 const aluguelRouter = Router();
 
@@ -19,7 +18,6 @@ aluguelRouter.route('/')
         let data_retirada : Date = req.body.data_retirada
         let data_devolucao : Date = req.body.data_devolucao
         let preco : number = Number(req.body.preco)
-        console.log('post aluguel.routes')
         aluguelController.addRent(email, id, data_retirada, data_devolucao, preco)
         return res.json({ mensagem: "new ALUGUEL added"})
     })

@@ -116,7 +116,6 @@ export class FeedbackController {
             nota: nota,
             descricao: descricao
         }
-        console.log(newFeed)
         this.feedbacks.push(newFeed)
     }
 
