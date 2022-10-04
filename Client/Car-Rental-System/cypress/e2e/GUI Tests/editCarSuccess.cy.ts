@@ -10,7 +10,6 @@ describe('empty spec', () => {
       cy.url().should('include', '/carlist/0')
       cy.get('#edit1').click()
       cy.url().should('include', '/editcar')
-      cy.get('[formControlName="nome"]').type('Civic')
       cy.get('[formControlName="preco"]').type('2')
       cy.get('[formControlName="disponiveis"]').type('2')
       cy.wait(1000)
