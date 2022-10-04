@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { CarType, CarService, FeedbackType } from '../car.service';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -8,8 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor() {}
+  constructor(private carService: CarService, private route: Router) {}
 
   ngOnInit(): void {}
+  navigate_to_location_page(id : number){
+    this.route.navigate(['/location', id])
+  }
 
+  existCar(id: number){
+    this.carService.getCarById(String(id)).subscribe({
+      next: () =>{
+        this.navigate_to_location_page(Number(id))
+      },
+      error: () => {
+        alert("Esse carro foi removido, desculpe pelo transtorno")
+      }
+    })
+  }
 }
+
