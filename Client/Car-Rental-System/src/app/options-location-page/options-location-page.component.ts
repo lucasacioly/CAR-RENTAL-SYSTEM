@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../auth.service';
-import { FormBuilder } from '@angular/forms';
-import { CarType, CarService, AluguelType } from '../car.service';
+import { CarType, CarService } from '../car.service';
 
 @Component({
   selector: 'app-options-location-page',
@@ -13,7 +12,6 @@ export class OptionsLocationComponent implements OnInit {
 
   constructor(private route: Router,
     private routeActivated: ActivatedRoute,
-    private formBuilder: FormBuilder,
     private carService: CarService,
     private authService: AuthService) { }
 
@@ -83,18 +81,13 @@ export class OptionsLocationComponent implements OnInit {
 
   getDayDiff(startDate: string, endDate: string) {
     const msInDay = 24 * 60 * 60 * 1000;
-    //console.log("numero ?", Date.parse(startDate));
-    //console.log("numero ?", Date.parse(endDate));
-
     return Math.round(Math.abs(Date.parse(endDate) - Date.parse(startDate)) / msInDay);
   }
 
   getCar(id: string) {
-    console.log(id);
     return this.carService.getCarById(id).subscribe({
       next: (car) =>{
         this.selectedCar = car;
-        console.log(car);
         this.imagem = this.selectedCar.imagem;
         this.total = this.dias*this.selectedCar.preco
       },
@@ -106,19 +99,15 @@ export class OptionsLocationComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = +this.routeActivated.snapshot.paramMap.get('id')!
-    console.log("id: " + this.id);
     this.routeActivated.queryParams
     .subscribe(params => {
       this.retirada = params['retirada'];
       this.devolucao = params['devolucao'];
-      console.log(this.retirada);
     }
    );
     this.retiradaData = new Date(this.retirada)
     this.devolucaoData = new Date(this.devolucao)
-    console.log("data de retirada em Date: " + this.retiradaData);
     this.dias = this.getDayDiff(this.retirada, this.devolucao)
-    console.log("dias em dias: " + this.dias);
 
 
     this.getCar(String(this.id));
@@ -157,8 +146,7 @@ export class OptionsLocationComponent implements OnInit {
     car.preco,
     car.quantidade_disponivel - 1,
     car.feedbacks).subscribe({
-      next: (message) =>{
-        //this.newCar.reset()
+      next: () =>{
         this.route.navigate(['/carlist/0'])
       },
       error: () => {
@@ -172,7 +160,6 @@ export class OptionsLocationComponent implements OnInit {
     return this.carService.getCarById(id).subscribe({
       next: (car) =>{
         this.newCar = car;
-        console.log(car);
         this.editCar(this.newCar)
       },
       error: () => {
@@ -182,23 +169,16 @@ export class OptionsLocationComponent implements OnInit {
   }
 
   createRent() {
-    console.log(this.email);
-    console.log(this.id);
-    console.log(this.retiradaData);
-    console.log(this.devolucaoData);
 
     this.carService.addRent(this.email, this.id, this.retiradaData, this.devolucaoData, this.total).subscribe({
       next: (message) =>{
         this.getCarbyId(String(this.id))
-        alert(message.mensagem);
+        alert("Aluguel concluido!");
       },
       error: () => {
         alert("deu ruim")
       }
     })
   }
-
-
-
 
 }

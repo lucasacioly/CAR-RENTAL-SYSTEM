@@ -1,6 +1,5 @@
 import { Router, Request, Response } from 'express';
 import { FeedbackController } from '../controllers/feedback.controller';
-import carRouter from './car.routes';
 
 const feedbackRouter = Router();
 

@@ -33,21 +33,30 @@ export class AddCarPageComponent implements OnInit {
     this.route.navigate([''])
   }
 
-  navigate_to_car_list_page(){
-    this.route.navigate(['/carlist'])
-  }
-
+  alertTodosCampos = false
+  alertPrecoNeg = false
+  alertCarrosNeg = false
+  alertErro = false
   addCar(){
     if (this.addCarForm.value.nome! == '' || this.addCarForm.value.nome! == '' || this.addCarForm.value.marca! == '' || this.addCarForm.value.ano! == 0 || this.addCarForm.value.direcao! == '' || this.addCarForm.value.imagem! == '' || this.addCarForm.value.categoria! == '' || this.addCarForm.value.totAssentos! == '' || this.addCarForm.value.cambio! == '' || this.addCarForm.value.tipoCombustivel! == '' || this.addCarForm.value.tamanhoMala! == '') {
-      alert("Preencha todos os campos")
+      this.alertTodosCampos = true
+      this.alertCarrosNeg = false
+      this.alertPrecoNeg = false
     }
     else if (this.addCarForm.value.quantidade_disponivel! < 0) {
-      alert("A quantidade de carros não pode ser negativa")
+      this.alertCarrosNeg = true
+      this.alertTodosCampos = false
+      this.alertPrecoNeg = false
     }
     else if (this.addCarForm.value.preco! < 0) {
-      alert("O preço do aluguel não pode ser negativo")
+      this.alertPrecoNeg = true
+      this.alertTodosCampos = false
+      this.alertCarrosNeg = false
     }
     else {
+      this.alertTodosCampos = false
+      this.alertCarrosNeg = false
+      this.alertPrecoNeg = false
       return this.carService.addCar(this.addCarForm.value.nome!,
         this.addCarForm.value.marca!,
         this.addCarForm.value.ano!,
@@ -60,12 +69,14 @@ export class AddCarPageComponent implements OnInit {
         this.addCarForm.value.tamanhoMala!,
         this.addCarForm.value.preco!,
         this.addCarForm.value.quantidade_disponivel!).subscribe({
-        next: (message) =>{
+        next: () =>{
+          this.alertErro = false
           this.addCarForm.reset();
           this.route.navigate(['/carlist/0'])
-          alert(message.mensagem);
+          alert("Carro adicionado com sucesso");
         },
         error: () => {
+          this.alertErro = true
           alert('Houve um erro ao adicionar o carro');
         }
       })
@@ -78,6 +89,13 @@ export class AddCarPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  closeAlerts(){
+    this.alertTodosCampos = false
+    this.alertPrecoNeg = false
+    this.alertCarrosNeg = false
+    this.alertErro = false
   }
 
 }

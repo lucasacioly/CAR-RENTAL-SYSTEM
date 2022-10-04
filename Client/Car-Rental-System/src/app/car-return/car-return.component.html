@@ -13,8 +13,12 @@
       <p>{{retirada}}</p>
       <h2>Data de devolução prevista:</h2>
       <p>{{devolucao}}</p>
-      
+
       <button (click)="returnCar()" class="button"> Concluir</button>
+      <div *ngIf="!alertMultaCalc" class="alert alert-danger" role="alert">
+        Multa ainda não calculada
+        <button (click)="closeAlerts()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
     </section>
 
 
@@ -33,6 +37,11 @@
       <h2 *ngIf="!multa">Total: R$ {{pagamento}}</h2>
       <h2 *ngIf="multa">Total com multa: R$ {{pagamento}}</h2>
       <button type="submit" class="button"> Calcular </button>
+
+      <div *ngIf="!alertPreenchido" class="alert alert-danger" role="alert">
+        Preencha todas as informações!
+        <button (click)="closeAlerts()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
 
     </form>
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ParamMap, Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { CarType, CarService, FeedbackType } from '../car.service';
 import { ActivatedRoute } from '@angular/router';
@@ -17,9 +17,6 @@ export class LocationPageComponent implements OnInit {
     private carService: CarService,
     private formBuilder: FormBuilder) { }
 
-  navigate_to_accessories(){
-    this.route.navigate(['/options'])
-  }
 
   navigate_to_home_page(){
     this.route.navigate([''])
@@ -29,13 +26,13 @@ export class LocationPageComponent implements OnInit {
     this.route.navigate(['/login'])
   }
 
+  alertDatas = true
   onSubmit(){
     if(this.locationForm.value.retirada == '' || this.locationForm.value.devolucao == ''){
-      alert("Preencha todos os campos das datas")
+      this.alertDatas = false
     }
     else if(this.isClient || this.isAdmin){
-      console.log(this.locationForm.value.retirada!);
-
+      this.alertDatas = true
       this.route.navigate(['/options', this.id],{queryParams: {retirada: this.locationForm.value.retirada!, devolucao: this.locationForm.value.devolucao!}})
       this.locationForm.reset();
 
@@ -71,11 +68,9 @@ export class LocationPageComponent implements OnInit {
 
 
   getCar(id: string) {
-    console.log(id);
     return this.carService.getCarById(id).subscribe({
       next: (car) =>{
         this.selectedCar = car;
-        console.log(car);
       },
       error: () => {
         alert("Deu ruim")
@@ -87,7 +82,7 @@ export class LocationPageComponent implements OnInit {
   mes = 0;
   ano = 0;
   dataAtual = ''
-  
+
 
   ngOnInit(): void {
     this.PastDateTime();
@@ -98,27 +93,20 @@ export class LocationPageComponent implements OnInit {
     this.mes = Number(this.dataAtual)
     this.ano = this.data.getFullYear();
     this.dataAtual = this.dia + '/' + this.mes + '/' + this.ano;
-    console.log(this.dia);
-    console.log(this.mes);
-    console.log(this.ano);
 
     this.carService.getCarById(String(this.id)).subscribe({
       next: (car) =>{
         this.selectedCar = car;
-        console.log(car);
       },
       error: () => {
         alert("deu ruim")
       }
     })
-    //this.selectedCar = this.carService.getCar(this.id)!
     this.getCarFeedbacks()
     this.getCar(String(this.id))
   }
 
   listaFeedback : FeedbackType[] = []
-
-
 
   getCarFeedbacks(){
     this.carService.getCarFeedbacks(this.id).subscribe({
@@ -129,8 +117,6 @@ export class LocationPageComponent implements OnInit {
         alert("Não possui feedbacks")
       }
     })
-
-
 
   }
 
@@ -166,5 +152,9 @@ export class LocationPageComponent implements OnInit {
     }
 
 
+  }
+
+  closeAlert(){
+    this.alertDatas = true
   }
 }

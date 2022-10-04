@@ -2,7 +2,6 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    //justify-content: space-between;
     font-weight: normal;
     height: 100vh;
     padding-top: 2%;
@@ -12,7 +11,6 @@
         font-weight: normal;
         color: var(--white);
         align-content: center;
-        //margin-bottom: 5px;
     }
 
     h1 {
@@ -37,21 +35,16 @@
     .car{
         display: flex;
         flex-direction: column;
-       // padding-top: 20px;
     }
 
     .image{
         height: 250px;
-        //width: 150px;
         color: var(--white);
-        //margin-bottom: 100px;
     }
 
     .info{
         text-align:center;
-        //padding-top: 10%;
-        color: var(--white);
-       // width: 40%;
+        color: var(--white);;
     }
 
     .table{
@@ -67,8 +60,6 @@
         justify-content: space-around;
         display: flex;
         flex-direction: column;
-        //padding-top: 6%;
-        //padding-left: 0;
         height: 100%;
         text-align:center;
     }
@@ -102,4 +93,8 @@
 
 .imagemPrincipal{
   width: 300px;
+}
+
+.alert{
+  margin-left: 25%;
 }

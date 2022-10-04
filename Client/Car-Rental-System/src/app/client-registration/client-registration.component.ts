@@ -16,10 +16,6 @@ export class ClientRegistrationComponent implements OnInit {
     this.route.navigate([''])
   }
 
-  navigate_to_login_page(){
-    this.route.navigate(['/login'])
-  }
-
   show: boolean = false;
   show_senha() {
     this.show = !this.show;

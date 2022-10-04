@@ -1,6 +1,5 @@
-import { Component, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { faCashRegister } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '../auth.service';
 import { AluguelType, CarService, CarType} from '../car.service';
 
@@ -18,10 +17,6 @@ export class CarListComponent implements OnInit {
 
   navigate_to_home_page(){
     this.route.navigate([''])
-  }
-
-  navigate_to_login_page(){
-    this.route.navigate(['/login'])
   }
 
   navigate_to_add_car_page(){
@@ -55,7 +50,6 @@ export class CarListComponent implements OnInit {
     return this.carService.getAllCars().subscribe({
       next: (cars) =>{
         this.listaCarros = cars;
-        console.log(this.listaCarros);
       },
       error: () => {
         alert("deu ruim")
@@ -71,13 +65,9 @@ export class CarListComponent implements OnInit {
         for (let i = 0; i < this.listaAlugueis.length; i++) {
           this.carService.getCarById(String(this.listaAlugueis[i].id)).subscribe({
             next: (car) =>{
-              console.log(i);
-              console.log(this.listaCarroEmail);
               if (this.listaAlugueis[i].devolvido == false) {
                 this.listaCarroEmail.push([car, this.listaAlugueis[i].email, this.listaAlugueis[i].data_retirada, this.listaAlugueis[i].data_devolucao, this.listaAlugueis[i].preco, this.listaAlugueis[i].devolvido])
               }
-
-
             },
             error: () => {
               alert("deu ruim")
@@ -101,9 +91,6 @@ export class CarListComponent implements OnInit {
         for (let i = 0; i < this.listaAlugueis.length; i++) {
           this.carService.getCarById(String(this.listaAlugueis[i].id)).subscribe({
             next: (car) =>{
-              console.log(i);
-              console.log(this.listaCarroEmail);
-
               this.listaCarroEmail.push([car, this.listaAlugueis[i].email, this.listaAlugueis[i].data_retirada, this.listaAlugueis[i].data_devolucao, this.listaAlugueis[i].preco, this.listaAlugueis[i].devolvido])
 
             },
@@ -123,7 +110,6 @@ export class CarListComponent implements OnInit {
   id_page = 0
   ngOnInit(): void {
     this.id_page = +this.routeActivated.snapshot.paramMap.get('id')!
-    console.log(this.id_page);
 
     if (this.id_page == 0) {
       this.getAllCars();
@@ -142,14 +128,5 @@ export class CarListComponent implements OnInit {
     this.id_page = +this.routeActivated.snapshot.paramMap.get('id')!
 
   }
-
-  /*
-  ngDoCheck() {
-
-    console.log(this.carService.cars);
-    this.cars = this.carService.cars;
-    //this.getAllCars();
-  }
-  */
 
 }

@@ -23,4 +23,9 @@
     <button type="submit" class="submit-button titles button">
         ENVIAR
     </button>
+
+    <div *ngIf="!alertComNota" class="alert alert-danger" role="alert">
+      É preciso informar uma nota
+      <button (click)="closeAlerts()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
 </form>
