@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ParamMap, Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { CarService, CarType } from '../car.service';
 import { FormBuilder } from '@angular/forms';
@@ -88,10 +88,11 @@ export class CarReturnComponent implements OnInit {
 
   }
 
+  alertPreenchido = true
+
   onSubmit() {
     this.atrasoForm = this.returnForm.value.atraso!
     this.batidoForm = this.returnForm.value.batido!
-    console.log(this.pagamento);
     if (this.atrasoForm == this.atrasos[1]) {
       this.pagamento += 100
       this.multa = true
@@ -118,13 +119,12 @@ export class CarReturnComponent implements OnInit {
       this.multa = true
     }
     if (this.atrasoForm == '' || this.batidoForm == ''){
-      alert('Preencha todas as informações!')
+      this.alertPreenchido = false
     }
-    else{ this.clicado = true }
-    console.log(this.pagamento);
-    console.log(this.multa);
-
-
+    else{
+      this.alertPreenchido = true
+      this.clicado = true
+    }
   }
 
   newCaredit: CarType = {
@@ -159,8 +159,7 @@ export class CarReturnComponent implements OnInit {
     car.preco,
     car.quantidade_disponivel + 1,
     car.feedbacks).subscribe({
-      next: (message) =>{
-        //this.newCar.reset()
+      next: () =>{
         this.route.navigate([''])
       },
       error: () => {
@@ -174,7 +173,6 @@ export class CarReturnComponent implements OnInit {
     return this.carService.getCarById(id).subscribe({
       next: (car) =>{
         this.newCaredit = car;
-        console.log(car);
         this.editCar(this.newCaredit)
       },
       error: () => {
@@ -186,7 +184,7 @@ export class CarReturnComponent implements OnInit {
   returnCarCheck(){
     return this.carService.returnCar(this.email, this.id, this.retiradaData, this.devolucaoData, this.pagamento).subscribe({
       next: (mensagem) =>{
-        alert(mensagem.mensagem)
+        alert("Devolução conlcuida")
         this.getCarbyId(String(this.id))
       },
       error: () => {
@@ -196,16 +194,22 @@ export class CarReturnComponent implements OnInit {
   }
 
 
-
+  alertMultaCalc = true
   returnCar() {
     if (!this.clicado){
-      alert('Multa ainda não calculada')
+      this.alertMultaCalc = false
     }
     else{
+      this.alertMultaCalc = true
       this.returnCarCheck()
     }
 
     }
-    
+
+  closeAlerts(){
+    this.alertMultaCalc = true
+    this.alertPreenchido = true
+  }
+
 
 }

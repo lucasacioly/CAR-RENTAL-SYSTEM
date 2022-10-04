@@ -70,7 +70,15 @@
             <button (click)="onSubmit()" type="button" class="btn btn-success">
                 AVANÇAR
             </button>
+
+
         </form>
+
+    </div>
+
+    <div *ngIf="!alertDatas" class="alert alert-danger" role="alert">
+      Preencha todos os campos das datas
+      <button (click)="closeAlert()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 
 

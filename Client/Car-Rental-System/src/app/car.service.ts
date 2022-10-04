@@ -81,7 +81,6 @@ export class CarService {
         quantidade_disponivel : quantidade_disponivel,
         feedbacks : feedbacks
     }
-    console.log(editedCar.quantidade_disponivel)
     return this.http.put<any>(`${environment.url}/car/${id}`, editedCar)
   }
 
@@ -119,7 +118,6 @@ export class CarService {
       data_devolucao: data_devolucao,
       preco: preco
     }
-    console.log(rent);
 
     return this.http.post<any>(`${environment.url}/rent`, rent);
   }

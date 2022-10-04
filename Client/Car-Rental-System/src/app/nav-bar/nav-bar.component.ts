@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, Route } from '@angular/router';
+import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -17,24 +17,8 @@ export class NavBarComponent implements OnInit {
     this.route.navigate(['/login'])
   }
 
-  navigate_to_car_list(){
-    this.route.navigate(['/carlist'])
-  }
-
   navigate_to_home_page(){
     this.route.navigate([''])
-  }
-
-  navigate_to_feedback_page(){
-    this.route.navigate(['/feedback'])
-  }
-
-  navigate_to_car_return_page(){
-    this.route.navigate(['/carreturn'])
-  }
-
-  navigate_to_car_history_page(){
-    this.route.navigate(['/carhistory'])
   }
 
   isClient = this.authService.isClient;

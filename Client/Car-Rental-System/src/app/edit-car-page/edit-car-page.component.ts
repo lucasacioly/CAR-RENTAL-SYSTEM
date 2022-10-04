@@ -29,9 +29,6 @@ export class EditCarPageComponent implements OnInit {
     Cambio:String[] = ["Automático", "Manual"]
     Assentos:String[] = ["2", "5", "7+"]
 
-  navigate_to_car_list_page(){
-    this.route.navigate(['/carlist'])
-  }
 
   navigate_to_home_page(){
     this.route.navigate([''])
@@ -82,19 +79,15 @@ export class EditCarPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = +this.routeActivated.snapshot.paramMap.get('id')!
-    //this.selectedCar = this.carService.getCar(this.id)!
     this.carService.getCarById(String(this.id)).subscribe({
       next: (car) =>{
         this.selectedCar = car
-        console.log(this.selectedCar)
         this.editCarFormBuilder(this.selectedCar)
       },
       error: () => {
         alert("deu ruim")
       }
     })
-
-    console.log(this.selectedCar.marca)
   }
 
   ngDoCheck(): void{
@@ -124,8 +117,6 @@ export class EditCarPageComponent implements OnInit {
   carroId = 0
 
   editCarFormBuilder(car: CarType) {
-    console.log('entrou');
-    console.log(car);
 
     this.carroId = car.id
     this.editCarForm.controls['id'].setValue(car.id)
@@ -141,22 +132,34 @@ export class EditCarPageComponent implements OnInit {
     this.editCarForm.controls['tamanhoMala'].setValue(car.tamanhoMala)
     this.editCarForm.controls['disponiveis'].setValue(car.quantidade_disponivel)
     this.editCarForm.controls['preco'].setValue(car.preco)
-    console.log(this.editCarForm.value.marca!);
-
 
   }
 
+  alertTodosCampos = false
+  alertPrecoNeg = false
+  alertCarrosNeg = false
+  alertErro = false
+
   editCar(){
     if (this.editCarForm.value.nome! == '' || this.editCarForm.value.nome! == '' || this.editCarForm.value.marca! == '' || this.editCarForm.value.ano! == 0 || this.editCarForm.value.direcao! == '' || this.editCarForm.value.imagem! == '' || this.editCarForm.value.categoria! == '' || this.editCarForm.value.totAssentos! == '' || this.editCarForm.value.cambio! == '' || this.editCarForm.value.tipoCombustivel! == '' || this.editCarForm.value.tamanhoMala! == '') {
-      alert("Preencha todos os campos")
+      this.alertTodosCampos = true
+      this.alertCarrosNeg = false
+      this.alertPrecoNeg = false
     }
     else if (this.editCarForm.value.disponiveis! < 0) {
-      alert("A quantidade de carros não pode ser negativa")
+      this.alertCarrosNeg = true
+      this.alertTodosCampos = false
+      this.alertPrecoNeg = false
     }
     else if (this.editCarForm.value.preco! < 0) {
-      alert("O preço do aluguel não pode ser negativo")
+      this.alertPrecoNeg = true
+      this.alertTodosCampos = false
+      this.alertCarrosNeg = false
     }
     else {
+      this.alertTodosCampos = false
+      this.alertCarrosNeg = false
+      this.alertPrecoNeg = false
       return this.carService.editCar(String(this.carroId), this.editCarForm.value.nome!,
       this.editCarForm.value.marca!,
       this.editCarForm.value.ano!,
@@ -170,12 +173,14 @@ export class EditCarPageComponent implements OnInit {
       this.editCarForm.value.preco!,
       this.editCarForm.value.disponiveis!,
       this.selectedCar.feedbacks).subscribe({
-        next: (message) =>{
+        next: () =>{
+          this.alertErro = false
           this.editCarForm.reset()
           this.route.navigate(['/carlist/0'])
-          alert(message.mensagem);
+          alert("Carro editado com sucesso");
         },
         error: () => {
+          this.alertErro = true
           alert('Deu ruim');
         }
       })
@@ -186,6 +191,13 @@ export class EditCarPageComponent implements OnInit {
   onSubmit() {
     this.editCar()
 
+  }
+
+  closeAlerts(){
+    this.alertTodosCampos = false
+    this.alertPrecoNeg = false
+    this.alertCarrosNeg = false
+    this.alertErro = false
   }
 
 }

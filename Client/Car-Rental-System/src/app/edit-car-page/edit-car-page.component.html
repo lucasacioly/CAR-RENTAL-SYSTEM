@@ -2,11 +2,6 @@
 
 <section class="add-car-container">
 
-  <!--
-    Ajustar logotipo
-  <img (click)="navigate_to_home_page()" src="assets/AluCar.png">
-  -->
-
   <img (click)="navigate_to_home_page()" class="logo" src="assets/AluCar.png">
 
   <h1>Editar Carro</h1>
@@ -89,12 +84,23 @@
 
 </section>
 
+<!--Alertas-->
+<div *ngIf="alertTodosCampos" class="alert alert-danger" role="alert">
+  Preencha todos os campos
+  <button (click)="closeAlerts()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
 
-<!--
-<app-nav-bar></app-nav-bar>
-<section class="add-car-container">
-    <img class = "logo" src="assets/AluCar.png"/>
-    <div class="form-container">
-    </div>
-</section>
--->
+<div *ngIf="alertCarrosNeg" class="alert alert-danger" role="alert">
+  A quantidade de carros não pode ser negativa
+  <button (click)="closeAlerts()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<div *ngIf="alertPrecoNeg" class="alert alert-danger" role="alert">
+  O preço do aluguel não pode ser negativo
+  <button (click)="closeAlerts()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<div *ngIf="alertErro" class="alert alert-danger" role="alert">
+  Houve um erro ao adicionar o carro
+  <button (click)="closeAlerts()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>

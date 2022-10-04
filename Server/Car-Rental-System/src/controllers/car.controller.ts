@@ -135,13 +135,10 @@ export class CarController {
     constructor() {}
 
     getAllCars(): Car[] {
-        console.log(this.cars)
         return this.cars;
     }
 
     getCarById(id: number): Car {
-        console.log('chegou:', id);
-        console.log(this.cars.find(car => car.id === id))
         return this.cars.find(car => car.id == id)
         
     }
@@ -165,8 +162,7 @@ export class CarController {
         }
         else {
             nextid = this.cars[this.cars.length-1].id + 1
-        }
-        
+        }  
 
         const newCar : Car = {id : nextid,
             marca: marca,
@@ -182,7 +178,6 @@ export class CarController {
             preco: preco,
             quantidade_disponivel: quantidade_disponivel,
             feedbacks : []};
-        console.log(newCar);
         this.cars.push(newCar);
     }
 
@@ -201,7 +196,7 @@ export class CarController {
         quantidade_disponivel: number,
         feedbacks: Feedback[]) : boolean {
         
-        let car =  this.cars.find(c => c.id == id) // não é igual a oldCar?
+        let car =  this.cars.find(c => c.id == id)
 
         if (!car){
             return false;
@@ -222,11 +217,9 @@ export class CarController {
                 quantidade_disponivel: quantidade_disponivel,
                 feedbacks : feedbacks};
 
-        let oldCar = this.getCarById(id) // não é igual a car?
+        let oldCar = this.getCarById(id)
         let index = this.cars.indexOf(oldCar!)
         this.cars[index] = newCar
-        console.log("Tamo aqui")
-        console.log("quantidade", this.cars[index].quantidade_disponivel)
         }
     }
 

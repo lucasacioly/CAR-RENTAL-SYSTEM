@@ -1,5 +1,5 @@
 import { Component, Injectable, OnInit } from '@angular/core';
-import { ParamMap, Route, ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CarService, CarType, FeedbackType } from '../car.service';
 import { FormBuilder } from '@angular/forms';
 import { AuthService } from '../auth.service';
@@ -57,7 +57,6 @@ export class FeedbackPageComponent implements OnInit {
     this.carService.getCarById(String(this.id)).subscribe({
       next: (car) =>{
         this.newCar = car;
-        console.log(car);
         this.getFeedbackCar(this.newCar)
       },
       error: () => {
@@ -71,11 +70,8 @@ export class FeedbackPageComponent implements OnInit {
 
   addFeedback(idCar: number, nome: string, nota: number, descricao: string){
     this.carService.addFeedback(idCar, nome, nota, descricao).subscribe({
-      next: (feedbacks) =>{
-        //this.newFeedback.reset();
-        console.log(feedbacks);
-
-
+      next: () =>{
+        alert('Feedback adicionado com sucesso')
       },
       error: () => {
         alert('Error');
@@ -85,9 +81,8 @@ export class FeedbackPageComponent implements OnInit {
 
   deleteRent(id: number, email: string) {
     this.carService.deleteRent(email, id).subscribe({
-      next: (message) =>{
+      next: () =>{
         this.navigate_to_home_page()
-        //alert(message.mensagem);
       },
       error: () => {
         alert('Error');
@@ -95,23 +90,29 @@ export class FeedbackPageComponent implements OnInit {
     })
   }
 
+
+  alertComNota = true
   onSubmit() {
     if (this.feedbackForm.value.avaliacao! == 0) {
-      alert("É preciso informar uma nota")
-    } 
+      this.alertComNota = false
+    }
     else {
+      this.alertComNota = true
       let newFeedback: FeedbackType = {
         id: this.id,
         nome: this.authService.clientName,
         nota: Number(this.feedbackForm.value.avaliacao!),
         descricao: this.feedbackForm.value.descricao!
       }
-      console.log("id:",this.id);
 
       this.addFeedback(this.id, newFeedback.nome, newFeedback.nota, newFeedback.descricao)
       this.feedbackForm.reset();
       this.deleteRent(this.id, this.email)
     }
+  }
+
+  closeAlerts(){
+    this.alertComNota = true
   }
 
 }

@@ -1,7 +1,6 @@
 .container {
 
     height: 100%;
-    //float: right;
     top:0;
     right:0;
     z-index: 100;
@@ -9,7 +8,6 @@
     position: fixed;
     background-color: #D9D9D9;
     box-shadow: -7px 0px 8px rgba(0, 0, 0, 0.25);
-    //background-color: black;
     @media (min-width: 500px) {
       width: 250px;
     }
@@ -18,11 +16,9 @@
     }
 
     flex-direction: column;
-    //align-items: center;
     padding-top: 1%;
     padding-bottom: 20px;
     overflow-y: scroll;
-    // hide scroll bar
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 
